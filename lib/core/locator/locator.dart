@@ -10,9 +10,7 @@ import 'package:spioc_portfolio/core/locator/locator_views.dart';
 GetIt getIt = GetIt.instance;
 bool _initialized = false;
 
-void locatorSetup({
-  bool isTesting = false,
-}) {
+void locatorSetup({bool isTesting = false}) {
   if (!_initialized) {
     setupLocatorObjects(isTesting: isTesting);
     setupLocatorViews();
