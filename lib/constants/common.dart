@@ -6,3 +6,5 @@ const emptyWidget = SizedBox();
 const emptyString = '';
 
 const ScrollPhysics defaultScrollPhysics = ClampingScrollPhysics();
+
+const initials = 'SPC';
