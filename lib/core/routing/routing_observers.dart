@@ -48,7 +48,6 @@ class WebAppTitleNavigationObserver extends NavigatorObserver {
     }
 
     final title = suffix != null ? '$initials | $suffix' : initials;
-
     WebUtils.setTitle(title);
   }
 }
