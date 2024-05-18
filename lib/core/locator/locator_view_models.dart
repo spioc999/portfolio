@@ -6,4 +6,8 @@ void setupLocatorViewModels() {
   getIt.registerFactory<HomeViewModelContract>(
     () => HomeViewModel(),
   );
+
+  getIt.registerFactory<NotFoundViewModelContract>(
+    () => NotFoundViewModel(),
+  );
 }

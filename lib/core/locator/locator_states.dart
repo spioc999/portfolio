@@ -5,4 +5,8 @@ void setupLocatorStates() {
   getIt.registerFactory<HomeState>(
     HomeState.new,
   );
+
+  getIt.registerFactory<NotFoundState>(
+    NotFoundState.new,
+  );
 }

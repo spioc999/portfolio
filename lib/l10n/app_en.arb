@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
   "generic_error": "Ops, something went wrong!",
-  "homeview_tabtitle": "Home"
+  "homeview_tabtitle": "Home",
+  "notfoundview_tabtitle": "404"
 }
