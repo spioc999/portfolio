@@ -1,0 +1,54 @@
+{
+    "viewModel": {
+      "description": "Create ViewModel skeleton",
+      "prefix": "viewmodel",
+      "body": [
+        "class $1ViewModel",
+        "\t\textends BaseViewModel<$1ViewContract, $1State>",
+        "\t\timplements $1ViewModelContract {",
+        "",
+        "\t$1ViewModel();",
+        "",
+        "}",
+      ]
+    },
+    "contracts": {
+      "description": "Create Contracts skeleton",
+      "prefix": "contracts",
+      "body": [
+        "abstract class $1ViewContract extends BaseViewContract {",
+        "\t",
+        "}",
+        "",
+        "abstract class $1ViewModelContract extends BaseViewModelContract<",
+        "$1State, $1ViewContract> {",
+        "\t",
+        "}",
+        "",
+        "class $1State extends BaseVMState {",
+        "\t",
+        "}",
+      ]
+    },
+    "view": {
+      "description": "Create View skeleton",
+      "prefix": "view",
+      "body": [
+        "class $1View extends BaseMvvmStatefulWidget {",
+        "\t$1View({super.key}) : super(_$1ViewState());",
+        "}",
+        "",
+        "class _$1ViewState extends BaseState<$1View,",
+        "\t\t$1ViewModelContract, $1State> implements $1ViewContract {",
+        "\t@override",
+        "\tWidget build(BuildContext context) {",
+        "\t\treturn BaseWidget<$1ViewModelContract, $1State>(",
+        "\t\t\tmodel: viewModel,",
+        "\t\t\tbuilder: (context, viewModel, child) => const Placeholder(),",
+        "\t\t);",
+        "\t}",
+        "}",
+        "",
+      ]
+    },
+  }
