@@ -15,7 +15,7 @@ class PortfolioWebApp extends StatelessWidget {
       providers: providers,
       child: MaterialApp.router(
         //TODO add selector for changing theme
-        onGenerateTitle: (_) => initials,
+        onGenerateTitle: (_) => fullName,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         theme: ThemeData.light(useMaterial3: true),
