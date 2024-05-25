@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:spioc_portfolio/core/locator/locator.dart';
-import 'package:spioc_portfolio/core/routing/route_names.dart';
+import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_observers.dart';
 import 'package:spioc_portfolio/ui/portfolio_shell_navigator_scaffold.dart';
 import 'package:spioc_portfolio/views/views.dart';
@@ -24,8 +24,9 @@ final routerConfig = GoRouter(
       observers: [WebAppTitleNavigationObserver()],
       builder: (context, state, child) => PortfolioShellNavigatorScaffold(
         route: RouteName.values.firstWhere(
-            (r) => r.path == state.matchedLocation,
-            orElse: () => RouteName.home),
+          (r) => r.path == state.matchedLocation,
+          orElse: () => RouteName.home,
+        ),
         child: child,
       ),
       routes: [
@@ -34,6 +35,7 @@ final routerConfig = GoRouter(
           name: RouteName.home.name,
           parentNavigatorKey: shellNavigatorKey,
           pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
             name: state.name,
             child: getIt<HomeView>(),
           ),
@@ -43,6 +45,7 @@ final routerConfig = GoRouter(
           name: RouteName.aboutMe.name,
           parentNavigatorKey: shellNavigatorKey,
           pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
             name: state.name,
             child: getIt<AboutMeView>(),
           ),
@@ -52,6 +55,7 @@ final routerConfig = GoRouter(
           name: RouteName.education.name,
           parentNavigatorKey: shellNavigatorKey,
           pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
             name: state.name,
             child: getIt<EducationView>(),
           ),
@@ -61,6 +65,7 @@ final routerConfig = GoRouter(
           name: RouteName.experience.name,
           parentNavigatorKey: shellNavigatorKey,
           pageBuilder: (context, state) => NoTransitionPage(
+            key: state.pageKey,
             name: state.name,
             child: getIt<ExperienceView>(),
           ),

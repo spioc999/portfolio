@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:spioc_portfolio/core/routing/route_names.dart';
+import 'package:spioc_portfolio/core/routing/route_name.dart';
 
 class RoutingHelper {
   static void pop<T extends Object?>(BuildContext context, [T? result]) =>
