@@ -6,7 +6,7 @@ class EmojiLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Offstage(
-      // Insert invisible emoji in order to load the emoji font in CanvasKit
+      // Insert invisible emoji in order to load the emoji font
       // on startup. Magic stuff !!
       child: Text('🧑🏽‍💻🪄'),
     );

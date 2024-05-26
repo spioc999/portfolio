@@ -15,7 +15,10 @@ class _HomeViewState
       model: viewModel,
       builder: (context, viewModel, _) {
         return Center(
-          child: Text('Home'),
+          child: Text(
+            'Home',
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
         );
       },
     );

@@ -18,9 +18,7 @@ Future<void> commonRuns({bool isTesting = false}) async {
   locatorSetup();
   initRouting();
 
-  await Future.wait(
-    [
-      getIt<SharedPref>().init(),
-    ],
-  );
+  await Future.wait([
+    getIt<SharedPref>().init(),
+  ]);
 }

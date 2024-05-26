@@ -60,7 +60,7 @@ class _PortfolioShellNavigatorScaffoldState
             ...RouteNameExt.pages.map(
               (route) => Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: ElevatedButton(
+                child: TextButton(
                   onPressed: () {
                     RoutingHelper.goNamed(context, route);
                   },
