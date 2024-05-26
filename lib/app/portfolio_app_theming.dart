@@ -2,47 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 
-class PortfolioAppThemes {
+class PortfolioAppTheming {
   //TODO download fonts
-  static const _titleFontFamily = 'Bebas Neue';
-  static const _bodyFontFamily = 'Roboto';
-
-  static AppBarTheme _appBarTheme({required bool isDark}) => AppBarTheme(
-        backgroundColor: isDark ? Colors.black : Colors.white,
-        toolbarHeight: Dimens.appBarHeight,
-      );
+  static const titleFontFamily = 'Bebas Neue';
+  static const bodyFontFamily = 'Nunito Sans';
 
   static TextTheme _textTheme({required bool isDark}) {
     TextStyle displayStyle(double fontSize) => GoogleFonts.getFont(
-          _titleFontFamily,
+          titleFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.bold,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle headlineStyle(double fontSize) => GoogleFonts.getFont(
-          _titleFontFamily,
+          titleFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle titleStyle(double fontSize) => GoogleFonts.getFont(
-          _titleFontFamily,
+          titleFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.w500,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle bodyStyle(double fontSize) => GoogleFonts.getFont(
-          _bodyFontFamily,
+          bodyFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.normal,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle labelStyle(double fontSize) => GoogleFonts.getFont(
-          _bodyFontFamily,
+          bodyFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.normal,
           color: isDark ? Colors.grey.shade200 : Colors.grey.shade800,
@@ -67,6 +62,13 @@ class PortfolioAppThemes {
     );
   }
 
+  static const minButtonSize = Size(
+    Dimens.minButtonWidth,
+    Dimens.minButtonHeight,
+  );
+  static const buttonPadding =
+      EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingButton);
+
   static ElevatedButtonThemeData _elevatedButtonThemeData(
           {required bool isDark}) =>
       ElevatedButtonThemeData(
@@ -82,9 +84,11 @@ class PortfolioAppThemes {
           ),
           textStyle: WidgetStateProperty.resolveWith(
             (states) {
-              TextStyle textStyle = const TextStyle(
+              TextStyle textStyle = GoogleFonts.getFont(
+                bodyFontFamily,
                 fontWeight: FontWeight.bold,
               );
+
               if (states.contains(WidgetState.hovered) ||
                   states.contains(WidgetState.pressed)) {
                 textStyle = textStyle.copyWith(
@@ -99,7 +103,10 @@ class PortfolioAppThemes {
           foregroundColor: WidgetStatePropertyAll(
             isDark ? Colors.black : Colors.white,
           ),
+          minimumSize: const WidgetStatePropertyAll(minButtonSize),
+          padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
+          overlayColor: const WidgetStatePropertyAll(Colors.transparent),
           elevation: const WidgetStatePropertyAll(0.0),
         ),
       );
@@ -118,7 +125,8 @@ class PortfolioAppThemes {
           ),
           textStyle: WidgetStateProperty.resolveWith(
             (states) {
-              TextStyle textStyle = const TextStyle(
+              TextStyle textStyle = GoogleFonts.getFont(
+                bodyFontFamily,
                 fontWeight: FontWeight.bold,
               );
 
@@ -133,6 +141,8 @@ class PortfolioAppThemes {
               return textStyle;
             },
           ),
+          minimumSize: const WidgetStatePropertyAll(minButtonSize),
+          padding: const WidgetStatePropertyAll(buttonPadding),
           overlayColor: const WidgetStatePropertyAll(Colors.transparent),
           elevation: const WidgetStatePropertyAll(0.0),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
@@ -154,9 +164,11 @@ class PortfolioAppThemes {
           ),
           textStyle: WidgetStateProperty.resolveWith(
             (states) {
-              TextStyle textStyle = const TextStyle(
+              TextStyle textStyle = GoogleFonts.getFont(
+                bodyFontFamily,
                 fontWeight: FontWeight.bold,
               );
+
               if (states.contains(WidgetState.hovered) ||
                   states.contains(WidgetState.pressed)) {
                 textStyle = textStyle.copyWith(
@@ -180,15 +192,18 @@ class PortfolioAppThemes {
               return BorderSide(color: color);
             },
           ),
+          minimumSize: const WidgetStatePropertyAll(minButtonSize),
+          padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
+          overlayColor: const WidgetStatePropertyAll(Colors.transparent),
           elevation: const WidgetStatePropertyAll(0.0),
         ),
       );
 
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: _appBarTheme(isDark: false),
     cardColor: Colors.white,
+    dividerColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
     textTheme: _textTheme(isDark: false),
     elevatedButtonTheme: _elevatedButtonThemeData(isDark: false),
@@ -197,8 +212,8 @@ class PortfolioAppThemes {
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     scaffoldBackgroundColor: Colors.black,
-    appBarTheme: _appBarTheme(isDark: true),
     cardColor: Colors.black,
+    dividerColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.black,
       brightness: Brightness.dark,

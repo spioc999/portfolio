@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/home/home_contracts.dart';
 
@@ -15,9 +17,24 @@ class _HomeViewState
       model: viewModel,
       builder: (context, viewModel, _) {
         return Center(
-          child: Text(
-            'Home',
-            style: Theme.of(context).textTheme.displayLarge,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text(
+                  fullName,
+                  style: Theme.of(context).textTheme.displayLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: Dimens.defaultMargin,
+                ),
+                Text(
+                  'Flutter & AI Engineer',
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
         );
       },
