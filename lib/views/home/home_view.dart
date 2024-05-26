@@ -18,6 +18,7 @@ class _HomeViewState
       builder: (context, viewModel, _) {
         return Center(
           child: SingleChildScrollView(
+            padding: defaultHorizontalPadding,
             child: Column(
               children: [
                 Text(
