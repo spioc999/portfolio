@@ -5,6 +5,7 @@ import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/core/providers.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
+import 'package:spioc_portfolio/models/models.dart';
 
 class PortfolioShellNavigatorScaffold extends StatefulWidget {
   final Widget child;
@@ -84,7 +85,7 @@ class _PortfolioShellNavigatorScaffoldState
                                 ),
                               ),
                           child: const Text(
-                            initials,
+                            Me.initials,
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),

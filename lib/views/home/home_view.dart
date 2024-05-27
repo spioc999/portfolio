@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/home/home_contracts.dart';
 
@@ -21,8 +22,11 @@ class _HomeViewState
             padding: defaultHorizontalPadding,
             child: Column(
               children: [
+                const SizedBox(
+                  height: Dimens.defaultMargin,
+                ),
                 Text(
-                  fullName,
+                  Me.fullName,
                   style: Theme.of(context).textTheme.displayLarge,
                   textAlign: TextAlign.center,
                 ),
@@ -30,7 +34,7 @@ class _HomeViewState
                   height: Dimens.defaultMargin,
                 ),
                 Text(
-                  'Flutter & AI Engineer',
+                  vmState.role(l10n),
                   style: Theme.of(context).textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
