@@ -88,7 +88,8 @@ class PortfolioAppTheming {
           minimumSize: const WidgetStatePropertyAll(minButtonSize),
           padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
-          elevation: const WidgetStatePropertyAll(0.0),
+          elevation: const WidgetStatePropertyAll(Dimens.zero),
+          iconSize: const WidgetStatePropertyAll(Dimens.defaultIconSize),
         ),
       );
 
@@ -106,7 +107,8 @@ class PortfolioAppTheming {
           ),
           minimumSize: const WidgetStatePropertyAll(minButtonSize),
           padding: const WidgetStatePropertyAll(buttonPadding),
-          elevation: const WidgetStatePropertyAll(0.0),
+          elevation: const WidgetStatePropertyAll(Dimens.zero),
+          iconSize: const WidgetStatePropertyAll(Dimens.defaultIconSize),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
         ),
       );
@@ -139,7 +141,7 @@ class PortfolioAppTheming {
           minimumSize: const WidgetStatePropertyAll(minButtonSize),
           padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
-          elevation: const WidgetStatePropertyAll(0.0),
+          elevation: const WidgetStatePropertyAll(Dimens.zero),
           iconSize: const WidgetStatePropertyAll(Dimens.defaultIconSize),
         ),
       );
