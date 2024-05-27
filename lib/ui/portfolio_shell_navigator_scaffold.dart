@@ -21,7 +21,7 @@ class PortfolioShellNavigatorScaffold extends StatefulWidget {
 
 class _PortfolioShellNavigatorScaffoldState
     extends State<PortfolioShellNavigatorScaffold> {
-  static const bottomDividerHeight = 0.5;
+  static const bottomDividerHeight = 1.0;
 
   late RouteName selectedRoute;
 
@@ -64,19 +64,27 @@ class _PortfolioShellNavigatorScaffoldState
                     initials,
                   ),
                 ),
-                const SizedBox(
-                  width: 4,
-                ),
                 ...RouteNameExt.pages.map(
-                  (route) => Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    child: TextButton(
-                      onPressed: () {
-                        RoutingHelper.goNamed(context, route);
-                      },
-                      child: Text(
-                        route.title(context)?.toUpperCase() ?? emptyString,
-                      ),
+                  (route) => TextButton(
+                    onPressed: () {
+                      RoutingHelper.goNamed(context, route);
+                    },
+                    style: Theme.of(context).textButtonTheme.style?.copyWith(
+                          fixedSize: const WidgetStatePropertyAll(
+                            Size.fromHeight(
+                              Dimens.appBarHeight - bottomDividerHeight,
+                            ),
+                          ),
+                        ),
+                    child: Text(
+                      route.title(context)?.toUpperCase() ?? emptyString,
+                      style: route == selectedRoute
+                          ? const TextStyle(
+                              decoration: TextDecoration.underline,
+                              decorationThickness: 2.0,
+                              fontWeight: FontWeight.bold,
+                            )
+                          : null,
                     ),
                   ),
                 ),
