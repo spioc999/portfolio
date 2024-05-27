@@ -62,6 +62,7 @@ class _PortfolioShellNavigatorScaffoldState
                       ),
                   child: const Text(
                     initials,
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 ...RouteNameExt.pages.map(
@@ -98,7 +99,11 @@ class _PortfolioShellNavigatorScaffoldState
           ],
         ),
       ),
-      body: widget.child,
+      body: SelectableRegion(
+        focusNode: FocusNode(),
+        selectionControls: materialTextSelectionControls,
+        child: widget.child,
+      ),
     );
   }
 }
