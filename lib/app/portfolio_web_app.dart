@@ -14,20 +14,24 @@ class PortfolioWebApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: providers,
-      child: MaterialApp.router(
-        //TODO add selector for changing theme
-        onGenerateTitle: (_) => fullName,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        theme: PortfolioAppTheming.lightTheme,
-        darkTheme: PortfolioAppTheming.darkTheme,
-        themeMode: ThemeMode.dark,
-        routerConfig: routerConfig,
-        builder: (context, child) => Stack(
-          children: [
-            child!,
-            const EmojiLoader(),
-          ],
+      child: Selector<AppSettingsProvider, AppSettings>(
+        selector: (_, provider) => provider.appSettings,
+        builder: (_, value, __) => MaterialApp.router(
+          onGenerateTitle: (_) => fullName,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          debugShowCheckedModeBanner: false,
+          theme: PortfolioAppTheming.lightTheme,
+          darkTheme: PortfolioAppTheming.darkTheme,
+          themeMode: value.themeMode,
+          locale: value.locale,
+          routerConfig: routerConfig,
+          builder: (_, child) => Stack(
+            children: [
+              child!,
+              const EmojiLoader(),
+            ],
+          ),
         ),
       ),
     );

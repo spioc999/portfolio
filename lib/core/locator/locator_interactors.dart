@@ -3,8 +3,8 @@ import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/modules/modules.dart';
 
 void setupLocatorInteractors() {
-  getIt.registerFactory<AppearanceInteractor>(
-    () => AppearanceInteractor(
+  getIt.registerFactory<AppSettingsInteractor>(
+    () => AppSettingsInteractor(
       sharedPref: getIt<SharedPref>(),
     ),
   );
