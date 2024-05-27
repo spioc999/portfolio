@@ -66,9 +66,9 @@ class _PortfolioShellNavigatorScaffoldState
                 ),
                 ...RouteNameExt.pages.map(
                   (route) => TextButton(
-                    onPressed: () {
-                      RoutingHelper.goNamed(context, route);
-                    },
+                    onPressed: route != selectedRoute
+                        ? () => RoutingHelper.goNamed(context, route)
+                        : emptyCallback,
                     style: Theme.of(context).textButtonTheme.style?.copyWith(
                           fixedSize: const WidgetStatePropertyAll(
                             Size.fromHeight(
