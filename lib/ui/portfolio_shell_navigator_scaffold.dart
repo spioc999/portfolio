@@ -25,7 +25,7 @@ class _PortfolioShellNavigatorScaffoldState
     extends State<PortfolioShellNavigatorScaffold> {
   static const bottomDividerHeight = 1.0;
 
-  ButtonStyle? get _textButtonButtonStyle =>
+  ButtonStyle? get _navigationAndSettingsButtonStyle =>
       Theme.of(context).textButtonTheme.style?.copyWith(
             fixedSize: const WidgetStatePropertyAll(
               Size.fromHeight(
@@ -60,7 +60,6 @@ class _PortfolioShellNavigatorScaffoldState
         preferredSize: const Size.fromHeight(Dimens.appBarHeight),
         child: Column(
           children: [
-            //TODO convert into CustomScroll
             Row(
               children: [
                 ElevatedButton(
@@ -82,10 +81,8 @@ class _PortfolioShellNavigatorScaffoldState
                 ),
                 ...RouteNameExt.pages.map(
                   (route) => TextButton(
-                    onPressed: route != selectedRoute
-                        ? () => RoutingHelper.goNamed(context, route)
-                        : emptyCallback,
-                    style: _textButtonButtonStyle,
+                    onPressed: () => RoutingHelper.goNamed(context, route),
+                    style: _navigationAndSettingsButtonStyle,
                     child: Text(
                       route.title(context)?.toUpperCase() ?? emptyString,
                       style: route == selectedRoute
@@ -103,7 +100,7 @@ class _PortfolioShellNavigatorScaffoldState
                   onPressed: () =>
                       Provider.of<AppSettingsProvider>(context, listen: false)
                           .switchLocale(languageCode),
-                  style: _textButtonButtonStyle,
+                  style: _navigationAndSettingsButtonStyle,
                   child: Text(
                     languageCode.toUpperCase(),
                   ),
@@ -112,7 +109,7 @@ class _PortfolioShellNavigatorScaffoldState
                   onPressed: () =>
                       Provider.of<AppSettingsProvider>(context, listen: false)
                           .switchThemeByBrightness(themeBrightness),
-                  style: _textButtonButtonStyle,
+                  style: _navigationAndSettingsButtonStyle,
                   child: Icon(
                     themeBrightness == Brightness.dark
                         ? Icons.dark_mode_outlined
