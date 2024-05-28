@@ -22,7 +22,6 @@ dependencies:
   url_launcher: ^6.2.6
   collection: ^1.18.0
   shared_preferences: ^2.2.3
-  google_fonts: ^6.2.1
   responsive_builder: ^0.7.0
 
 dev_dependencies:
@@ -36,3 +35,17 @@ flutter:
 
   assets:
     - assets/imgs/
+
+  fonts:
+    - family: Bebas Neue
+      fonts:
+        - asset: fonts/bebas_neue/BebasNeue-Regular.ttf
+          weight: 400
+    - family: Fira Sans Condensed
+      fonts:
+        - asset: fonts/fira_sans_condensed/FiraSansCondensed-Regular.ttf
+          weight: 400
+        - asset: fonts/fira_sans_condensed/FiraSansCondensed-SemiBold.ttf
+          weight: 600
+        - asset: fonts/fira_sans_condensed/FiraSansCondensed-Bold.ttf
+          weight: 700
