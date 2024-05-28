@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
-import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/components/personal_rounded_images.dart';
+import 'package:spioc_portfolio/ui/layouts/portfolio_sliver_footer.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/home/home_contracts.dart';
 
@@ -54,29 +54,7 @@ class _HomeViewState
                 ),
               ),
             ),
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const AppDivider.horizontal(height: 0.5),
-                    Padding(
-                      padding: defaultHorizontalPadding.copyWith(
-                          top: Dimens.smallMargin, bottom: Dimens.smallMargin),
-                      child: Text(
-                        l10n.homeview_footer_label,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+            const PortfolioSliverFooter(),
           ],
         );
       },

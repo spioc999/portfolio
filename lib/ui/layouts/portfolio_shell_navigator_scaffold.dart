@@ -7,6 +7,7 @@ import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PortfolioShellNavigatorScaffold extends StatefulWidget {
   final Widget child;
@@ -118,26 +119,32 @@ class _PortfolioShellNavigatorScaffoldState
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          TextButton(
-                            onPressed: () => Provider.of<AppSettingsProvider>(
-                              context,
-                              listen: false,
-                            ).switchLocale(languageCode),
-                            style: _navigationAndSettingsButtonStyle,
-                            child: Text(
-                              languageCode.toUpperCase(),
+                          Tooltip(
+                            message: AppLocalizations.of(context)!
+                                .generic_switch_language_tooltip,
+                            child: TextButton(
+                              onPressed: () => Provider.of<AppSettingsProvider>(
+                                context,
+                                listen: false,
+                              ).switchLocale(languageCode),
+                              style: _navigationAndSettingsButtonStyle,
+                              child: Text(languageCode.toUpperCase()),
                             ),
                           ),
-                          TextButton(
-                            onPressed: () => Provider.of<AppSettingsProvider>(
-                              context,
-                              listen: false,
-                            ).switchThemeByBrightness(themeBrightness),
-                            style: _navigationAndSettingsButtonStyle,
-                            child: Icon(
-                              themeBrightness == Brightness.dark
-                                  ? Icons.dark_mode_outlined
-                                  : Icons.light_mode_outlined,
+                          Tooltip(
+                            message: AppLocalizations.of(context)!
+                                .generic_switch_theme_tooltip,
+                            child: TextButton(
+                              onPressed: () => Provider.of<AppSettingsProvider>(
+                                context,
+                                listen: false,
+                              ).switchThemeByBrightness(themeBrightness),
+                              style: _navigationAndSettingsButtonStyle,
+                              child: Icon(
+                                themeBrightness == Brightness.dark
+                                    ? Icons.dark_mode_outlined
+                                    : Icons.light_mode_outlined,
+                              ),
                             ),
                           )
                         ],
