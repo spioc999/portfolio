@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_observers.dart';
-import 'package:spioc_portfolio/ui/portfolio_shell_navigator_scaffold.dart';
+import 'package:spioc_portfolio/ui/layouts/portfolio_shell_navigator_scaffold.dart';
 import 'package:spioc_portfolio/views/views.dart';
 
 final globalNavigatorKey = GlobalKey<NavigatorState>();

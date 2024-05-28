@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/animation_duration.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class PersonalRoundedImages extends StatefulWidget {
   const PersonalRoundedImages({super.key});
@@ -58,6 +59,7 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
               turns: Tween(begin: 0.0, end: 1.0).animate(_rotationController),
               child: AnimatedContainer(
                 duration: AnimationDuration.intermediateDuration,
+                curve: Curves.decelerate,
                 width: _dimension,
                 height: _dimension,
                 decoration: BoxDecoration(
@@ -72,18 +74,12 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
               ),
             ),
             Positioned.fill(
-              child: Container(
-                clipBehavior: Clip.hardEdge,
-                width: _dimension,
-                height: _dimension,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
+              child: Padding(
                 padding: const EdgeInsets.all(_gradientBorderThickness),
                 child: ClipOval(
-                  child: Image.network(
-                    _images[_imageIndex],
-                    fit: BoxFit.fill,
+                  child: FadeInImage.memoryNetwork(
+                    placeholder: kTransparentImage,
+                    image: _images[_imageIndex],
                   ),
                 ),
               ),
