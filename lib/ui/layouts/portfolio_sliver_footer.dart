@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioSliverFooter extends StatelessWidget {
@@ -32,7 +32,7 @@ class PortfolioSliverFooter extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelSmall,
                   children: [
                     TextSpan(
-                      text: AppLocalizations.of(context)!.generic_footer_label1,
+                      text: l10n(context).generic_footer_label1,
                     ),
                     TextSpan(
                       text: technologyName,
@@ -42,7 +42,7 @@ class PortfolioSliverFooter extends StatelessWidget {
                         ..onTap = () => launchUrl(Uri.parse(technologyLink)),
                     ),
                     TextSpan(
-                      text: AppLocalizations.of(context)!.generic_footer_label2,
+                      text: l10n(context).generic_footer_label2,
                     ),
                   ],
                 ),
