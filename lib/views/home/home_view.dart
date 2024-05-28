@@ -60,13 +60,16 @@ class _HomeViewState
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const AppDivider.horizontal(),
+                    const AppDivider.horizontal(height: 0.5),
                     Padding(
                       padding: defaultHorizontalPadding.copyWith(
                           top: Dimens.smallMargin, bottom: Dimens.smallMargin),
                       child: Text(
                         l10n.homeview_footer_label,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: Theme.of(context).textTheme.labelSmall,
                       ),
                     ),
