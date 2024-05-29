@@ -1,0 +1,22 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+      {
+        "name": "[DEBUG] SPC Portfolio",
+        "program": "lib/main.dart",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "args": [
+          "-d",
+          "chrome",
+        ]
+      },
+      {
+        "name": "All Tests",
+        "type": "dart",
+        "request": "launch",
+        "program": "./test/"
+      }
+    ]
+  }
