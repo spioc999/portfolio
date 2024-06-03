@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:spioc_portfolio/app/portfolio_app_theming.dart';
 import 'package:spioc_portfolio/core/providers.dart';
 import 'package:spioc_portfolio/core/routing/routing_config.dart';
-import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/toolkit/emoji_loader.dart';
+import 'package:spioc_portfolio/utils/web_utils.dart';
 
 class PortfolioWebApp extends StatelessWidget {
   const PortfolioWebApp({super.key});
@@ -17,7 +17,8 @@ class PortfolioWebApp extends StatelessWidget {
       child: Selector<AppSettingsProvider, AppSettings>(
         selector: (_, provider) => provider.appSettings,
         builder: (_, settings, __) => MaterialApp.router(
-          onGenerateTitle: (_) => Me.fullName,
+          onGenerateTitle: (context) =>
+              WebUtils.getTitleByRoute(null, context), //TODO check me
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           debugShowCheckedModeBanner: false,
