@@ -7,9 +7,10 @@
   "generic_switch_language_tooltip": "Cambia lingua: Inglese",
   "generic_switch_theme_tooltip": "Cambia tema",
   "aboutmeview_title": "Chi sono",
-  "aboutmeview_intro": "Ciao, sono Simone Pio! Ho {years} anni e sono un Flutter & AI Engineer.\n\nLa mia passione per la tecnologia nasce da piccolo nella mia terra natale, la Sicilia.\n\nMi descrivo come una persona molto determinata, che vuole sempre imparare cose nuove e cercare di capirne tutti gli aspetti.",
+  "aboutmeview_intro": "Ciao👋, sono Simone Pio! Ho {yearsOld} anni e sono un Flutter & AI Engineer.\n\nLa mia passione per la tecnologia nasce da piccolo nella mia terra natale, la Sicilia.\n\nMi descrivo come una persona molto determinata, che vuole sempre imparare cose nuove e cercare di capirne tutti gli aspetti.",
   "experienceview_title": "Esperienza",
   "educationview_title": "Formazione",
   "notfoundview_title": "Pagina Non Trovata",
-  "notfoundview_errorcode": "404"
+  "notfoundview_errorcode": "404",
+  "notfoundview_subtitle": "↖ Ritorna alla homepage"
 }

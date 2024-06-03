@@ -10,25 +10,27 @@ import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 
-class PortfolioShellNavigatorScaffold extends StatefulWidget {
+class PortfolioNavigationScaffold extends StatefulWidget {
   final Widget child;
   final RouteName route;
 
-  const PortfolioShellNavigatorScaffold({
+  const PortfolioNavigationScaffold({
     super.key,
     required this.child,
     required this.route,
   });
 
   @override
-  State<PortfolioShellNavigatorScaffold> createState() =>
-      _PortfolioShellNavigatorScaffoldState();
+  State<PortfolioNavigationScaffold> createState() =>
+      _PortfolioNavigationScaffoldState();
 }
 
-class _PortfolioShellNavigatorScaffoldState
-    extends State<PortfolioShellNavigatorScaffold> {
+class _PortfolioNavigationScaffoldState
+    extends State<PortfolioNavigationScaffold> {
   static const bottomDividerHeight = 1.0;
   late String initials;
+
+  bool get _isNotFoundPage => selectedRoute == RouteName.notFound;
 
   ButtonStyle? get _navigationAndSettingsButtonStyle =>
       Theme.of(context).textButtonTheme.style?.copyWith(
@@ -49,7 +51,7 @@ class _PortfolioShellNavigatorScaffoldState
   }
 
   @override
-  void didUpdateWidget(covariant PortfolioShellNavigatorScaffold oldWidget) {
+  void didUpdateWidget(covariant PortfolioNavigationScaffold oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.route != widget.route) {
       setState(() => selectedRoute = widget.route);
@@ -94,64 +96,68 @@ class _PortfolioShellNavigatorScaffoldState
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                        ...RouteNameExt.pages.map(
-                          (route) => TextButton(
-                            onPressed: () =>
-                                RoutingHelper.goNamed(context, route),
-                            style: _navigationAndSettingsButtonStyle,
-                            child: Text(
-                              route.title(context)?.toUpperCase() ??
-                                  emptyString,
-                              style: route == selectedRoute
-                                  ? const TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      decorationThickness: 2.0,
-                                      fontWeight: FontWeight.bold,
-                                    )
-                                  : null,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Tooltip(
-                            message: l10n.generic_switch_language_tooltip,
-                            child: TextButton(
-                              onPressed: () => Provider.of<AppSettingsProvider>(
-                                context,
-                                listen: false,
-                              ).switchLocale(languageCode),
+                        if (!_isNotFoundPage)
+                          ...RouteNameExt.pages.map(
+                            (route) => TextButton(
+                              onPressed: () =>
+                                  RoutingHelper.goNamed(context, route),
                               style: _navigationAndSettingsButtonStyle,
-                              child: Text(languageCode.toUpperCase()),
-                            ),
-                          ),
-                          Tooltip(
-                            message: l10n.generic_switch_theme_tooltip,
-                            child: TextButton(
-                              onPressed: () => Provider.of<AppSettingsProvider>(
-                                context,
-                                listen: false,
-                              ).switchThemeByBrightness(themeBrightness),
-                              style: _navigationAndSettingsButtonStyle,
-                              child: Icon(
-                                themeBrightness == Brightness.dark
-                                    ? Icons.dark_mode_outlined
-                                    : Icons.light_mode_outlined,
+                              child: Text(
+                                route.title(context)?.toUpperCase() ??
+                                    emptyString,
+                                style: route == selectedRoute
+                                    ? const TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        decorationThickness: 2.0,
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                    : null,
                               ),
                             ),
                           )
-                        ],
-                      ),
+                      ],
                     ),
-                  )
+                  ),
+                  if (!_isNotFoundPage)
+                    SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Tooltip(
+                              message: l10n.generic_switch_language_tooltip,
+                              child: TextButton(
+                                onPressed: () =>
+                                    Provider.of<AppSettingsProvider>(
+                                  context,
+                                  listen: false,
+                                ).switchLocale(languageCode),
+                                style: _navigationAndSettingsButtonStyle,
+                                child: Text(languageCode.toUpperCase()),
+                              ),
+                            ),
+                            Tooltip(
+                              message: l10n.generic_switch_theme_tooltip,
+                              child: TextButton(
+                                onPressed: () =>
+                                    Provider.of<AppSettingsProvider>(
+                                  context,
+                                  listen: false,
+                                ).switchThemeByBrightness(themeBrightness),
+                                style: _navigationAndSettingsButtonStyle,
+                                child: Icon(
+                                  themeBrightness == Brightness.dark
+                                      ? Icons.dark_mode_outlined
+                                      : Icons.light_mode_outlined,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
                 ],
               ),
             ),

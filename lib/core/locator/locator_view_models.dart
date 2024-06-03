@@ -5,7 +5,9 @@ import 'package:spioc_portfolio/views/view_models.dart';
 
 void setupLocatorViewModels() {
   getIt.registerFactory<AboutMeViewModelContract>(
-    () => AboutMeViewModel(),
+    () => AboutMeViewModel(
+      personalDataInteractor: getIt<PersonalDataInteractor>(),
+    ),
   );
   getIt.registerFactory<EducationViewModelContract>(
     () => EducationViewModel(),

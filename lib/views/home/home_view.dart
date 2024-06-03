@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/expandable_rounded_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
@@ -46,7 +46,7 @@ class _HomeViewState
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ExpandableRoundedNetworkImage(vmState.imageUrls[_imageIndex]),
-                  const Gap(Dimens.defaultMargin),
+                  defaultMarginGap,
                   Text(
                     vmState.firstName,
                     style: ResponsiveHelper.themeDisplayStyle(context),
@@ -57,7 +57,7 @@ class _HomeViewState
                     style: ResponsiveHelper.themeDisplayStyle(context),
                     textAlign: TextAlign.center,
                   ),
-                  const Gap(Dimens.defaultMargin),
+                  defaultMarginGap,
                   Text(
                     vmState.role(l10n),
                     style: ResponsiveHelper.themeTitleStyle(context),
