@@ -27,7 +27,6 @@ class PortfolioNavigationScaffold extends StatefulWidget {
 
 class _PortfolioNavigationScaffoldState
     extends State<PortfolioNavigationScaffold> {
-  static const bottomDividerHeight = 1.0;
   late String initials;
 
   bool get _isNotFoundPage => selectedRoute == RouteName.notFound;
@@ -36,7 +35,7 @@ class _PortfolioNavigationScaffoldState
       Theme.of(context).textButtonTheme.style?.copyWith(
             fixedSize: const WidgetStatePropertyAll(
               Size.fromHeight(
-                Dimens.appBarHeight - bottomDividerHeight,
+                Dimens.appBarHeight - Dimens.defaultDividerThickness,
               ),
             ),
           );
@@ -69,7 +68,7 @@ class _PortfolioNavigationScaffoldState
         child: Column(
           children: [
             SizedBox(
-              height: Dimens.appBarHeight - bottomDividerHeight,
+              height: Dimens.appBarHeight - Dimens.defaultDividerThickness,
               child: CustomScrollView(
                 scrollDirection: Axis.horizontal,
                 physics: defaultScrollPhysics,
@@ -87,7 +86,8 @@ class _PortfolioNavigationScaffoldState
                                 fixedSize: const WidgetStatePropertyAll(
                                   Size(
                                     Dimens.appBarHeight + Dimens.smallMargin,
-                                    Dimens.appBarHeight - bottomDividerHeight,
+                                    Dimens.appBarHeight -
+                                        Dimens.defaultDividerThickness,
                                   ),
                                 ),
                               ),
@@ -161,9 +161,7 @@ class _PortfolioNavigationScaffoldState
                 ],
               ),
             ),
-            const AppDivider.horizontal(
-              height: bottomDividerHeight,
-            ),
+            const AppDivider.horizontal(),
           ],
         ),
       ),

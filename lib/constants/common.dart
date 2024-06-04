@@ -21,5 +21,15 @@ const defaultBodyPadding = EdgeInsets.symmetric(
   horizontal: Dimens.horizontalPaddingDefault,
   vertical: Dimens.verticalPaddingDefault,
 );
+const tabletBodyPadding = EdgeInsets.symmetric(
+  horizontal: Dimens.horizontalPaddingTablet,
+  vertical: Dimens.verticalPaddingDefault,
+);
+const desktopBodyPadding = EdgeInsets.symmetric(
+  horizontal: Dimens.horizontalPaddingDesktop,
+  vertical: Dimens.verticalPaddingDefault,
+);
 
 const defaultMarginGap = Gap(Dimens.defaultMargin);
+const largeMarginGap = Gap(Dimens.largeMargin);
+const veryLargeMarginGap = Gap(Dimens.veryLargeMargin);

@@ -49,18 +49,18 @@ class _HomeViewState
                   defaultMarginGap,
                   Text(
                     vmState.firstName,
-                    style: ResponsiveHelper.themeDisplayStyle(context),
+                    style: ResponsiveValues.themeDisplayStyle(context),
                     textAlign: TextAlign.center,
                   ),
                   Text(
                     vmState.lastName,
-                    style: ResponsiveHelper.themeDisplayStyle(context),
+                    style: ResponsiveValues.themeDisplayStyle(context),
                     textAlign: TextAlign.center,
                   ),
                   defaultMarginGap,
                   Text(
                     vmState.role(l10n),
-                    style: ResponsiveHelper.themeTitleStyle(context),
+                    style: ResponsiveValues.themeTitleStyle(context),
                     textAlign: TextAlign.center,
                   ),
                 ],

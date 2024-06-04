@@ -4,6 +4,7 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
+import 'package:spioc_portfolio/utils/responsive_helper.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioScrollableView extends StatelessWidget {
@@ -22,7 +23,7 @@ class PortfolioScrollableView extends StatelessWidget {
       physics: defaultScrollPhysics,
       slivers: [
         SliverPadding(
-          padding: defaultBodyPadding,
+          padding: ResponsiveValues.bodyPadding(context),
           sliver: SliverToBoxAdapter(child: body),
         ),
         if (withFooter) const _PortfolioSliverFooter(),
@@ -44,7 +45,7 @@ class _PortfolioSliverFooter extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const AppDivider.horizontal(height: 0.5),
+            const AppDivider.horizontal(height: Dimens.tightDividerThickness),
             Padding(
               padding: defaultHorizontalPadding.copyWith(
                 top: Dimens.smallMargin,

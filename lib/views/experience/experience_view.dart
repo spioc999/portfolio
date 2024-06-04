@@ -26,7 +26,7 @@ class _ExperienceViewState extends BaseState<
                 child: Text(
                   l10n.experienceview_title,
                   textAlign: TextAlign.center,
-                  style: ResponsiveHelper.themeDisplayStyle(context),
+                  style: ResponsiveValues.themeDisplayStyle(context),
                 ),
               ),
             ],
