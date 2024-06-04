@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
-import 'package:spioc_portfolio/utils/responsive_helper.dart';
+import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/education/education_contracts.dart';
 
