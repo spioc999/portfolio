@@ -52,38 +52,43 @@ class _ExpandableRoundedNetworkImageState
         onEnter: (_) => setState(() => isHovered = true),
         onExit: (_) => setState(() => isHovered = false),
         hitTestBehavior: HitTestBehavior.deferToChild,
-        child: Stack(
-          children: [
-            RotationTransition(
-              turns: Tween(begin: 0.0, end: 1.0).animate(_rotationController),
-              child: AnimatedContainer(
-                duration: AnimationDuration.intermediateDuration,
-                curve: Curves.decelerate,
-                width: _dimension,
-                height: _dimension,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Theme.of(context).colorScheme.primary,
-                      Theme.of(context).colorScheme.tertiaryContainer,
-                    ],
-                  ),
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-            Positioned.fill(
-              child: Padding(
-                padding: EdgeInsets.all(widget.borderThickness),
-                child: ClipOval(
-                  child: FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image: widget.imgUrl,
+        child: GestureDetector(
+          onTap: () => _rotationController
+            ..reset()
+            ..repeat(),
+          child: Stack(
+            children: [
+              RotationTransition(
+                turns: Tween(begin: 0.0, end: 1.0).animate(_rotationController),
+                child: AnimatedContainer(
+                  duration: AnimationDuration.intermediateDuration,
+                  curve: Curves.decelerate,
+                  width: _dimension,
+                  height: _dimension,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Theme.of(context).colorScheme.primary,
+                        Theme.of(context).colorScheme.tertiaryContainer,
+                      ],
+                    ),
+                    shape: BoxShape.circle,
                   ),
                 ),
               ),
-            ),
-          ],
+              Positioned.fill(
+                child: Padding(
+                  padding: EdgeInsets.all(widget.borderThickness),
+                  child: ClipOval(
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: widget.imgUrl,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
