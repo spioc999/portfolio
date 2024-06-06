@@ -9,6 +9,7 @@ class PersonalDataService {
   String get initials => _me.initials;
   String get firstName => _me.firstName;
   String get lastName => _me.lastName;
+  List<Contact> get contacts => _me.contacts;
   List<String> get imageUrls => _me.imageUrls;
   String get fullName => _me.fullName;
   DateTime get dateOfBirth => _me.dateOfBirth;
