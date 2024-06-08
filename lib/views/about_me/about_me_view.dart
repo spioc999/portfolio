@@ -86,7 +86,12 @@ class _AboutMeViewState
   }
 
   @override
-  void startLetsCelebrate() => _confettiController.play();
+  void startLetsCelebrate() {
+    if (_confettiController.state == ConfettiControllerState.playing) {
+      _confettiController.stop();
+    }
+    _confettiController.play();
+  }
 
   @override
   void dispose() {
