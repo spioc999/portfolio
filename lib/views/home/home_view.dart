@@ -57,7 +57,7 @@ class _HomeViewState
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  vmState.role(l10n),
+                  vmState.role,
                   style: ResponsiveValues.themeTitleStyle(context),
                   textAlign: TextAlign.center,
                 ),

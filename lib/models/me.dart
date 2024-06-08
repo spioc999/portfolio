@@ -1,15 +1,14 @@
 import 'package:spioc_portfolio/models/models.dart';
-import 'package:spioc_portfolio/utils/typedefs.dart';
 
 class Me {
   final String initials;
   final String firstName;
   final String lastName;
+  final String role;
   final List<Contact> contacts;
   final DateTime dateOfBirth;
   final List<String> imageUrls;
 
-  final LocalizedString role;
   final About about;
   final Education education;
   final Experience experience;
