@@ -19,8 +19,5 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
   }
 
   @override
-  void onLetsCelebrateTap() {
-    // TODO: implement onLetsCelebrateTap
-    print('lets celebrate');
-  }
+  void onLetsCelebrateTap() => sourceView.startLetsCelebrate();
 }
