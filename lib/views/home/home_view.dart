@@ -7,7 +7,6 @@ import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/components/expandable_rounded_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
-import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/home/home_contracts.dart';
@@ -71,7 +70,7 @@ class _HomeViewState
                       .map(
                         (c) => TextButton(
                           onPressed: () => viewModel.onContactTap(c),
-                          child: Icon(c.type.icon),
+                          child: Icon(c.icon),
                         ),
                       )
                       .toList(),

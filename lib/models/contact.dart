@@ -1,11 +1,11 @@
-enum ContactType { github, linkedin, instagram }
+import 'package:flutter/material.dart';
 
 class Contact {
   final String link;
-  final ContactType type;
+  final IconData icon;
 
   Contact({
     required this.link,
-    required this.type,
+    required this.icon,
   });
 }
