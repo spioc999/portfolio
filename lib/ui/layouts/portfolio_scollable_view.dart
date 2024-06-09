@@ -51,10 +51,8 @@ class _PortfolioSliverFooter extends StatelessWidget {
                 top: Dimens.smallMargin,
                 bottom: Dimens.smallMargin,
               ),
-              child: RichText(
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                text: TextSpan(
+              child: Text.rich(
+                TextSpan(
                   style: Theme.of(context).textTheme.labelSmall,
                   children: [
                     TextSpan(
@@ -72,6 +70,8 @@ class _PortfolioSliverFooter extends StatelessWidget {
                     ),
                   ],
                 ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
           ],

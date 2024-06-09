@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:spioc_portfolio/app/portfolio_app_theming.dart';
 import 'package:spioc_portfolio/core/providers.dart';
 import 'package:spioc_portfolio/core/routing/routing_config.dart';
-import 'package:spioc_portfolio/ui/toolkit/emoji_loader.dart';
 import 'package:spioc_portfolio/utils/web_utils.dart';
 
 class PortfolioWebApp extends StatelessWidget {
@@ -21,18 +20,12 @@ class PortfolioWebApp extends StatelessWidget {
               WebUtils.getTitleByRoute(null, context), //TODO check me
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
-          debugShowCheckedModeBanner: false,
           theme: PortfolioAppTheming.lightTheme,
           darkTheme: PortfolioAppTheming.darkTheme,
           themeMode: settings.themeMode,
           locale: settings.locale,
           routerConfig: routerConfig,
-          builder: (_, child) => Stack(
-            children: [
-              child!,
-              const EmojiLoader(),
-            ],
-          ),
+          builder: (_, child) => child!,
         ),
       ),
     );
