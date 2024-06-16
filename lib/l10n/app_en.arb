@@ -9,6 +9,8 @@
   "aboutmeview_intro_1": "Hello👋! My name is {firstName}, I am {yearsOld} years old",
   "aboutmeview_intro_letscelebrate": "(today it's my birthday, let's celebrate!🎉)",
   "aboutmeview_intro_2": "and I work as a {role}. I describe myself as a very determined person who always wants to learn new things and try to understand all their aspects.\n\nMy passion for technology was born in my beloved homeland, the beautiful Sicily. In addition to technology, I am a great enthusiast of sports and music, which hold a special place in my life.\nMy experiences abroad have been very important, enriching my cultural and professional background, allowing me to grow significantly. The friendships I have formed over the years have had a significant impact on me, teaching me the value of diversity and collaboration.",
+  "aboutmeview_techstack_title": "Tech Stack",
+  "aboutmeview_hobbies_title": "Hobbies",
   "experienceview_title": "Experience",
   "educationview_title": "Education",
   "notfoundview_title": "Page Not Found",

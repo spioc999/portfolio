@@ -1,3 +1,5 @@
+import 'package:simple_icons/simple_icons.dart';
+import 'package:spioc_portfolio/core/resources/res.dart';
 import 'package:spioc_portfolio/models/models.dart';
 
 class Me {
@@ -28,3 +30,80 @@ class Me {
 
   String get fullName => '$firstName $lastName';
 }
+
+final simonePioCaronia = Me(
+  initials: 'SPC',
+  firstName: 'Simone Pio',
+  lastName: 'Caronia',
+  role: 'Flutter & AI Engineer',
+  contacts: [
+    Contact(
+      link: 'https://github.com/spioc999/',
+      icon: SimpleIcons.github,
+    ),
+    Contact(
+      link: 'https://www.linkedin.com/in/simone-pio-caronia-8b959916b/',
+      icon: SimpleIcons.linkedin,
+    ),
+    Contact(
+      link: 'https://www.instagram.com/spioc_999/',
+      icon: SimpleIcons.instagram,
+    ),
+  ],
+  dateOfBirth: DateTime(1999, 10, 20),
+  imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
+  about: About(
+    technologies: [
+      Technology(
+        icon: SimpleIcons.flutter,
+        name: 'Flutter',
+      ),
+      Technology(
+        icon: SimpleIcons.dart,
+        name: 'Dart',
+      ),
+      Technology(
+        icon: SimpleIcons.python,
+        name: 'Python',
+      ),
+      Technology(
+        icon: SimpleIcons.git,
+        name: 'Git',
+      ),
+      Technology(
+        icon: SimpleIcons.nodedotjs,
+        name: 'Node.js',
+      ),
+      Technology(
+        icon: SimpleIcons.kotlin,
+        name: 'Kotlin',
+      ),
+      Technology(
+        icon: SimpleIcons.swift,
+        name: 'Swift',
+      ),
+      Technology(
+        icon: SimpleIcons.firebase,
+        name: 'Firebase',
+      ),
+      Technology(
+        icon: SimpleIcons.databricks,
+        name: 'SQL',
+      ),
+      Technology(
+        icon: SimpleIcons.javascript,
+        name: 'JavaScript',
+      ),
+      Technology(
+        icon: SimpleIcons.oracle,
+        name: 'Java',
+      ),
+    ],
+    hobbies: [],
+    softSkills: [],
+    projects: [],
+    certifications: [],
+  ),
+  education: Education(),
+  experience: Experience(),
+);
