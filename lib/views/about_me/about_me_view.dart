@@ -85,6 +85,11 @@ class _AboutMeViewState
                       key: const Key(AboutMeKeys.techStackSection),
                       technologies: vmState.technologies,
                     ),
+                  if (vmState.softSkills.isNotEmpty)
+                    _SoftSkillsSection(
+                      key: const Key(AboutMeKeys.softSkillsSection),
+                      softSkills: vmState.softSkills,
+                    ),
                   if (vmState.hobbies.isNotEmpty)
                     _HobbiesSection(
                       key: const Key(AboutMeKeys.hobbiesSection),
@@ -142,11 +147,52 @@ class _TechStackSection extends StatelessWidget {
         Wrap(
           spacing: Dimens.smallMargin,
           runSpacing: Dimens.smallMargin,
+          alignment: WrapAlignment.center,
           children: technologies
               .map(
                 (t) => Chip(
                   avatar: Icon(t.icon),
                   label: Text(t.name),
+                  labelStyle: ResponsiveValues.themeBodyStyle(context),
+                ),
+              )
+              .toList(),
+        )
+      ],
+    );
+  }
+}
+
+class _SoftSkillsSection extends StatelessWidget {
+  final List<SoftSkill> softSkills;
+
+  const _SoftSkillsSection({
+    super.key,
+    required this.softSkills,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        veryLargeMarginGap,
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            l10n(context).aboutmeview_softskills_title,
+            style: ResponsiveValues.themeTitleStyle(context),
+          ),
+        ),
+        defaultMarginGap,
+        Wrap(
+          spacing: Dimens.smallMargin,
+          runSpacing: Dimens.smallMargin,
+          alignment: WrapAlignment.center,
+          children: softSkills
+              .map(
+                (t) => Chip(
+                  label: Text(t.label(l10n(context))),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
               )

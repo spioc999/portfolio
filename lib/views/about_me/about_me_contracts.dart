@@ -17,5 +17,6 @@ class AboutMeState extends BaseVMState {
   late bool isBirthdayToday;
 
   List<Technology> technologies = [];
+  List<SoftSkill> softSkills = [];
   List<Hobby> hobbies = [];
 }
