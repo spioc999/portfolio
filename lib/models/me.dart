@@ -100,9 +100,9 @@ final simonePioCaronia = Me(
       ),
     ],
     softSkills: [
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_publicspeaking),
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_teamworking),
       SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_problemsolving),
+      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_teamworking),
+      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_publicspeaking),
       SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_creativity),
       SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_stubbornness),
     ],
