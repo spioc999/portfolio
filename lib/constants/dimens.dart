@@ -29,8 +29,8 @@ class Dimens {
   static const double defaultIconSize = 18.0;
 
   static const double defaultImageSize = 264.0;
-  static const double defaultSmallImageSize = 160.0;
+  static const double defaultSmallImageSize = 132.0;
   static const double defaultImageExpansionPercentage = 0.10;
   static const double defaultImageBorderThickness = 5.0;
-  static const double defaultSmallImageBorderThickness = 3.5;
+  static const double defaultSmallImageBorderThickness = 3.0;
 }
