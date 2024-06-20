@@ -53,6 +53,11 @@ final simonePioCaronia = Me(
   dateOfBirth: DateTime(1999, 10, 20),
   imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
   about: About(
+    intro: (l10n, params) => l10n.aboutmeview_intro(
+      params['firstName'],
+      params['role'],
+      params['yearsOld'],
+    ),
     technologies: [
       Technology(
         icon: SimpleIcons.flutter,
