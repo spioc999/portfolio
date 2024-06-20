@@ -31,6 +31,11 @@ const desktopBodyPadding = EdgeInsets.symmetric(
   vertical: Dimens.verticalPaddingDefault,
 );
 
+const defaultChipPadding = EdgeInsets.symmetric(
+  vertical: Dimens.verticalPaddingChip,
+  horizontal: Dimens.horizontalPaddingChip,
+);
+
 const smallMarginGap = Gap(Dimens.smallMargin);
 const defaultMarginGap = Gap(Dimens.defaultMargin);
 const largeMarginGap = Gap(Dimens.largeMargin);

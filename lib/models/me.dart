@@ -105,11 +105,26 @@ final simonePioCaronia = Me(
       ),
     ],
     softSkills: [
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_problemsolving),
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_teamworking),
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_publicspeaking),
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_creativity),
-      SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_stubbornness),
+      SoftSkill(
+        emoji: '✅',
+        label: (l10n) => l10n.aboutmeview_softskills_problemsolving,
+      ),
+      SoftSkill(
+        emoji: '👥',
+        label: (l10n) => l10n.aboutmeview_softskills_teamworking,
+      ),
+      SoftSkill(
+        emoji: '🗣️',
+        label: (l10n) => l10n.aboutmeview_softskills_publicspeaking,
+      ),
+      SoftSkill(
+        emoji: '🎨',
+        label: (l10n) => l10n.aboutmeview_softskills_creativity,
+      ),
+      SoftSkill(
+        emoji: '📌',
+        label: (l10n) => l10n.aboutmeview_softskills_stubbornness,
+      ),
     ],
     hobbies: [
       Hobby(

@@ -36,6 +36,7 @@ class AboutMeTechStackSection extends StatelessWidget {
               .map(
                 (t) => Chip(
                   avatar: Icon(t.icon),
+                  padding: defaultChipPadding,
                   label: Text(t.name),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
@@ -76,8 +77,15 @@ class AboutMeSoftSkillsSection extends StatelessWidget {
           crossAxisAlignment: WrapCrossAlignment.start,
           children: softSkills
               .map(
-                (t) => Chip(
-                  label: Text(t.label(l10n(context))),
+                (s) => Chip(
+                  avatar: Text(
+                    s.emoji,
+                    style: ResponsiveValues.themeBodyStyle(context)?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  padding: defaultChipPadding,
+                  label: Text(s.label(l10n(context))),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
               )
