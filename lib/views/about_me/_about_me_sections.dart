@@ -35,7 +35,10 @@ class AboutMeTechStackSection extends StatelessWidget {
           children: technologies
               .map(
                 (t) => Chip(
-                  avatar: Icon(t.icon),
+                  avatar: Icon(
+                    t.icon,
+                    size: Theme.of(context).textTheme.bodyMedium?.fontSize,
+                  ),
                   padding: defaultChipPadding,
                   label: Text(t.name),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
@@ -80,9 +83,9 @@ class AboutMeSoftSkillsSection extends StatelessWidget {
                 (s) => Chip(
                   avatar: Text(
                     s.emoji,
-                    style: ResponsiveValues.themeBodyStyle(context)?.copyWith(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
                   ),
                   padding: defaultChipPadding,
                   label: Text(s.label(l10n(context))),
