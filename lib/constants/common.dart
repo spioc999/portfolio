@@ -36,3 +36,4 @@ const defaultMarginGap = Gap(Dimens.defaultMargin);
 const largeMarginGap = Gap(Dimens.largeMargin);
 const veryLargeMarginGap = Gap(Dimens.veryLargeMargin);
 const extraLargeMarginGap = Gap(Dimens.extraLargeMargin);
+const gigantMarginGap = Gap(Dimens.gigantMargin);

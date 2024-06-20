@@ -111,7 +111,32 @@ final simonePioCaronia = Me(
       SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_creativity),
       SoftSkill(label: (l10n) => l10n.aboutmeview_softskills_stubbornness),
     ],
-    hobbies: [],
+    hobbies: [
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_racket,
+        imageUrl: Res.jpgHobbyRacket,
+      ),
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_basketball,
+        imageUrl: Res.jpgHobbyBasket,
+      ),
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_gdmi,
+        imageUrl: Res.jpgHobbyGdmi,
+      ),
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_sea,
+        imageUrl: Res.jpgHobbySea,
+      ),
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_trumpet,
+        imageUrl: Res.jpgHobbyTrumpet,
+      ),
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_travelling,
+        imageUrl: Res.jpgHobbyTravelling,
+      ),
+    ],
     projects: [],
     certifications: [],
   ),

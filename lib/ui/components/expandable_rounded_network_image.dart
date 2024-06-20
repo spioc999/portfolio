@@ -17,6 +17,14 @@ class ExpandableRoundedNetworkImage extends StatefulWidget {
     this.borderThickness = Dimens.defaultImageBorderThickness,
   });
 
+  const ExpandableRoundedNetworkImage.small(
+    this.imgUrl, {
+    super.key,
+    this.size = Dimens.defaultSmallImageSize,
+    this.expansionPercentage = Dimens.defaultImageExpansionPercentage,
+    this.borderThickness = Dimens.defaultSmallImageBorderThickness,
+  });
+
   @override
   State<ExpandableRoundedNetworkImage> createState() =>
       _ExpandableRoundedNetworkImageState();
@@ -83,6 +91,7 @@ class _ExpandableRoundedNetworkImageState
                     child: FadeInImage.memoryNetwork(
                       placeholder: kTransparentImage,
                       image: widget.imgUrl,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
