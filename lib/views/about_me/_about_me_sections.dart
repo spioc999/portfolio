@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
@@ -81,11 +82,13 @@ class AboutMeSoftSkillsSection extends StatelessWidget {
           children: softSkills
               .map(
                 (s) => Chip(
-                  avatar: Text(
-                    s.emoji,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
+                  avatar: SelectionArea(
+                    child: Text(
+                      s.emoji,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                    ),
                   ),
                   padding: defaultChipPadding,
                   label: Text(s.label(l10n(context))),
