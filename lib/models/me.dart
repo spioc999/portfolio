@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:spioc_portfolio/core/resources/res.dart';
 import 'package:spioc_portfolio/models/models.dart';
@@ -156,10 +157,21 @@ final simonePioCaronia = Me(
         imageUrl: Res.jpgHobbyLego,
       ),
     ],
-    certifications: [
-      Certification(),
-    ],
     projects: [],
+    certifications: [
+      Certification(
+        icon: SimpleIcons.oracle,
+        label: 'Oracle Certified Associate - Java SE 8',
+      ),
+      Certification(
+        icon: Icons.language_outlined,
+        label: 'ETS - TOEFL iBT (88/120)',
+      ),
+      Certification(
+        icon: SimpleIcons.cisco,
+        label: 'ITN CCNA1 - Cisco',
+      ),
+    ],
   ),
   education: Education(),
   experience: Experience(),

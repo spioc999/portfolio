@@ -94,6 +94,11 @@ class _AboutMeViewState
                       key: const Key(AboutMeKeys.hobbiesSection),
                       hobbies: vmState.hobbies,
                     ),
+                  if (vmState.projects.isNotEmpty)
+                    AboutMeProjectsSection(
+                      key: const Key(AboutMeKeys.projectsSection),
+                      projects: vmState.projects,
+                    ),
                   if (vmState.certifications.isNotEmpty)
                     AboutMeCertificationsSection(
                       key: const Key(AboutMeKeys.certificationsSection),
