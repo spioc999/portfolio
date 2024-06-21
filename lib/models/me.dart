@@ -165,7 +165,7 @@ final simonePioCaronia = Me(
       ),
       Certification(
         icon: Icons.language_outlined,
-        label: 'ETS - TOEFL iBT (88/120)',
+        label: 'TOEFL iBT (88/120 - B2)',
       ),
       Certification(
         icon: SimpleIcons.cisco,
