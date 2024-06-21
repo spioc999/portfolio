@@ -138,7 +138,7 @@ class AboutMeHobbiesSection extends StatelessWidget {
                     ),
                     smallMarginGap,
                     SizedBox(
-                      width: Dimens.defaultSmallImageSize,
+                      width: ResponsiveValues.smallImageSize(context),
                       child: Text(
                         h.label(l10n(context)),
                         style: ResponsiveValues.themeBodyStyle(context),
