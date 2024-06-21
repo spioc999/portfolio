@@ -19,7 +19,7 @@ class Dimens {
 
   static const double horizontalPaddingButton = 10.0;
   static const double horizontalPaddingChip = 10.0;
-  static const double horizontalPaddingDefault = 36.0;
+  static const double horizontalPaddingDefault = 32.0;
   static const double horizontalPaddingTablet = 80.0;
   static const double horizontalPaddingDesktop = 132.0;
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
@@ -153,6 +152,33 @@ class AboutMeHobbiesSection extends StatelessWidget {
               )
               .toList(),
         ),
+      ],
+    );
+  }
+}
+
+class AboutMeCertificationsSection extends StatelessWidget {
+  final List<Certification> certifications;
+
+  const AboutMeCertificationsSection({
+    super.key,
+    required this.certifications,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        gigantMarginGap,
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            l10n(context).aboutmeview_certifications_title,
+            style: ResponsiveValues.themeTitleStyle(context),
+          ),
+        ),
+        defaultMarginGap,
       ],
     );
   }

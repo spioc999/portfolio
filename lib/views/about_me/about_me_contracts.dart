@@ -22,4 +22,5 @@ class AboutMeState extends BaseVMState {
   List<Technology> technologies = [];
   List<SoftSkill> softSkills = [];
   List<Hobby> hobbies = [];
+  List<Certification> certifications = [];
 }
