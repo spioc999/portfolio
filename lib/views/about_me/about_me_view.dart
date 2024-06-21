@@ -99,6 +99,7 @@ class _AboutMeViewState
                       key: const Key(AboutMeKeys.projectsSection),
                       projects: vmState.projects,
                       onLinkTap: viewModel.onLinkTap,
+                      moreProjectsLink: vmState.moreProjectsLink,
                     ),
                   if (vmState.certifications.isNotEmpty)
                     AboutMeCertificationsSection(

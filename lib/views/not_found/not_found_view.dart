@@ -34,13 +34,13 @@ class _NotFoundViewState
                   ),
                   Text(
                     l10n.notfoundview_title,
-                    style: ResponsiveValues.themeTitleStyle(context),
+                    style: ResponsiveValues.themeHeadingStyle(context),
                     textAlign: TextAlign.center,
                   ),
                   defaultMarginGap,
                   Text(
                     l10n.notfoundview_subtitle,
-                    style: ResponsiveValues.themeBodyStyle(context),
+                    style: ResponsiveValues.themeTitleStyle(context),
                     textAlign: TextAlign.center,
                   ),
                 ],

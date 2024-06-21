@@ -159,11 +159,13 @@ class AboutMeHobbiesSection extends StatelessWidget {
 class AboutMeProjectsSection extends StatelessWidget {
   final List<Project> projects;
   final Function(String) onLinkTap;
+  final String? moreProjectsLink;
 
   const AboutMeProjectsSection({
     super.key,
     required this.projects,
     required this.onLinkTap,
+    this.moreProjectsLink,
   });
 
   @override
@@ -249,6 +251,20 @@ class AboutMeProjectsSection extends StatelessWidget {
               )
               .toList(),
         ),
+        if (moreProjectsLink != null) ...[
+          defaultMarginGap,
+          TransparentInkWell(
+            onTap: () => onLinkTap(moreProjectsLink!),
+            child: Text(
+              l10n(context).generic_view_more,
+              style: ResponsiveValues.themeBodyStyle(
+                context,
+              )?.copyWith(
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          )
+        ]
       ],
     );
   }
