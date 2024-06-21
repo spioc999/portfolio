@@ -40,6 +40,7 @@ const defaultChipPadding = EdgeInsets.symmetric(
   horizontal: Dimens.horizontalPaddingChip,
 );
 
+const verySmallMarginGap = Gap(Dimens.verySmallMargin);
 const smallMarginGap = Gap(Dimens.smallMargin);
 const defaultMarginGap = Gap(Dimens.defaultMargin);
 const largeMarginGap = Gap(Dimens.largeMargin);

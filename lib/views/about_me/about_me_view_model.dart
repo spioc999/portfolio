@@ -29,4 +29,7 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
 
   @override
   void onLetsCelebrateTap() => sourceView.startLetsCelebrate();
+
+  @override
+  void onLinkTap(String url) => sourceView.openExternalUrl(url);
 }

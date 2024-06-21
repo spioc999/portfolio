@@ -3,28 +3,28 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 
 class PortfolioAppTheming {
-  static const titleFontFamily = 'Bebas Neue';
+  static const headingFontFamily = 'Bebas Neue';
   static const bodyFontFamily = 'Fira Sans Condensed';
 
   static TextTheme _textTheme({required bool isDark}) {
     TextStyle displayStyle(double fontSize) => TextStyle(
-          fontFamily: titleFontFamily,
+          fontFamily: headingFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.bold,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle headlineStyle(double fontSize) => TextStyle(
-          fontFamily: titleFontFamily,
+          fontFamily: headingFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle titleStyle(double fontSize) => TextStyle(
-          fontFamily: titleFontFamily,
+          fontFamily: bodyFontFamily,
           fontSize: fontSize,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black,
         );
 
@@ -46,12 +46,12 @@ class PortfolioAppTheming {
       displayLarge: displayStyle(120),
       displayMedium: displayStyle(100),
       displaySmall: displayStyle(80),
-      headlineLarge: headlineStyle(48),
-      headlineMedium: headlineStyle(40),
-      headlineSmall: headlineStyle(32),
-      titleLarge: titleStyle(36),
-      titleMedium: titleStyle(32),
-      titleSmall: titleStyle(28),
+      headlineLarge: headlineStyle(44),
+      headlineMedium: headlineStyle(36),
+      headlineSmall: headlineStyle(28),
+      titleLarge: titleStyle(26),
+      titleMedium: titleStyle(22),
+      titleSmall: titleStyle(18),
       bodyLarge: bodyStyle(18),
       bodyMedium: bodyStyle(16),
       bodySmall: bodyStyle(14),
