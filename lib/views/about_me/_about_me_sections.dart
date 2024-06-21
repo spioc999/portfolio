@@ -39,7 +39,6 @@ class AboutMeTechStackSection extends StatelessWidget {
                     t.icon,
                     size: Theme.of(context).textTheme.bodyMedium?.fontSize,
                   ),
-                  padding: defaultChipPadding,
                   label: Text(t.name),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
@@ -89,7 +88,6 @@ class AboutMeSoftSkillsSection extends StatelessWidget {
                           ),
                     ),
                   ),
-                  padding: defaultChipPadding,
                   label: Text(s.label(l10n(context))),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
@@ -179,6 +177,41 @@ class AboutMeProjectsSection extends StatelessWidget {
           ),
         ),
         defaultMarginGap,
+        Wrap(
+          spacing: Dimens.largeMargin,
+          runSpacing: Dimens.smallMargin,
+          alignment: WrapAlignment.center,
+          children: projects
+              .map(
+                (h) => Card(
+                  child: Container(
+                    constraints: BoxConstraints.loose(
+                      const Size(
+                        Dimens.defaultCardWidth,
+                        Dimens.defaultCardHeight,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(Dimens.defaultCardPadding),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          smallMarginGap,
+                          Text(
+                            h.title,
+                            style: ResponsiveValues.themeBodyStyle(context),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              )
+              .toList(),
+        ),
       ],
     );
   }
@@ -217,7 +250,6 @@ class AboutMeCertificationsSection extends StatelessWidget {
                     c.icon,
                     size: Theme.of(context).textTheme.bodyMedium?.fontSize,
                   ),
-                  padding: defaultChipPadding,
                   label: Text(c.label),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
