@@ -164,7 +164,8 @@ final simonePioCaronia = Me(
     projects: [
       Project(
         title: 'portfolio',
-        description: (l10n) => 'fefe',
+        description: (l10n) =>
+            'fefevfv fvfvfvf vfvfvfv vfvfv vfvfvf vfvfvfv fvfvfvfvfbgtbt fgbrgbr5ththtybg ',
         links: [
           (label: null, url: 'https://github.com/spioc999/portfolio'),
         ],
@@ -172,6 +173,7 @@ final simonePioCaronia = Me(
           SimpleIcons.flutter,
           SimpleIcons.dart,
         ],
+        hashtags: ['web'],
       ),
     ],
     certifications: [

@@ -209,39 +209,55 @@ class AboutMeProjectsSection extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
                           ),
-                          Wrap(
-                            spacing: Dimens.smallMargin,
-                            alignment: WrapAlignment.start,
-                            children: h.links
-                                .map(
-                                  (link) => TransparentInkWell(
-                                    onTap: () => onLinkTap(link.url),
-                                    child: Text(
-                                      link.label ??
-                                          l10n(context)
-                                              .aboutmeview_projects_repolink,
-                                      style: ResponsiveValues.themeLabelStyle(
-                                        context,
-                                      )?.copyWith(
-                                        decoration: TextDecoration.underline,
+                          if (h.links.isNotEmpty)
+                            Wrap(
+                              spacing: Dimens.smallMargin,
+                              alignment: WrapAlignment.start,
+                              children: h.links
+                                  .map(
+                                    (link) => TransparentInkWell(
+                                      onTap: () => onLinkTap(link.url),
+                                      child: Text(
+                                        link.label ??
+                                            l10n(context)
+                                                .aboutmeview_projects_repolink,
+                                        style: ResponsiveValues.themeLabelStyle(
+                                          context,
+                                        )?.copyWith(
+                                          decoration: TextDecoration.underline,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                )
-                                .toList(),
+                                  )
+                                  .toList(),
+                            ),
+                          smallMarginGap,
+                          Text(
+                            h.description(l10n(context)),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 3,
+                            style: ResponsiveValues.themeBodyStyle(context),
                           ),
                           const Spacer(),
+                          smallMarginGap,
                           Wrap(
                             spacing: Dimens.defaultMargin,
                             alignment: WrapAlignment.start,
-                            children: h.techIcons
-                                .map(
-                                  (techIcon) => Icon(
-                                    techIcon,
-                                    size: Dimens.defaultSmallIconSize,
-                                  ),
-                                )
-                                .toList(),
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            children: [
+                              ...h.techIcons.map(
+                                (techIcon) => Icon(
+                                  techIcon,
+                                  size: Dimens.defaultSmallIconSize,
+                                ),
+                              ),
+                              ...h.hashtags.map(
+                                (hashTag) => Text(
+                                  '#$hashTag',
+                                  style: Theme.of(context).textTheme.labelLarge,
+                                ),
+                              )
+                            ],
                           )
                         ],
                       ),
