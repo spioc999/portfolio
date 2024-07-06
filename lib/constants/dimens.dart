@@ -40,6 +40,6 @@ class Dimens {
   static const double defaultSmallImageBorderThickness = 3.0;
 
   static const double defaultCardPadding = 14.0;
-  static const double defaultCardWidth = 300.0;
-  static const double defaultCardHeight = 180.0;
+  static const double defaultCardWidth = 320.0;
+  static const double defaultCardHeight = 208.0;
 }
