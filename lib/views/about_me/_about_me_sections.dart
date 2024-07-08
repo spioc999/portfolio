@@ -73,7 +73,7 @@ class AboutMeTechStackSection extends StatelessWidget {
       content: Wrap(
         spacing: Dimens.smallMargin,
         runSpacing: Dimens.smallMargin,
-        alignment: WrapAlignment.center,
+        alignment: ResponsiveValues.wrapAlignment(context),
         children: technologies
             .map(
               (t) => Chip(
@@ -109,8 +109,7 @@ class AboutMeSoftSkillsSection extends StatelessWidget {
       content: Wrap(
         spacing: Dimens.smallMargin,
         runSpacing: Dimens.smallMargin,
-        alignment: WrapAlignment.center,
-        crossAxisAlignment: WrapCrossAlignment.start,
+        alignment: ResponsiveValues.wrapAlignment(context),
         children: softSkills
             .map(
               (s) => Chip(
@@ -150,7 +149,7 @@ class AboutMeHobbiesSection extends StatelessWidget {
       content: Wrap(
         spacing: Dimens.largeMargin,
         runSpacing: Dimens.smallMargin,
-        alignment: WrapAlignment.center,
+        alignment: ResponsiveValues.wrapAlignment(context),
         children: hobbies
             .map(
               (h) => Column(
@@ -199,108 +198,98 @@ class AboutMeProjectsSection extends StatelessWidget {
         l10n(context).aboutmeview_projects_title,
         style: ResponsiveValues.themeHeadingStyle(context),
       ),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      content: Wrap(
+        spacing: Dimens.largeMargin,
+        runSpacing: Dimens.smallMargin,
+        alignment: ResponsiveValues.wrapAlignment(context),
+        crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          Wrap(
-            spacing: Dimens.largeMargin,
-            runSpacing: Dimens.smallMargin,
-            alignment: WrapAlignment.center,
-            children: projects
-                .map(
-                  (h) => Card(
-                    child: Container(
-                      constraints: BoxConstraints.tight(
-                        const Size(
-                          Dimens.defaultCardWidth,
-                          Dimens.defaultCardHeight,
-                        ),
+          ...projects.map(
+            (h) => Card(
+              child: Container(
+                constraints: BoxConstraints.tight(
+                  const Size(
+                    Dimens.defaultCardWidth,
+                    Dimens.defaultCardHeight,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(Dimens.defaultCardPadding),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        h.title,
+                        style: Theme.of(context).textTheme.titleMedium,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
                       ),
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.all(Dimens.defaultCardPadding),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              h.title,
-                              style: Theme.of(context).textTheme.titleMedium,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                            if (h.links.isNotEmpty)
-                              Wrap(
-                                spacing: Dimens.smallMargin,
-                                alignment: WrapAlignment.start,
-                                children: h.links
-                                    .map(
-                                      (link) => TransparentInkWell(
-                                        onTap: () => onLinkTap(link.url),
-                                        child: Text(
-                                          link.label ??
-                                              l10n(context)
-                                                  .aboutmeview_projects_repolink,
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelMedium
-                                              ?.copyWith(
-                                                decoration:
-                                                    TextDecoration.underline,
-                                              ),
+                      if (h.links.isNotEmpty)
+                        Wrap(
+                          spacing: Dimens.smallMargin,
+                          alignment: WrapAlignment.start,
+                          children: h.links
+                              .map(
+                                (link) => TransparentInkWell(
+                                  onTap: () => onLinkTap(link.url),
+                                  child: Text(
+                                    link.label ??
+                                        l10n(context)
+                                            .aboutmeview_projects_repolink,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelMedium
+                                        ?.copyWith(
+                                          decoration: TextDecoration.underline,
                                         ),
-                                      ),
-                                    )
-                                    .toList(),
-                              ),
-                            defaultMarginGap,
-                            Text(
-                              h.description(l10n(context)),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 3,
-                              style: Theme.of(context).textTheme.bodyMedium,
-                            ),
-                            const Spacer(),
-                            smallMarginGap,
-                            Wrap(
-                              spacing: Dimens.defaultMargin,
-                              alignment: WrapAlignment.start,
-                              crossAxisAlignment: WrapCrossAlignment.center,
-                              children: [
-                                ...h.techIcons.map(
-                                  (techIcon) => Icon(
-                                    techIcon,
-                                    size: Dimens.defaultSmallIconSize,
                                   ),
                                 ),
-                                ...h.hashtags.map(
-                                  (hashTag) => Text(
-                                    '#$hashTag',
-                                    style:
-                                        Theme.of(context).textTheme.labelLarge,
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
+                              )
+                              .toList(),
                         ),
+                      defaultMarginGap,
+                      Text(
+                        h.description(l10n(context)),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                    ),
+                      const Spacer(),
+                      smallMarginGap,
+                      Wrap(
+                        spacing: Dimens.defaultMargin,
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          ...h.techIcons.map(
+                            (techIcon) => Icon(
+                              techIcon,
+                              size: Dimens.defaultSmallIconSize,
+                            ),
+                          ),
+                          ...h.hashtags.map(
+                            (hashTag) => Text(
+                              '#$hashTag',
+                              style: Theme.of(context).textTheme.labelLarge,
+                            ),
+                          )
+                        ],
+                      )
+                    ],
                   ),
-                )
-                .toList(),
+                ),
+              ),
+            ),
           ),
-          if (moreProjectsLink != null) ...[
-            defaultMarginGap,
+          if (moreProjectsLink != null)
             TextButton(
               onPressed: () => onLinkTap(moreProjectsLink!),
               child: Text(
                 '${l10n(context).generic_view_more} ➡️',
               ),
             )
-          ]
         ],
       ),
     );
@@ -325,7 +314,7 @@ class AboutMeCertificationsSection extends StatelessWidget {
       content: Wrap(
         spacing: Dimens.smallMargin,
         runSpacing: Dimens.smallMargin,
-        alignment: WrapAlignment.center,
+        alignment: ResponsiveValues.wrapAlignment(context),
         children: certifications
             .map(
               (c) => Chip(

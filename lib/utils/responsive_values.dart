@@ -58,4 +58,12 @@ class ResponsiveValues {
         tablet: Dimens.defaultSmallImageSize + Dimens.largeMargin,
         desktop: Dimens.defaultSmallImageSize + Dimens.largeMargin,
       );
+
+  static WrapAlignment wrapAlignment(BuildContext context) =>
+      getValueForScreenType(
+        context: context,
+        mobile: WrapAlignment.center,
+        tablet: WrapAlignment.center,
+        desktop: WrapAlignment.start,
+      );
 }
