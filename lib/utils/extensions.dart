@@ -11,3 +11,8 @@ extension WidgetExt on Widget {
       AppLocalizations.of(context);
   AppLocalizations l10n(BuildContext context) => maybeL10n(context)!;
 }
+
+extension DateTimeExt on DateTime {
+  bool isSameDayAndMonth(DateTime other) =>
+      month == other.month && day == other.day;
+}

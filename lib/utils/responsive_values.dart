@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
 
-class ResponsiveHelper {
+class ResponsiveValues {
+  static EdgeInsetsGeometry bodyPadding(BuildContext context) =>
+      getValueForScreenType(
+        context: context,
+        mobile: defaultBodyPadding,
+        tablet: tabletBodyPadding,
+        desktop: desktopBodyPadding,
+      );
+
   static TextStyle? themeDisplayStyle(BuildContext context) =>
       getValueForScreenType(
         context: context,
@@ -40,5 +50,28 @@ class ResponsiveHelper {
         mobile: Theme.of(context).textTheme.labelMedium,
         tablet: Theme.of(context).textTheme.labelLarge,
         desktop: Theme.of(context).textTheme.labelLarge,
+      );
+
+  static double smallImageSize(BuildContext context) => getValueForScreenType(
+        context: context,
+        mobile: Dimens.defaultSmallImageSize,
+        tablet: Dimens.defaultSmallImageSize + Dimens.largeMargin,
+        desktop: Dimens.defaultSmallImageSize + Dimens.largeMargin,
+      );
+
+  static WrapAlignment wrapAlignment(BuildContext context) =>
+      getValueForScreenType(
+        context: context,
+        mobile: WrapAlignment.center,
+        tablet: WrapAlignment.center,
+        desktop: WrapAlignment.start,
+      );
+
+  static CrossAxisAlignment crossAxisAlignment(BuildContext context) =>
+      getValueForScreenType(
+        context: context,
+        mobile: CrossAxisAlignment.center,
+        tablet: CrossAxisAlignment.center,
+        desktop: CrossAxisAlignment.start,
       );
 }
