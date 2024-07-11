@@ -66,4 +66,12 @@ class ResponsiveValues {
         tablet: WrapAlignment.center,
         desktop: WrapAlignment.start,
       );
+
+  static CrossAxisAlignment crossAxisAlignment(BuildContext context) =>
+      getValueForScreenType(
+        context: context,
+        mobile: CrossAxisAlignment.center,
+        tablet: CrossAxisAlignment.center,
+        desktop: CrossAxisAlignment.start,
+      );
 }

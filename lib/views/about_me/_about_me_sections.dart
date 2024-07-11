@@ -198,98 +198,102 @@ class AboutMeProjectsSection extends StatelessWidget {
         l10n(context).aboutmeview_projects_title,
         style: ResponsiveValues.themeHeadingStyle(context),
       ),
-      content: Wrap(
-        spacing: Dimens.largeMargin,
-        runSpacing: Dimens.smallMargin,
-        alignment: ResponsiveValues.wrapAlignment(context),
-        crossAxisAlignment: WrapCrossAlignment.center,
+      content: Column(
+        crossAxisAlignment: ResponsiveValues.crossAxisAlignment(context),
         children: [
-          ...projects.map(
-            (h) => Card(
-              child: Container(
-                constraints: BoxConstraints.tight(
-                  const Size(
-                    Dimens.defaultCardWidth,
-                    Dimens.defaultCardHeight,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(Dimens.defaultCardPadding),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        h.title,
-                        style: Theme.of(context).textTheme.titleMedium,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                      ),
-                      if (h.links.isNotEmpty)
-                        Wrap(
-                          spacing: Dimens.smallMargin,
-                          alignment: WrapAlignment.start,
-                          children: h.links
-                              .map(
-                                (link) => TransparentInkWell(
-                                  onTap: () => onLinkTap(link.url),
-                                  child: Text(
-                                    link.label ??
-                                        l10n(context)
-                                            .aboutmeview_projects_repolink,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelMedium
-                                        ?.copyWith(
-                                          decoration: TextDecoration.underline,
+          Wrap(
+            spacing: Dimens.largeMargin,
+            runSpacing: Dimens.smallMargin,
+            alignment: ResponsiveValues.wrapAlignment(context),
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: projects
+                .map(
+                  (h) => Card(
+                    child: SizedBox(
+                      width: Dimens.defaultCardWidth,
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.all(Dimens.defaultCardPadding),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              h.title,
+                              style: Theme.of(context).textTheme.titleMedium,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                            ),
+                            if (h.links.isNotEmpty)
+                              Wrap(
+                                spacing: Dimens.smallMargin,
+                                alignment: WrapAlignment.start,
+                                children: h.links
+                                    .map(
+                                      (link) => TransparentInkWell(
+                                        onTap: () => onLinkTap(link.url),
+                                        child: Text(
+                                          link.label?.call(l10n(context)) ??
+                                              l10n(context)
+                                                  .aboutmeview_projects_repolink,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .labelMedium
+                                              ?.copyWith(
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
                                         ),
+                                      ),
+                                    )
+                                    .toList(),
+                              ),
+                            defaultMarginGap,
+                            Text(
+                              "${h.description(l10n(context))}\n\n\n",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 4,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                            largeMarginGap,
+                            Wrap(
+                              spacing: Dimens.defaultMargin,
+                              alignment: WrapAlignment.start,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                ...h.techIcons.map(
+                                  (techIcon) => Icon(
+                                    techIcon,
+                                    size: Dimens.defaultSmallIconSize,
                                   ),
                                 ),
-                              )
-                              .toList(),
+                                ...h.hashtags.map(
+                                  (hashTag) => Text(
+                                    '#$hashTag',
+                                    style:
+                                        Theme.of(context).textTheme.labelLarge,
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
                         ),
-                      defaultMarginGap,
-                      Text(
-                        h.description(l10n(context)),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 3,
-                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      const Spacer(),
-                      smallMarginGap,
-                      Wrap(
-                        spacing: Dimens.defaultMargin,
-                        alignment: WrapAlignment.start,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          ...h.techIcons.map(
-                            (techIcon) => Icon(
-                              techIcon,
-                              size: Dimens.defaultSmallIconSize,
-                            ),
-                          ),
-                          ...h.hashtags.map(
-                            (hashTag) => Text(
-                              '#$hashTag',
-                              style: Theme.of(context).textTheme.labelLarge,
-                            ),
-                          )
-                        ],
-                      )
-                    ],
+                    ),
                   ),
-                ),
-              ),
-            ),
+                )
+                .toList(),
           ),
-          if (moreProjectsLink != null)
+          if (moreProjectsLink != null) ...[
+            defaultMarginGap,
             TextButton(
               onPressed: () => onLinkTap(moreProjectsLink!),
               child: Text(
                 '${l10n(context).generic_view_more} ➡️',
               ),
             )
+          ]
         ],
       ),
     );
