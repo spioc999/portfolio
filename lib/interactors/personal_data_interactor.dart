@@ -25,6 +25,7 @@ class PersonalDataInteractor {
   String get role => _personalData.role;
 
   List<Contact> get contacts => _personalData.contacts;
+  String? get projectsUrl => _personalData.projectsUrl;
   List<String> get imageUrls => _personalData.imageUrls;
   DateTime get dateOfBirth => _personalData.dateOfBirth;
   About get about => _personalData.about;
