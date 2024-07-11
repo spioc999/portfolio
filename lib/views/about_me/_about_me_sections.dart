@@ -209,8 +209,10 @@ class AboutMeProjectsSection extends StatelessWidget {
             children: projects
                 .map(
                   (h) => Card(
-                    child: SizedBox(
-                      width: Dimens.defaultCardWidth,
+                    child: Container(
+                      constraints: const BoxConstraints.tightFor(
+                        width: Dimens.defaultCardWidth,
+                      ),
                       child: Padding(
                         padding:
                             const EdgeInsets.all(Dimens.defaultCardPadding),
