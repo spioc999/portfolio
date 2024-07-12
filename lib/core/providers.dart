@@ -59,11 +59,11 @@ class AppSettingsProvider extends ChangeNotifier {
 }
 
 class AppSettings {
-  ThemeMode? themeMode;
+  ThemeMode themeMode;
   Locale? locale;
 
   AppSettings({
-    this.themeMode,
+    this.themeMode = ThemeMode.dark, //Dark as default
     this.locale,
   });
 
