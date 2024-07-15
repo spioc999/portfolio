@@ -17,7 +17,7 @@ class PortfolioWebApp extends StatelessWidget {
         selector: (_, provider) => provider.appSettings,
         builder: (_, settings, __) => MaterialApp.router(
           onGenerateTitle: (context) =>
-              WebUtils.getTitleByRoute(null, context), //TODO check me
+              WebUtils.getTitleFromCurrentRoute(context),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           theme: PortfolioAppTheming.lightTheme,
