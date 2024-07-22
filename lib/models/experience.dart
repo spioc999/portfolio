@@ -1,5 +1,7 @@
+import 'package:spioc_portfolio/utils/typedefs.dart';
+
 class Experience {
-  final String role;
+  final LocalizedString role;
   final String company;
   final DateTime startDateTime;
   final DateTime? endDateTime;

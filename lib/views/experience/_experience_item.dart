@@ -3,6 +3,7 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/experience.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
+import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 
 class ExperienceItem extends StatelessWidget {
@@ -24,7 +25,7 @@ class ExperienceItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              experience.role,
+              experience.role(l10n(context)),
               style: ResponsiveValues.themeHeadingStyle(context)?.copyWith(
                 height: Dimens.one,
               ),
