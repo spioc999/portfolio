@@ -10,10 +10,14 @@ void setupLocatorViewModels() {
     ),
   );
   getIt.registerFactory<EducationViewModelContract>(
-    () => EducationViewModel(),
+    () => EducationViewModel(
+      personalDataInteractor: getIt<PersonalDataInteractor>(),
+    ),
   );
   getIt.registerFactory<ExperienceViewModelContract>(
-    () => ExperienceViewModel(),
+    () => ExperienceViewModel(
+      personalDataInteractor: getIt<PersonalDataInteractor>(),
+    ),
   );
   getIt.registerFactory<HomeViewModelContract>(
     () => HomeViewModel(

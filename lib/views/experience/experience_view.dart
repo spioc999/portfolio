@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
@@ -20,14 +22,21 @@ class _ExperienceViewState extends BaseState<
       builder: (context, viewModel, child) {
         return PortfolioScrollableView(
           body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FittedBox(
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  l10n.experienceview_title,
-                  textAlign: TextAlign.center,
-                  style: ResponsiveValues.themeDisplayStyle(context),
+              Align(
+                alignment: Alignment.center,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    l10n.experienceview_title,
+                    textAlign: TextAlign.center,
+                    style: ResponsiveValues.themeDisplayStyle(context),
+                  ),
                 ),
+              ),
+              const AppDivider.horizontal(
+                height: Dimens.tightDividerThickness,
               ),
             ],
           ),
