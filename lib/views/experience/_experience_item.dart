@@ -32,9 +32,34 @@ class ExperienceItem extends StatelessWidget {
             ),
             smallMarginGap,
             Text(
-              experience.company,
+              '@ ${experience.company}',
               style: ResponsiveValues.themeBodyStyle(context),
             ),
+            if (experience.hasLocalityOrWorkingType) ...[
+              smallMarginGap,
+              Text.rich(
+                TextSpan(
+                  style: ResponsiveValues.themeLabelStyle(context),
+                  children: [
+                    if (experience.locality != null)
+                      TextSpan(
+                        text: experience.locality!(l10n(context)).toUpperCase(),
+                      ),
+                    if (experience.locality != null &&
+                        experience.workingType != null)
+                      const TextSpan(
+                        text: dashWithSpacingString,
+                      ),
+                    if (experience.workingType != null)
+                      TextSpan(
+                        text: experience.workingType!
+                            .label(l10n(context))
+                            .toUpperCase(),
+                      ),
+                  ],
+                ),
+              ),
+            ]
           ],
         ),
       ),

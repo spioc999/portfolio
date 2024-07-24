@@ -24,7 +24,7 @@ class PortfolioTimeBoundedLayout extends StatelessWidget {
         Expanded(
           flex: 4,
           child: Text(
-            '${_startDateString(context)} - ${_endDateString(context)}'
+            '${_startDateString(context)}$dashWithSpacingString${_endDateString(context)}'
                 .toUpperCase(),
             style: ResponsiveValues.themeLabelStyle(context),
           ),
