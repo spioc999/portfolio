@@ -263,12 +263,12 @@ final simonePioCaronia = Me(
       company: 'NTT Data',
       startDateTime: DateTime(2020, 4),
       endDateTime: DateTime(2020, 7),
-      workingType: ExperienceWorkingType.hybrid,
+      workingType: ExperienceWorkingType.internship,
       locality: (l10n) => l10n.generic_rome,
     ),
     Experience(
       role: (l10n) => l10n.experienceview_shopassistant_jobname,
-      company: 'eduVenture - Piggybank',
+      company: 'Piggybank',
       startDateTime: DateTime(2019, 8),
       endDateTime: DateTime(2019, 9),
       workingType: ExperienceWorkingType.summerWorkExperience,
@@ -279,7 +279,7 @@ final simonePioCaronia = Me(
       company: 'NTT Data',
       startDateTime: DateTime(2019, 3),
       endDateTime: DateTime(2019, 7),
-      workingType: ExperienceWorkingType.inPresence,
+      workingType: ExperienceWorkingType.internship,
       locality: (l10n) => l10n.generic_rome,
     ),
     Experience(
