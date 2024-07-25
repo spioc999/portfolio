@@ -39,7 +39,7 @@ class PortfolioAppTheming {
           fontFamily: bodyFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.normal,
-          color: isDark ? Colors.grey.shade200 : Colors.grey.shade800,
+          color: isDark ? Colors.white : Colors.black,
         );
 
     return TextTheme(
