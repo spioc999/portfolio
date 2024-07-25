@@ -3,6 +3,8 @@ import 'package:spioc_portfolio/utils/typedefs.dart';
 class Experience {
   final LocalizedString role;
   final String company;
+  final String companyUrl;
+  final String? companyImageUrl;
   final LocalizedString? locality;
   final ExperienceWorkingType? workingType;
   final DateTime startDateTime;
@@ -11,6 +13,8 @@ class Experience {
   Experience({
     required this.role,
     required this.company,
+    required this.companyUrl,
+    this.companyImageUrl,
     required this.startDateTime,
     required this.endDateTime,
     this.locality,

@@ -9,4 +9,10 @@ class Res {
   static const jpgHobbyTravelling = 'assets/imgs/hobby_travelling.jpg';
   static const jpgHobbyTrumpet = 'assets/imgs/hobby_trumpet.jpg';
   static const jpgHobbyLego = 'assets/imgs/hobby_lego.jpg';
+
+  static const jpgExperienceAlpiantech =
+      'assets/imgs/experience_alpiantech.jpg';
+  static const jpgExperienceFip = 'assets/imgs/experience_fip.jpg';
+  static const jpgExperienceNttdata = 'assets/imgs/experience_nttdata.jpg';
+  static const jpgExperiencePiggybank = 'assets/imgs/experience_piggybank.jpg';
 }
