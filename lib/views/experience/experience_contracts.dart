@@ -8,4 +8,5 @@ abstract class ExperienceViewModelContract
 
 class ExperienceState extends BaseVMState {
   final List<Experience> experiences = [];
+  final List<Experience> otherExperiences = [];
 }

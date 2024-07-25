@@ -16,6 +16,7 @@ class Me {
   final About about;
   final List<Education> educations;
   final List<Experience> experiences;
+  final List<Experience> otherExperiences;
 
   Me({
     required this.initials,
@@ -29,6 +30,7 @@ class Me {
     required this.about,
     required this.educations,
     required this.experiences,
+    this.otherExperiences = const <Experience>[],
   });
 
   String get fullName => '$firstName $lastName';
@@ -267,20 +269,22 @@ final simonePioCaronia = Me(
       locality: (l10n) => l10n.generic_rome,
     ),
     Experience(
-      role: (l10n) => l10n.experienceview_shopassistant_jobname,
-      company: 'Piggybank',
-      startDateTime: DateTime(2019, 8),
-      endDateTime: DateTime(2019, 9),
-      workingType: ExperienceWorkingType.summerWorkExperience,
-      locality: (l10n) => l10n.generic_dublin,
-    ),
-    Experience(
       role: (_) => 'Junior Frontend Developer',
       company: 'NTT Data',
       startDateTime: DateTime(2019, 3),
       endDateTime: DateTime(2019, 7),
       workingType: ExperienceWorkingType.internship,
       locality: (l10n) => l10n.generic_rome,
+    ),
+  ],
+  otherExperiences: [
+    Experience(
+      role: (l10n) => l10n.experienceview_shopassistant_jobname,
+      company: 'Piggybank',
+      startDateTime: DateTime(2019, 8),
+      endDateTime: DateTime(2019, 9),
+      workingType: ExperienceWorkingType.summerWorkExperience,
+      locality: (l10n) => l10n.generic_dublin,
     ),
     Experience(
       role: (l10n) => l10n.experienceview_referee_jobname,

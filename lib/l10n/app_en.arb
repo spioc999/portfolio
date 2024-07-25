@@ -40,6 +40,7 @@
   "aboutmeview_projects_bingo_description": "A Bingo reproduction featuring both the user interface (in Flutter) and the application logic (in Python) to play simultaneously on different devices.",
   "aboutmeview_certifications_title": "Certifications",
   "experienceview_title": "Experience",
+  "experienceview_otherexperiences_label": "Other experiences",
   "experienceview_shopassistant_jobname": "Shop Assistant",
   "experienceview_referee_jobname": "Basketball Referee",
   "experienceworkingtype_remote_label": "Remote",

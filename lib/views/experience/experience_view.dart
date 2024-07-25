@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
@@ -42,6 +43,19 @@ class _ExperienceViewState extends BaseState<
               ...vmState.experiences.map(
                 (e) => ExperienceItem(experience: e),
               ),
+              if (vmState.otherExperiences.isNotEmpty) ...[
+                superGigantMarginGap,
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    l10n.experienceview_otherexperiences_label,
+                    style: ResponsiveValues.themeHeadingStyle(context),
+                  ),
+                ),
+                ...vmState.otherExperiences.map(
+                  (oE) => ExperienceItem(experience: oE),
+                )
+              ]
             ],
           ),
         );
