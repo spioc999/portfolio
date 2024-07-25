@@ -158,15 +158,16 @@ class PortfolioAppTheming {
       );
 
   static ChipThemeData _chipTheme({required bool isDark}) => ChipThemeData(
-        side: BorderSide(
-          color: isDark ? Colors.white : Colors.black,
-          width: Dimens.one,
-        ),
-        padding: defaultChipPadding,
-      );
+      side: BorderSide(
+        color: isDark ? Colors.white : Colors.black,
+        width: Dimens.one,
+      ),
+      padding: defaultChipPadding,
+      color: WidgetStatePropertyAll(isDark ? Colors.black : Colors.white));
 
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
     dividerColor: Colors.black,
+    scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.light,
@@ -180,6 +181,7 @@ class PortfolioAppTheming {
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     dividerColor: Colors.white,
+    scaffoldBackgroundColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
