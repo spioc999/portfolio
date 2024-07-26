@@ -74,7 +74,7 @@ class _ExperienceItemState extends State<ExperienceItem> {
                     ),
                   ),
                   if (widget.experience.hasLocalityOrWorkingType) ...[
-                    smallMarginGap,
+                    verySmallMarginGap,
                     Text.rich(
                       TextSpan(
                         style: ResponsiveValues.themeLabelStyle(context),
@@ -98,7 +98,8 @@ class _ExperienceItemState extends State<ExperienceItem> {
                         ],
                       ),
                     ),
-                  ]
+                  ],
+                  smallMarginGap,
                 ],
               ),
             ),
