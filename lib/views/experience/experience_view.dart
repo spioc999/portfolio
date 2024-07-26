@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/constants/keys.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -42,6 +43,7 @@ class _ExperienceViewState extends BaseState<
               ),
               ...vmState.experiences.map(
                 (e) => ExperienceItem(
+                  key: Key(ExperienceKeys.item(e.role(l10n), e.company)),
                   experience: e,
                   onLinkTap: viewModel.onLinkTap,
                 ),
@@ -54,6 +56,9 @@ class _ExperienceViewState extends BaseState<
                 ),
                 ...vmState.otherExperiences.map(
                   (oE) => ExperienceItem(
+                    key: Key(
+                      ExperienceKeys.otherItem(oE.role(l10n), oE.company),
+                    ),
                     experience: oE,
                     onLinkTap: viewModel.onLinkTap,
                   ),

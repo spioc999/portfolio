@@ -9,3 +9,10 @@ class AboutMeKeys {
   static const projectsSection = 'aboutMe_projectsSection';
   static const certificationsSection = 'aboutMe_certificationsSection';
 }
+
+class ExperienceKeys {
+  static String item(String position, String company) =>
+      'experience_item_$position@$company';
+  static String otherItem(String position, String company) =>
+      'experience_otherItem_$position@$company';
+}
