@@ -1,3 +1,4 @@
+import 'package:spioc_portfolio/utils/localization_utils.dart';
 import 'package:spioc_portfolio/utils/typedefs.dart';
 
 class Experience {
@@ -21,7 +22,8 @@ class Experience {
     this.workingType,
   });
 
-  bool get hasLocalityOrWorkingType => locality != null || workingType != null;
+  String get identifier =>
+      '${LocalizationUtils.getEnLocalizedString(role)}@$company';
 }
 
 enum ExperienceWorkingType {
