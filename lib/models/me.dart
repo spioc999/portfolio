@@ -305,5 +305,46 @@ final simonePioCaronia = Me(
       endDateTime: DateTime(2018, 6),
     ),
   ],
-  educations: [], //TODO
+  educations: [
+    Education(
+      degree: (l10n) => "Master's degree in Intelligent Systems Engineering",
+      institute: (l10n) => "Campus Bio-Medico University of Rome",
+      instituteUrl: 'https://www.unicampus.it/',
+      instituteImageUrl: Res.jpgEducationUcbm,
+      startDateTime: DateTime(2021, 9),
+      endDateTime: DateTime(2024, 2),
+    ),
+    Education(
+      degree: (l10n) => "Bachelor's degree in Computer Engineering",
+      institute: (l10n) => "Politecnico of Milan",
+      instituteUrl: 'https://www.polimi.it/',
+      instituteImageUrl: Res.jpgEducationPolimi,
+      startDateTime: DateTime(2018, 10),
+      endDateTime: DateTime(2021, 7),
+    ),
+    Education(
+      degree: (l10n) => "Digital Engineering Program",
+      institute: (l10n) => "ELIS",
+      instituteUrl: 'https://www.elis.org/',
+      instituteImageUrl: Res.jpgEducationElis,
+      startDateTime: DateTime(2018, 10),
+      endDateTime: DateTime(2021, 7),
+    ),
+    Education(
+      degree: (l10n) => "Exchange Experience - Sixth Form",
+      institute: (l10n) => "St Cuthbert Mayne School",
+      instituteUrl: 'https://www.st-cuthbertmayne.co.uk/',
+      instituteImageUrl: Res.jpgEducationTorquay,
+      startDateTime: DateTime(2017, 2),
+      endDateTime: DateTime(2016, 9),
+    ),
+    Education(
+      degree: (l10n) => "High School Diploma",
+      institute: (l10n) => "Technical High School \"L. Da Vinci\"",
+      instituteUrl: 'https://www.isdavincitorre.edu.it/',
+      instituteImageUrl: Res.jpgEducationItis,
+      startDateTime: DateTime(2018, 7),
+      endDateTime: DateTime(2013, 9),
+    )
+  ],
 );

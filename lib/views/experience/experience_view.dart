@@ -45,7 +45,7 @@ class _ExperienceViewState extends BaseState<
                 (e) => ExperienceItem(
                   key: Key(ExperienceKeys.item(e.identifier)),
                   experience: e,
-                  onLinkTap: viewModel.onLinkTap,
+                  onLinkTap: viewModel.onExternalUrlTap,
                 ),
               ),
               if (vmState.otherExperiences.isNotEmpty) ...[
@@ -60,7 +60,7 @@ class _ExperienceViewState extends BaseState<
                       ExperienceKeys.otherItem(oE.identifier),
                     ),
                     experience: oE,
-                    onLinkTap: viewModel.onLinkTap,
+                    onLinkTap: viewModel.onExternalUrlTap,
                   ),
                 )
               ]

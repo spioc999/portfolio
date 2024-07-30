@@ -27,7 +27,4 @@ class ExperienceViewModel
       ),
     );
   }
-
-  @override
-  void onLinkTap(String url) => sourceView.openExternalUrl(url);
 }
