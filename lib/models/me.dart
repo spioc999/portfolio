@@ -335,16 +335,16 @@ final simonePioCaronia = Me(
       institute: (_) => "St Cuthbert Mayne School",
       instituteUrl: 'https://www.st-cuthbertmayne.co.uk/',
       instituteImageUrl: Res.jpgEducationTorquay,
-      startDateTime: DateTime(2017, 2),
-      endDateTime: DateTime(2016, 9),
+      startDateTime: DateTime(2016, 9),
+      endDateTime: DateTime(2017, 2),
     ),
     Education(
       degree: (l10n) => l10n.educationview_itis_degree,
       institute: (l10n) => l10n.educationview_itis_institute,
       instituteUrl: 'https://www.isdavincitorre.edu.it/',
       instituteImageUrl: Res.jpgEducationItis,
-      startDateTime: DateTime(2018, 7),
-      endDateTime: DateTime(2013, 9),
+      startDateTime: DateTime(2013, 9),
+      endDateTime: DateTime(2018, 7),
     )
   ],
 );
