@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
-import 'package:transparent_image/transparent_image.dart';
+import 'package:spioc_portfolio/ui/components/fade_in_memory_network_image.dart';
 
 class LogoSquaredNetworkImage extends StatelessWidget {
   final String imgUrl;
@@ -44,14 +44,12 @@ class LogoSquaredNetworkImage extends StatelessWidget {
             Dimens.defaultRadius - 1,
           ),
         ),
-        child: FadeInImage.memoryNetwork(
-          placeholder: kTransparentImage,
+        child: FadeInMemoryNetworkImage(
           image: imgUrl,
           imageErrorBuilder: (_, __, ___) => SizedBox.square(
             dimension: _effectiveSize,
             child: Icon(fallbackIcon),
           ),
-          fit: BoxFit.cover,
           width: _effectiveSize,
           height: _effectiveSize,
         ),

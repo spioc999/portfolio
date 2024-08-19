@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/animation_duration.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
-import 'package:transparent_image/transparent_image.dart';
+import 'package:spioc_portfolio/ui/components/fade_in_memory_network_image.dart';
 
 class ExpandableRoundedNetworkImage extends StatefulWidget {
   final double size;
@@ -88,10 +88,8 @@ class _ExpandableRoundedNetworkImageState
                 child: Padding(
                   padding: EdgeInsets.all(widget.borderThickness),
                   child: ClipOval(
-                    child: FadeInImage.memoryNetwork(
-                      placeholder: kTransparentImage,
+                    child: FadeInMemoryNetworkImage(
                       image: widget.imgUrl,
-                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
