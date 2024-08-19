@@ -25,8 +25,8 @@ class Dimens {
   static const double horizontalPaddingButton = 10.0;
   static const double horizontalPaddingChip = 10.0;
   static const double horizontalPaddingDefault = 32.0;
-  static const double horizontalPaddingTablet = 64.0;
-  static const double horizontalPaddingDesktop = 80.0;
+  static const double horizontalPaddingTablet = 76.0;
+  static const double horizontalPaddingDesktop = 100.0;
 
   static const double verticalPaddingDefault = 48.0;
   static const double verticalPaddingChip = 6.0;
@@ -43,4 +43,10 @@ class Dimens {
   static const double defaultCardPadding = 14.0;
   static const double defaultCardWidth = 320.0;
   static const double defaultCardHeight = 208.0;
+
+  static const double maxContentWidth = 1080.0;
+
+  static const double defaultLogoSize = 52.0;
+
+  static const double defaultListIndent = 12.0;
 }

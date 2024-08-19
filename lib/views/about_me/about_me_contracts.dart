@@ -9,7 +9,6 @@ abstract class AboutMeViewContract extends BaseViewContract {
 abstract class AboutMeViewModelContract
     extends BaseViewModelContract<AboutMeState, AboutMeViewContract> {
   void onLetsCelebrateTap();
-  void onLinkTap(String url);
 }
 
 class AboutMeState extends BaseVMState {
@@ -20,10 +19,10 @@ class AboutMeState extends BaseVMState {
 
   late bool isBirthdayToday;
 
-  List<Technology> technologies = [];
-  List<SoftSkill> softSkills = [];
-  List<Hobby> hobbies = [];
-  List<Project> projects = [];
+  final List<Technology> technologies = [];
+  final List<SoftSkill> softSkills = [];
+  final List<Hobby> hobbies = [];
+  final List<Project> projects = [];
   String? moreProjectsLink;
-  List<Certification> certifications = [];
+  final List<Certification> certifications = [];
 }
