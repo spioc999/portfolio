@@ -9,6 +9,7 @@ const emptyString = '';
 const whitespaceString = ' ';
 const dashWithSpacingString = ' - ';
 
+const loading = 'Loading...';
 const technologyName = 'Flutter';
 const technologyLink = 'https://flutter.dev/';
 
