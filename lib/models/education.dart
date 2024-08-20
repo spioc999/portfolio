@@ -9,6 +9,7 @@ class Education {
   final LocalizedString? locality;
   final DateTime startDateTime;
   final DateTime? endDateTime;
+  final LocalizedString? description;
 
   Education({
     required this.degree,
@@ -18,6 +19,7 @@ class Education {
     required this.startDateTime,
     required this.endDateTime,
     this.locality,
+    this.description,
   });
 
   String get identifier =>

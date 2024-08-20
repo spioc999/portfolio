@@ -61,7 +61,7 @@ final simonePioCaronia = Me(
   dateOfBirth: DateTime(1999, 10, 20),
   imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
   about: About(
-    intro: (l10n, params) => l10n.aboutmeview_intro(
+    intro: (l10n, params) => l10n.aboutme_intro(
       params['firstName'],
       params['role'],
       params['yearsOld'],
@@ -115,59 +115,59 @@ final simonePioCaronia = Me(
     softSkills: [
       SoftSkill(
         emoji: '✅',
-        label: (l10n) => l10n.aboutmeview_softskills_problemsolving,
+        label: (l10n) => l10n.aboutme_softskills_problemsolving,
       ),
       SoftSkill(
         emoji: '👥',
-        label: (l10n) => l10n.aboutmeview_softskills_teamworking,
+        label: (l10n) => l10n.aboutme_softskills_teamworking,
       ),
       SoftSkill(
         emoji: '🗣️',
-        label: (l10n) => l10n.aboutmeview_softskills_publicspeaking,
+        label: (l10n) => l10n.aboutme_softskills_publicspeaking,
       ),
       SoftSkill(
         emoji: '🎨',
-        label: (l10n) => l10n.aboutmeview_softskills_creativity,
+        label: (l10n) => l10n.aboutme_softskills_creativity,
       ),
       SoftSkill(
         emoji: '📌',
-        label: (l10n) => l10n.aboutmeview_softskills_stubbornness,
+        label: (l10n) => l10n.aboutme_softskills_stubbornness,
       ),
     ],
     hobbies: [
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_racket,
+        label: (l10n) => l10n.aboutme_hobbies_racket,
         imageUrl: Res.jpgHobbyRacket,
       ),
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_basketball,
+        label: (l10n) => l10n.aboutme_hobbies_basketball,
         imageUrl: Res.jpgHobbyBasket,
       ),
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_gdmi,
+        label: (l10n) => l10n.aboutme_hobbies_gdmi,
         imageUrl: Res.jpgHobbyGdmi,
       ),
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_sea,
+        label: (l10n) => l10n.aboutme_hobbies_sea,
         imageUrl: Res.jpgHobbySea,
       ),
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_trumpet,
+        label: (l10n) => l10n.aboutme_hobbies_trumpet,
         imageUrl: Res.jpgHobbyTrumpet,
       ),
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_travelling,
+        label: (l10n) => l10n.aboutme_hobbies_travelling,
         imageUrl: Res.jpgHobbyTravelling,
       ),
       Hobby(
-        label: (l10n) => l10n.aboutmeview_hobbies_lego,
+        label: (l10n) => l10n.aboutme_hobbies_lego,
         imageUrl: Res.jpgHobbyLego,
       ),
     ],
     projects: [
       Project(
         title: 'portfolio',
-        description: (l10n) => l10n.aboutmeview_projects_portfolio_description,
+        description: (l10n) => l10n.aboutme_projects_portfolio_description,
         links: [
           (label: null, url: 'https://github.com/spioc999/portfolio'),
         ],
@@ -181,17 +181,17 @@ final simonePioCaronia = Me(
       Project(
         title: 'federated-learning-thesis',
         description: (l10n) =>
-            l10n.aboutmeview_projects_federatedlearning_description,
+            l10n.aboutme_projects_federatedlearning_description,
         links: [
           (
             label: (l10n) =>
-                l10n.aboutmeview_projects_federatedlearning_pythonlink_label,
+                l10n.aboutme_projects_federatedlearning_pythonlink_label,
             url:
                 'https://github.com/spioc999/federated-learning-thesis-project',
           ),
           (
             label: (l10n) =>
-                l10n.aboutmeview_projects_federatedlearning_nodejslink_label,
+                l10n.aboutme_projects_federatedlearning_nodejslink_label,
             url:
                 'https://github.com/spioc999/federated-learning-module-snark-js',
           ),
@@ -204,18 +204,18 @@ final simonePioCaronia = Me(
       ),
       Project(
         title: 'bingo',
-        description: (l10n) => l10n.aboutmeview_projects_bingo_description,
+        description: (l10n) => l10n.aboutme_projects_bingo_description,
         links: [
           (
-            label: (l10n) => l10n.aboutmeview_projects_bingo_corelink_label,
+            label: (l10n) => l10n.aboutme_projects_bingo_corelink_label,
             url: 'https://github.com/PaoloRuggirello/bingo-core',
           ),
           (
-            label: (l10n) => l10n.aboutmeview_projects_bingo_belink_label,
+            label: (l10n) => l10n.aboutme_projects_bingo_belink_label,
             url: 'https://github.com/PaoloRuggirello/bingo-be',
           ),
           (
-            label: (l10n) => l10n.aboutmeview_projects_bingo_felink_label,
+            label: (l10n) => l10n.aboutme_projects_bingo_felink_label,
             url: 'https://github.com/spioc999/bingo_fe',
           ),
         ],
@@ -287,7 +287,7 @@ final simonePioCaronia = Me(
   ],
   otherExperiences: [
     Experience(
-      role: (l10n) => l10n.experienceview_shopassistant_jobname,
+      role: (l10n) => l10n.experience_shopassistant_jobname,
       company: 'Piggybank',
       companyUrl: 'https://museumofchildhood.ie/',
       companyImageUrl: Res.jpgExperiencePiggybank,
@@ -297,7 +297,7 @@ final simonePioCaronia = Me(
       locality: (l10n) => l10n.generic_dublin,
     ),
     Experience(
-      role: (l10n) => l10n.experienceview_referee_jobname,
+      role: (l10n) => l10n.experience_referee_jobname,
       company: 'Federazione Italiana Pallacanestro',
       companyUrl: 'https://fip.it/',
       companyImageUrl: Res.jpgExperienceFip,
@@ -307,16 +307,16 @@ final simonePioCaronia = Me(
   ],
   educations: [
     Education(
-      degree: (l10n) => l10n.educationview_ucbm_degree,
-      institute: (l10n) => l10n.educationview_ucbm_institute,
+      degree: (l10n) => l10n.education_ucbm_degree,
+      institute: (l10n) => l10n.education_ucbm_institute,
       instituteUrl: 'https://www.unicampus.it/',
       instituteImageUrl: Res.jpgEducationUcbm,
       startDateTime: DateTime(2021, 9),
       endDateTime: DateTime(2024, 2),
     ),
     Education(
-      degree: (l10n) => l10n.educationview_polimi_degree,
-      institute: (l10n) => l10n.educationview_polimi_institute,
+      degree: (l10n) => l10n.education_polimi_degree,
+      institute: (l10n) => l10n.education_polimi_institute,
       instituteUrl: 'https://www.polimi.it/',
       instituteImageUrl: Res.jpgEducationPolimi,
       startDateTime: DateTime(2018, 10),
@@ -339,8 +339,8 @@ final simonePioCaronia = Me(
       endDateTime: DateTime(2017, 2),
     ),
     Education(
-      degree: (l10n) => l10n.educationview_itis_degree,
-      institute: (l10n) => l10n.educationview_itis_institute,
+      degree: (l10n) => l10n.education_itis_degree,
+      institute: (l10n) => l10n.education_itis_institute,
       instituteUrl: 'https://www.isdavincitorre.edu.it/',
       instituteImageUrl: Res.jpgEducationItis,
       startDateTime: DateTime(2013, 9),
