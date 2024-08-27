@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/experience.dart';
+import 'package:spioc_portfolio/ui/components/app_markdown.dart';
 import 'package:spioc_portfolio/ui/components/logo_squared_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -25,18 +26,20 @@ class ExperienceItem extends StatefulWidget {
 class _ExperienceItemState extends State<ExperienceItem> {
   bool onHoverCompanyName = false;
 
+  Experience get _experience => widget.experience;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: Dimens.extraLargeMargin),
       child: PortfolioTimeBoundedLayout(
-        startDateTime: widget.experience.startDateTime,
-        endDateTime: widget.experience.endDateTime,
+        startDateTime: _experience.startDateTime,
+        endDateTime: _experience.endDateTime,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             LogoSquaredNetworkImage.experience(
-              imgUrl: widget.experience.companyImageUrl ?? emptyString,
+              imgUrl: _experience.companyImageUrl ?? emptyString,
             ),
             defaultMarginGap,
             Expanded(
@@ -44,7 +47,7 @@ class _ExperienceItemState extends State<ExperienceItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.experience.role(l10n).toUpperCase(),
+                    _experience.role(l10n).toUpperCase(),
                     style: ResponsiveValues.themeTitleStyle(context)?.copyWith(
                       height: Dimens.one,
                       fontWeight: FontWeight.bold,
@@ -57,7 +60,7 @@ class _ExperienceItemState extends State<ExperienceItem> {
                       children: [
                         const TextSpan(text: '@ '),
                         TextSpan(
-                          text: widget.experience.company,
+                          text: _experience.company,
                           style: onHoverCompanyName
                               ? const TextStyle(
                                   decoration: TextDecoration.underline)
@@ -67,14 +70,14 @@ class _ExperienceItemState extends State<ExperienceItem> {
                           onExit: (_) =>
                               setState(() => onHoverCompanyName = false),
                           recognizer: TapGestureRecognizer()
-                            ..onTap = () =>
-                                widget.onLinkTap(widget.experience.companyUrl),
+                            ..onTap =
+                                () => widget.onLinkTap(_experience.companyUrl),
                         ),
                       ],
                     ),
                   ),
-                  if (widget.experience.locality != null ||
-                      widget.experience.workingType != null) ...[
+                  if (_experience.locality != null ||
+                      _experience.workingType != null) ...[
                     verySmallMarginGap,
                     Text.rich(
                       TextSpan(
@@ -82,17 +85,16 @@ class _ExperienceItemState extends State<ExperienceItem> {
                         children: [
                           if (widget.experience.locality != null)
                             TextSpan(
-                              text: widget.experience.locality!(l10n)
-                                  .toUpperCase(),
+                              text: _experience.locality!(l10n).toUpperCase(),
                             ),
-                          if (widget.experience.locality != null &&
-                              widget.experience.workingType != null)
+                          if (_experience.locality != null &&
+                              _experience.workingType != null)
                             const TextSpan(
                               text: dashWithSpacingString,
                             ),
-                          if (widget.experience.workingType != null)
+                          if (_experience.workingType != null)
                             TextSpan(
-                              text: widget.experience.workingType!
+                              text: _experience.workingType!
                                   .label(l10n)
                                   .toUpperCase(),
                             ),
@@ -100,7 +102,12 @@ class _ExperienceItemState extends State<ExperienceItem> {
                       ),
                     ),
                   ],
-                  smallMarginGap,
+                  if (_experience.description != null) ...[
+                    smallMarginGap,
+                    AppMarkdown(
+                      data: _experience.description!(l10n),
+                    ),
+                  ],
                 ],
               ),
             ),
