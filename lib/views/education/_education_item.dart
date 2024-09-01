@@ -3,13 +3,13 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_markdown.dart';
-import 'package:spioc_portfolio/ui/components/institute_widget.dart';
+import 'package:spioc_portfolio/ui/components/at_place_clickable.dart';
 import 'package:spioc_portfolio/ui/components/logo_squared_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 
-class EducationItem extends StatefulWidget {
+class EducationItem extends StatelessWidget {
   final Education education;
   final Function(String) onLinkTap;
 
@@ -20,24 +20,17 @@ class EducationItem extends StatefulWidget {
   });
 
   @override
-  State<EducationItem> createState() => _EducationItemState();
-}
-
-class _EducationItemState extends State<EducationItem> {
-  Education get _education => widget.education;
-
-  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: Dimens.extraLargeMargin),
       child: PortfolioTimeBoundedLayout(
-        startDateTime: _education.startDateTime,
-        endDateTime: _education.endDateTime,
+        startDateTime: education.startDateTime,
+        endDateTime: education.endDateTime,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             LogoSquaredNetworkImage.experience(
-              imgUrl: _education.instituteImageUrl ?? emptyString,
+              imgUrl: education.instituteImageUrl ?? emptyString,
             ),
             defaultMarginGap,
             Expanded(
@@ -45,7 +38,7 @@ class _EducationItemState extends State<EducationItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    _education.degree(l10n).toUpperCase(),
+                    education.degree(l10n(context)).toUpperCase(),
                     style: ResponsiveValues.themeTitleStyle(context)?.copyWith(
                       height: Dimens.one,
                       fontWeight: FontWeight.bold,
@@ -53,25 +46,27 @@ class _EducationItemState extends State<EducationItem> {
                   ),
                   smallMarginGap,
                   AtPlaceClickable(
-                    place: _education.institute(l10n),
-                    link: _education.instituteUrl,
-                    onLinkTap: widget.onLinkTap,
+                    place: education.institute(l10n(context)),
+                    link: education.instituteUrl,
+                    onLinkTap: onLinkTap,
                     style: ResponsiveValues.themeBodyStyle(context),
                   ),
-                  if (_education.grade != null) ...[
+                  if (education.grade != null) ...[
                     smallMarginGap,
                     Text(
-                      l10n.educationview_grade_label(_education.grade!(l10n)),
+                      l10n(context).educationview_grade_label(
+                        education.grade!(l10n(context)),
+                      ),
                       style: ResponsiveValues.themeBodyStyle(context)?.copyWith(
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
-                  if (_education.description != null) ...[
+                  if (education.description != null) ...[
                     smallMarginGap,
                     AppMarkdown(
-                      data: _education.description!(l10n),
+                      data: education.description!(l10n(context)),
                     ),
                   ]
                 ],
