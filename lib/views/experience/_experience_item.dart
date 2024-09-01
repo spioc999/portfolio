@@ -1,9 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/experience.dart';
 import 'package:spioc_portfolio/ui/components/app_markdown.dart';
+import 'package:spioc_portfolio/ui/components/institute_widget.dart';
 import 'package:spioc_portfolio/ui/components/logo_squared_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -24,8 +24,6 @@ class ExperienceItem extends StatefulWidget {
 }
 
 class _ExperienceItemState extends State<ExperienceItem> {
-  bool onHoverCompanyName = false;
-
   Experience get _experience => widget.experience;
 
   @override
@@ -54,27 +52,11 @@ class _ExperienceItemState extends State<ExperienceItem> {
                     ),
                   ),
                   smallMarginGap,
-                  Text.rich(
-                    TextSpan(
-                      style: ResponsiveValues.themeBodyStyle(context),
-                      children: [
-                        const TextSpan(text: '@ '),
-                        TextSpan(
-                          text: _experience.company,
-                          style: onHoverCompanyName
-                              ? const TextStyle(
-                                  decoration: TextDecoration.underline)
-                              : null,
-                          onEnter: (_) =>
-                              setState(() => onHoverCompanyName = true),
-                          onExit: (_) =>
-                              setState(() => onHoverCompanyName = false),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap =
-                                () => widget.onLinkTap(_experience.companyUrl),
-                        ),
-                      ],
-                    ),
+                  AtPlaceClickable(
+                    place: _experience.company,
+                    link: _experience.companyUrl,
+                    onLinkTap: widget.onLinkTap,
+                    style: ResponsiveValues.themeBodyStyle(context),
                   ),
                   if (_experience.locality != null ||
                       _experience.workingType != null) ...[

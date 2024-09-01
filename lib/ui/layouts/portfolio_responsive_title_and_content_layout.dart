@@ -34,14 +34,9 @@ class PortfolioResponsiveTitleAndContentLayout extends StatelessWidget {
         desktop: (_) => Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: title,
-            ),
+            Expanded(child: title),
             veryLargeMarginGap,
-            Expanded(
-              flex: 5,
-              child: content,
-            ),
+            Expanded(flex: expandedContextFlex, child: content),
           ],
         ),
       ),
