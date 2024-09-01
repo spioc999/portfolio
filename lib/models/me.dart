@@ -320,6 +320,8 @@ final simonePioCaronia = Me(
       instituteImageUrl: Res.jpgEducationUcbm,
       startDateTime: DateTime(2021, 9),
       endDateTime: DateTime(2024, 2),
+      grade: (l10n) => l10n.education_ucbm_grade,
+      description: (l10n) => l10n.education_ucbm_description,
     ),
     Education(
       degree: (l10n) => l10n.education_polimi_degree,
@@ -328,6 +330,8 @@ final simonePioCaronia = Me(
       instituteImageUrl: Res.jpgEducationPolimi,
       startDateTime: DateTime(2018, 10),
       endDateTime: DateTime(2021, 7),
+      grade: (l10n) => l10n.education_polimi_grade,
+      description: (l10n) => l10n.education_polimi_description,
     ),
     Education(
       degree: (_) => "Digital Engineering Program",
@@ -336,6 +340,7 @@ final simonePioCaronia = Me(
       instituteImageUrl: Res.jpgEducationElis,
       startDateTime: DateTime(2018, 10),
       endDateTime: DateTime(2021, 7),
+      description: (l10n) => l10n.education_elis_description,
     ),
     Education(
       degree: (_) => "Sixth Form - Exchange Experience",
@@ -344,6 +349,7 @@ final simonePioCaronia = Me(
       instituteImageUrl: Res.jpgEducationTorquay,
       startDateTime: DateTime(2016, 9),
       endDateTime: DateTime(2017, 2),
+      description: (l10n) => l10n.education_torquay_description,
     ),
     Education(
       degree: (l10n) => l10n.education_itis_degree,
@@ -352,6 +358,8 @@ final simonePioCaronia = Me(
       instituteImageUrl: Res.jpgEducationItis,
       startDateTime: DateTime(2013, 9),
       endDateTime: DateTime(2018, 7),
+      grade: (l10n) => l10n.education_itis_grade,
+      description: (l10n) => l10n.education_itis_description,
     )
   ],
 );
