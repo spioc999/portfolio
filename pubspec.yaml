@@ -53,3 +53,11 @@ flutter:
           weight: 600
         - asset: fonts/fira_sans_condensed/FiraSansCondensed-Bold.ttf
           weight: 700
+
+scripts:
+  clean:
+    - flutter clean && flutter pub get
+  build:
+    - flutter build web --release
+  build_wasm:
+    - flutter build web --release --wasm
