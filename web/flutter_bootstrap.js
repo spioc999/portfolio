@@ -5,11 +5,17 @@
 // <div class="loading">
 //   <div class="loader" />
 // </div>
+const mode = window.localStorage.getItem("flutter.themeMode") || "dark"
+const isDarkMode = mode === "dark"
+
+document.body.className = isDarkMode ? "dark-background" : "light-background";
+
 const loadingDiv = document.createElement('div');
 loadingDiv.className = "loading";
 document.body.appendChild(loadingDiv);
+
 const loaderDiv = document.createElement('div');
-loaderDiv.className = "loader";
+loaderDiv.className = isDarkMode ? "light-loader" : "dark-loader";
 loadingDiv.appendChild(loaderDiv);
 
 // Customize the app initialization process
@@ -17,7 +23,7 @@ _flutter.loader.load({
   onEntrypointLoaded: async function(engineInitializer) {
     const appRunner = await engineInitializer.initializeEngine();
 
-    // Remove the loading spinner when the app runner is ready
+    // Remove the loading div when the app runner is ready
     if (document.body.contains(loadingDiv)) {
       document.body.removeChild(loadingDiv);
     }

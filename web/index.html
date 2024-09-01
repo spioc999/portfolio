@@ -46,6 +46,12 @@
 
   <!-- Custom CSS styling for the loading spinner -->
   <style>
+    .dark-background {
+      background-color: #131317;
+    }
+    .light-background {
+      background-color: #FFF;
+    }
     .loading {
       display: flex;
       justify-content: center;
@@ -57,7 +63,18 @@
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-    .loader {
+    .light-loader {
+      width: 60px;
+      aspect-ratio: 1;
+      --c: no-repeat linear-gradient(#FFF 0 0);
+      background: 
+        var(--c) 0%   50%,
+        var(--c) 50%  50%,
+        var(--c) 100% 50%;
+      background-size: 20% 100%;
+      animation: l1 1s infinite linear;
+    }
+    .dark-loader {
       width: 60px;
       aspect-ratio: 1;
       --c: no-repeat linear-gradient(#000 0 0);
