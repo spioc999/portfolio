@@ -54,4 +54,4 @@ const superGigantMarginGap = Gap(Dimens.superGigantMargin);
 const dateFormatMonth = 'MMM';
 const dateFormatMonthAndYear = 'MMM yyyy';
 
-const expandedContextFlex = 5;
+const expandedContextFlex = 4;
