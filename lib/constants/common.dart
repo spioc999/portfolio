@@ -55,3 +55,5 @@ const dateFormatMonth = 'MMM';
 const dateFormatMonthAndYear = 'MMM yyyy';
 
 const expandedContextFlex = 4;
+
+final zeroOneTween = Tween<double>(begin: 0.0, end: 1.0);
