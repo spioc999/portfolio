@@ -40,7 +40,7 @@
   "aboutme_projects_bingo_description": "A Bingo reproduction featuring both the user interface (in Flutter) and the application logic (in Python) to play simultaneously on different devices.",
   "aboutmeview_certifications_title": "Certifications",
   "experienceview_title": "Experience",
-  "experience_alpiantech_description": "- Cross-platform mobile & web development in private banking field using Flutter.\n- Python apps powered by AI & integration with LLM frameworks.",
+  "experience_alpiantech_description": "- Developed cross-platform mobile applications for private digital banks using Flutter.\n- Created AI-powered services leveraging LLMs and Python.\n- Contributed to the evolution of mobile architectures, focusing on testability, scalability, and efficiency.\n- Developed several chatbot web applications using Flutter for Web, while also contributing to pipeline development for automated deployment.\n- Adhered to Git flow and Agile methodologies, actively participating in Scrum processes and ceremonies.",
   "experience_nttdata_description": "- Cross-platform mobile development for an e-mobility app using Flutter.\n- Mobile native development using Kotlin/Java for Android.\n- Cross-platform mobile development using Xamarin.",
   "experience_nttdata_intership_mobile_description": "Development of a mobile cross-platform app using Flutter.",
   "experience_nttdata_intership_web_description": "Development of a web dashboard using React.js.",
