@@ -57,7 +57,6 @@ class _AboutMeViewState
                       l10n,
                       {
                         'firstName': vmState.firstName,
-                        'role': vmState.role,
                         'yearsOld': vmState.yearsOld,
                       },
                     ),
