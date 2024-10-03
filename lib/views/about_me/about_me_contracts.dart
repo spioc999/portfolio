@@ -13,7 +13,6 @@ abstract class AboutMeViewModelContract
 
 class AboutMeState extends BaseVMState {
   late String firstName;
-  late String role;
   late int yearsOld;
   late ParamLocalizedString intro;
 
