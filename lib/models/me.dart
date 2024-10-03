@@ -310,6 +310,7 @@ final simonePioCaronia = Me(
       companyImageUrl: Res.jpgExperienceFip,
       startDateTime: DateTime(2015, 11),
       endDateTime: DateTime(2018, 6),
+      locality: (l10n) => l10n.generic_sicily,
     ),
   ],
   educations: [
@@ -325,7 +326,7 @@ final simonePioCaronia = Me(
     ),
     Education(
       degree: (_) => "Digital Engineering Program",
-      institute: (_) => "ELIS",
+      institute: (_) => "ELIS - Digital University",
       instituteUrl: 'https://www.elis.org/',
       instituteImageUrl: Res.jpgEducationElis,
       startDateTime: DateTime(2018, 10),
