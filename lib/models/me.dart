@@ -128,7 +128,7 @@ final simonePioCaronia = Me(
       ),
       SoftSkill(
         emoji: '📌',
-        label: (l10n) => l10n.aboutme_softskills_stubbornness,
+        label: (l10n) => l10n.aboutme_softskills_determination,
       ),
     ],
     hobbies: [
@@ -316,7 +316,7 @@ final simonePioCaronia = Me(
       institute: (l10n) => l10n.education_ucbm_institute,
       instituteUrl: 'https://www.unicampus.it/',
       instituteImageUrl: Res.jpgEducationUcbm,
-      startDateTime: DateTime(2021, 9),
+      startDateTime: DateTime(2021, 10),
       endDateTime: DateTime(2024, 2),
       grade: (l10n) => l10n.education_ucbm_grade,
       description: (l10n) => l10n.education_ucbm_description,
