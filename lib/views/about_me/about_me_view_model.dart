@@ -18,7 +18,7 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
 
     final about = _personalDataInteractor.about;
 
-    vmState.cvUrl = about.cvUrl;
+    vmState.hasCv = _personalDataInteractor.hasCv;
     vmState.intro = about.intro;
     vmState.technologies.addAll(about.technologies);
     vmState.softSkills.addAll(about.softSkills);
@@ -35,7 +35,7 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
   void onDownloadCvTap() async {
     _setIsDownloadingCv(true);
 
-    await Future.delayed(Duration(seconds: 2));
+    await _personalDataInteractor.downloadCv();
 
     _setIsDownloadingCv(false);
   }
