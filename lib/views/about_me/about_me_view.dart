@@ -51,6 +51,11 @@ class _AboutMeViewState
                   const AppDivider.horizontal(
                     height: Dimens.tightDividerThickness,
                   ),
+                  if (vmState.hasCv)
+                    AboutMeDownloadCv(
+                      isDowloading: vmState.isDownloadingCv,
+                      onDownloadTap: viewModel.onDownloadCvTap,
+                    ),
                   AboutMeIntroSection(
                     key: const Key(AboutMeKeys.introSection),
                     intro: vmState.intro(

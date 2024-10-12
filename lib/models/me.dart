@@ -59,6 +59,7 @@ final simonePioCaronia = Me(
   dateOfBirth: DateTime(1999, 10, 20),
   imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
   about: About(
+    cvUrl: Res.pdfSpcCv,
     intro: (l10n, params) => l10n.aboutme_intro(
       params['firstName'],
       params['yearsOld'],
@@ -77,24 +78,28 @@ final simonePioCaronia = Me(
         name: 'Python',
       ),
       Technology(
-        icon: SimpleIcons.git,
-        name: 'Git',
-      ),
-      Technology(
-        icon: SimpleIcons.docker,
-        name: 'Docker',
-      ),
-      Technology(
-        icon: SimpleIcons.nodedotjs,
-        name: 'Node.js',
+        icon: SimpleIcons.oracle,
+        name: 'Java',
       ),
       Technology(
         icon: SimpleIcons.kotlin,
         name: 'Kotlin',
       ),
       Technology(
+        icon: SimpleIcons.git,
+        name: 'Git',
+      ),
+      Technology(
         icon: SimpleIcons.swift,
         name: 'Swift',
+      ),
+      Technology(
+        icon: SimpleIcons.nodedotjs,
+        name: 'Node.js',
+      ),
+      Technology(
+        icon: SimpleIcons.docker,
+        name: 'Docker',
       ),
       Technology(
         icon: SimpleIcons.firebase,
@@ -103,10 +108,6 @@ final simonePioCaronia = Me(
       Technology(
         icon: SimpleIcons.databricks,
         name: 'SQL',
-      ),
-      Technology(
-        icon: SimpleIcons.oracle,
-        name: 'Java',
       ),
     ],
     softSkills: [
@@ -123,12 +124,12 @@ final simonePioCaronia = Me(
         label: (l10n) => l10n.aboutme_softskills_publicspeaking,
       ),
       SoftSkill(
-        emoji: '🎨',
-        label: (l10n) => l10n.aboutme_softskills_creativity,
+        emoji: '📌',
+        label: (l10n) => l10n.aboutme_softskills_determination,
       ),
       SoftSkill(
-        emoji: '📌',
-        label: (l10n) => l10n.aboutme_softskills_stubbornness,
+        emoji: '🎨',
+        label: (l10n) => l10n.aboutme_softskills_creativity,
       ),
     ],
     hobbies: [
@@ -316,7 +317,7 @@ final simonePioCaronia = Me(
       institute: (l10n) => l10n.education_ucbm_institute,
       instituteUrl: 'https://www.unicampus.it/',
       instituteImageUrl: Res.jpgEducationUcbm,
-      startDateTime: DateTime(2021, 9),
+      startDateTime: DateTime(2021, 10),
       endDateTime: DateTime(2024, 2),
       grade: (l10n) => l10n.education_ucbm_grade,
       description: (l10n) => l10n.education_ucbm_description,
@@ -341,7 +342,7 @@ final simonePioCaronia = Me(
       description: (l10n) => l10n.education_polimi_description,
     ),
     Education(
-      degree: (_) => "Sixth Form - Exchange Experience",
+      degree: (_) => "Exchange Experience - Sixth Form",
       institute: (_) => "St Cuthbert Mayne School",
       instituteUrl: 'https://www.st-cuthbertmayne.co.uk/',
       instituteImageUrl: Res.jpgEducationTorquay,

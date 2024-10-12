@@ -24,6 +24,8 @@ class Res {
   static const jpgEducationUcbm = 'assets/imgs/education_ucbm.jpg';
   static const jpgEducationTorquay = 'assets/imgs/education_torquay.jpg';
 
+  static const pdfSpcCv = 'assets/pdfs/simone_pio_caronia_cv.pdf';
+
   static String resolvePath(String path) =>
       kReleaseMode ? 'assets/$path' : path;
 }
