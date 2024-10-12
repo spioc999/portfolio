@@ -26,6 +26,4 @@ class AboutMeState extends BaseVMState {
   final List<Project> projects = [];
   String? moreProjectsLink;
   final List<Certification> certifications = [];
-
-  bool isDownloadingCv = false;
 }

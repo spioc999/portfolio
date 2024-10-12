@@ -53,7 +53,6 @@ class _AboutMeViewState
                   ),
                   if (vmState.hasCv)
                     AboutMeDownloadCv(
-                      isDowloading: vmState.isDownloadingCv,
                       onDownloadTap: viewModel.onDownloadCvTap,
                     ),
                   AboutMeIntroSection(

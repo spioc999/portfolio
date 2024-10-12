@@ -41,5 +41,5 @@ class PersonalDataInteractor {
 
   List<Education> get educations => _personalData.educations;
 
-  Future<void> downloadCvFile() => _fileService.openAssetFile(about.cvUrl!);
+  void openCvFile() => _fileService.openAssetFile(about.cvUrl!);
 }
