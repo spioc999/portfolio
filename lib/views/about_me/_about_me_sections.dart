@@ -10,12 +10,10 @@ import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 
 class AboutMeDownloadCv extends StatelessWidget {
-  final bool isDowloading;
   final GestureTapCallback onDownloadTap;
 
   const AboutMeDownloadCv({
     super.key,
-    required this.isDowloading,
     required this.onDownloadTap,
   });
 
@@ -33,7 +31,7 @@ class AboutMeDownloadCv extends StatelessWidget {
             width: Dimens.maxButtonWidth,
           ),
           child: OutlinedButton(
-            onPressed: isDowloading ? null : onDownloadTap,
+            onPressed: onDownloadTap,
             style: Theme.of(context).outlinedButtonTheme.style?.copyWith(
                   padding: const WidgetStatePropertyAll(
                     EdgeInsets.all(Dimens.largeMargin),
@@ -48,18 +46,10 @@ class AboutMeDownloadCv extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Flexible(
-                  child: isDowloading
-                      ? const SizedBox.square(
-                          dimension: Dimens.defaultBigIconSize,
-                          child: Padding(
-                            padding: EdgeInsets.all(Dimens.extraSmallMargin),
-                            child: CircularProgressIndicator(),
-                          ),
-                        )
-                      : const Icon(
-                          Icons.download,
-                          size: Dimens.defaultBigIconSize,
-                        ),
+                  child: const Icon(
+                    Icons.download,
+                    size: Dimens.defaultBigIconSize,
+                  ),
                 ),
                 Flexible(
                   flex: 2,
