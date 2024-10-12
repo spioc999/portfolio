@@ -59,6 +59,7 @@ final simonePioCaronia = Me(
   dateOfBirth: DateTime(1999, 10, 20),
   imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
   about: About(
+    cvUrl: Res.pdfSpcCv,
     intro: (l10n, params) => l10n.aboutme_intro(
       params['firstName'],
       params['yearsOld'],
