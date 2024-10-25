@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
-import 'package:spioc_portfolio/core/routing/routing_config.dart';
+import 'package:spioc_portfolio/core/config/routing_config.dart';
 import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 
