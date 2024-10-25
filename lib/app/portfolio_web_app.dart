@@ -5,7 +5,7 @@ import 'package:spioc_portfolio/app/portfolio_app_theming.dart';
 import 'package:spioc_portfolio/constants/animation_duration.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/core/providers.dart';
-import 'package:spioc_portfolio/core/routing/routing_config.dart';
+import 'package:spioc_portfolio/core/config/routing_config.dart';
 import 'package:spioc_portfolio/utils/web_utils.dart';
 
 class PortfolioWebApp extends StatelessWidget {

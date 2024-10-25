@@ -52,4 +52,9 @@ class Dimens {
   static const double defaultLogoSize = 52.0;
 
   static const double defaultListIndent = 12.0;
+
+  //Breakpoints
+  static const double watchBreakpoints = 300.0;
+  static const double tableBreakpoints = 600.0;
+  static const double desktopBreakpoints = 1150.0;
 }
