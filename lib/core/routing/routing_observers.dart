@@ -42,6 +42,9 @@ class WebAppTitleNavigationObserver extends NavigatorObserver {
         case RouteNames.home:
           suffix = AppLocalizations.of(context)?.homeview_tabtitle;
           break;
+        case RouteNames.notFound:
+          suffix = AppLocalizations.of(context)?.notfoundview_tabtitle;
+          break;
         default:
           break;
       }
