@@ -43,7 +43,6 @@ class _HomeViewState
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                smallMarginGap,
                 ExpandableRoundedNetworkImage(vmState.imageUrls[_imageIndex]),
                 defaultMarginGap,
                 Text(

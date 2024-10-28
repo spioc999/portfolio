@@ -198,6 +198,31 @@ final simonePioCaronia = Me(
         ],
         hashtags: ['ai', 'security'],
       ),
+      Project(
+        title: 'bingo',
+        description: (l10n) => l10n.aboutmeview_projects_bingo_description,
+        links: [
+          (
+            label: (l10n) => l10n.aboutmeview_projects_bingo_corelink_label,
+            url: 'https://github.com/PaoloRuggirello/bingo-core',
+          ),
+          (
+            label: (l10n) => l10n.aboutmeview_projects_bingo_belink_label,
+            url: 'https://github.com/PaoloRuggirello/bingo-be',
+          ),
+          (
+            label: (l10n) => l10n.aboutmeview_projects_bingo_felink_label,
+            url: 'https://github.com/spioc999/bingo_fe',
+          ),
+        ],
+        techIcons: [
+          SimpleIcons.flutter,
+          SimpleIcons.dart,
+          SimpleIcons.python,
+          SimpleIcons.docker,
+        ],
+        hashtags: ['api', 'socket'],
+      ),
     ],
     certifications: [
       Certification(
