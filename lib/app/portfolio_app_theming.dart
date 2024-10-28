@@ -1,43 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 
 class PortfolioAppTheming {
-  //TODO download fonts
   static const titleFontFamily = 'Bebas Neue';
   static const bodyFontFamily = 'Fira Sans Condensed';
 
   static TextTheme _textTheme({required bool isDark}) {
-    TextStyle displayStyle(double fontSize) => GoogleFonts.getFont(
-          titleFontFamily,
+    TextStyle displayStyle(double fontSize) => TextStyle(
+          fontFamily: titleFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.bold,
           color: isDark ? Colors.white : Colors.black,
         );
 
-    TextStyle headlineStyle(double fontSize) => GoogleFonts.getFont(
-          titleFontFamily,
+    TextStyle headlineStyle(double fontSize) => TextStyle(
+          fontFamily: titleFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black,
         );
 
-    TextStyle titleStyle(double fontSize) => GoogleFonts.getFont(
-          titleFontFamily,
+    TextStyle titleStyle(double fontSize) => TextStyle(
+          fontFamily: titleFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.w500,
           color: isDark ? Colors.white : Colors.black,
         );
 
-    TextStyle bodyStyle(double fontSize) => GoogleFonts.getFont(
-          bodyFontFamily,
+    TextStyle bodyStyle(double fontSize) => TextStyle(
+          fontFamily: bodyFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.normal,
           color: isDark ? Colors.white : Colors.black,
         );
 
-    TextStyle labelStyle(double fontSize) => GoogleFonts.getFont(
-          bodyFontFamily,
+    TextStyle labelStyle(double fontSize) => TextStyle(
+          fontFamily: bodyFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.normal,
           color: isDark ? Colors.grey.shade200 : Colors.grey.shade800,
