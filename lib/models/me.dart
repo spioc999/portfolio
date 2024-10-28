@@ -163,16 +163,40 @@ final simonePioCaronia = Me(
     projects: [
       Project(
         title: 'portfolio',
-        description: (l10n) =>
-            'fefevfv fvfvfvf vfvfvfv vfvfv vfvfvf vfvfvfv fvfvfvfvfbgtbt fgbrgbr5ththtybg ededded dedede dedede deed ',
+        description: (l10n) => l10n.aboutmeview_projects_portfolio_description,
         links: [
           (label: null, url: 'https://github.com/spioc999/portfolio'),
         ],
         techIcons: [
           SimpleIcons.flutter,
           SimpleIcons.dart,
+          SimpleIcons.githubactions,
         ],
         hashtags: ['web'],
+      ),
+      Project(
+        title: 'federated-learning-thesis',
+        description: (l10n) =>
+            l10n.aboutmeview_projects_federatedlearning_description,
+        links: [
+          (
+            label: (l10n) =>
+                l10n.aboutmeview_projects_federatedlearning_pythonlink_label,
+            url:
+                'https://github.com/spioc999/federated-learning-thesis-project',
+          ),
+          (
+            label: (l10n) =>
+                l10n.aboutmeview_projects_federatedlearning_nodejslink_label,
+            url:
+                'https://github.com/spioc999/federated-learning-module-snark-js',
+          ),
+        ],
+        techIcons: [
+          SimpleIcons.python,
+          SimpleIcons.nodedotjs,
+        ],
+        hashtags: ['ai', 'security'],
       ),
     ],
     certifications: [

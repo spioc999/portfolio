@@ -5,4 +5,4 @@ typedef ParamLocalizedString = String Function(
   AppLocalizations,
   Map<String, dynamic>,
 );
-typedef Link = ({String url, String? label});
+typedef Link = ({String url, LocalizedString? label});

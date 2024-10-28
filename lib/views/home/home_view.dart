@@ -45,7 +45,7 @@ class _HomeViewState
               children: [
                 smallMarginGap,
                 ExpandableRoundedNetworkImage(vmState.imageUrls[_imageIndex]),
-                largeMarginGap,
+                defaultMarginGap,
                 Text(
                   vmState.firstName,
                   style: ResponsiveValues.themeDisplayStyle(context),
