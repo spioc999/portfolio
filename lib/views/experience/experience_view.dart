@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
+import 'package:spioc_portfolio/utils/extensions.dart';
+import 'package:spioc_portfolio/utils/responsive_helper.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/experience/experience_contracts.dart';
 
@@ -15,11 +18,18 @@ class _ExperienceViewState extends BaseState<
     return BaseWidget<ExperienceViewModelContract, ExperienceState>(
       model: viewModel,
       builder: (context, viewModel, child) {
-        return Center(
-          child: Text(
-            'Experience',
-            style: Theme.of(context).textTheme.displayLarge,
-            textAlign: TextAlign.center,
+        return PortfolioScrollableView(
+          body: Column(
+            children: [
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  l10n.experienceview_title,
+                  textAlign: TextAlign.center,
+                  style: ResponsiveHelper.themeDisplayStyle(context),
+                ),
+              ),
+            ],
           ),
         );
       },

@@ -15,6 +15,7 @@ class Dimens {
 
   static const double horizontalPaddingButton = 10.0;
   static const double horizontalPaddingDefault = 16.0;
+  static const double verticalPaddingDefault = 48.0;
 
   static const double defaultIconSize = 18.0;
 
