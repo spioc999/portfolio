@@ -77,6 +77,10 @@ final simonePioCaronia = Me(
         name: 'Git',
       ),
       Technology(
+        icon: SimpleIcons.docker,
+        name: 'Docker',
+      ),
+      Technology(
         icon: SimpleIcons.nodedotjs,
         name: 'Node.js',
       ),
