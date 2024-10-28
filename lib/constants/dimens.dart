@@ -1,5 +1,9 @@
 class Dimens {
   static const double zero = 0.0;
+  static const double dotFive = 0.5;
+  static const double one = 1.0;
+
+  static const double defaultRadius = 12.0;
 
   static const double tightDividerThickness = 0.5;
   static const double defaultDividerThickness = 1.0;
@@ -33,4 +37,8 @@ class Dimens {
   static const double defaultImageExpansionPercentage = 0.10;
   static const double defaultImageBorderThickness = 5.0;
   static const double defaultSmallImageBorderThickness = 3.0;
+
+  static const double defaultCardPadding = 16.0;
+  static const double defaultCardWidth = 264.0;
+  static const double defaultCardHeight = 180.0;
 }

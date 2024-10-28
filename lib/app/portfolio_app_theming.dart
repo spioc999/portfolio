@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 
 class PortfolioAppTheming {
@@ -144,26 +145,48 @@ class PortfolioAppTheming {
         ),
       );
 
+  static CardTheme _cardTheme({required bool isDark}) => CardTheme(
+        elevation: Dimens.zero,
+        color: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: defaultBorderRadius,
+          side: BorderSide(
+            color: isDark ? Colors.white : Colors.black,
+            width: Dimens.one,
+          ),
+        ),
+      );
+
+  static ChipThemeData _chipTheme({required bool isDark}) => ChipThemeData(
+        side: BorderSide(
+          color: isDark ? Colors.white : Colors.black,
+          width: Dimens.one,
+        ),
+        padding: defaultChipPadding,
+      );
+
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
-    cardColor: Colors.white,
     dividerColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.light,
     ),
+    cardTheme: _cardTheme(isDark: false),
     textTheme: _textTheme(isDark: false),
+    chipTheme: _chipTheme(isDark: false),
     elevatedButtonTheme: _elevatedButtonThemeData(isDark: false),
     textButtonTheme: _textButtonThemeData(isDark: false),
     outlinedButtonTheme: _outlinedButtonThemeData(isDark: false),
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
-    cardColor: Colors.black,
     dividerColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
     ),
+    cardTheme: _cardTheme(isDark: true),
     textTheme: _textTheme(isDark: true),
+    chipTheme: _chipTheme(isDark: true),
     elevatedButtonTheme: _elevatedButtonThemeData(isDark: true),
     textButtonTheme: _textButtonThemeData(isDark: true),
     outlinedButtonTheme: _outlinedButtonThemeData(isDark: true),

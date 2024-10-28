@@ -18,6 +18,10 @@ const ScrollPhysics defaultScrollPhysics = ClampingScrollPhysics();
 const defaultHorizontalPadding =
     EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingDefault);
 
+const defaultBorderRadius = BorderRadius.all(Radius.circular(
+  Dimens.defaultRadius,
+));
+
 const defaultBodyPadding = EdgeInsets.symmetric(
   horizontal: Dimens.horizontalPaddingDefault,
   vertical: Dimens.verticalPaddingDefault,
