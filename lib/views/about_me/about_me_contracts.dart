@@ -9,9 +9,11 @@ abstract class AboutMeViewContract extends BaseViewContract {
 abstract class AboutMeViewModelContract
     extends BaseViewModelContract<AboutMeState, AboutMeViewContract> {
   void onLetsCelebrateTap();
+  void onDownloadCvTap();
 }
 
 class AboutMeState extends BaseVMState {
+  String? cvUrl;
   late String firstName;
   late int yearsOld;
   late ParamLocalizedString intro;
@@ -24,4 +26,6 @@ class AboutMeState extends BaseVMState {
   final List<Project> projects = [];
   String? moreProjectsLink;
   final List<Certification> certifications = [];
+
+  bool isDownloadingCv = false;
 }

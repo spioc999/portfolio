@@ -13,6 +13,7 @@
   "aboutmeview_title": "About me",
   "aboutme_intro": "Hello👋! My name is {firstName}, I am {yearsOld} years old and I work as a Mobile Engineer, also focusing on AI projects. I describe myself as a very determined person who always wants to learn new things and try to understand all their aspects.\nMy passion for technology was born when I was a child in my beloved homeland, the beautiful Sicily. In addition to technology, I am a great enthusiast of sports and music, which hold a special place in my life.\nMy experiences abroad have been very important, enriching my cultural and professional background, allowing me to grow significantly. The friendships I have formed over the years have had a significant impact on me, teaching me the value of diversity and collaboration.",
   "aboutmeview_letscelebrate": "PS: Today it's my birthday, let's celebrate!🎉",
+  "aboutmeview_downloadmycv": "Download my CV",
   "aboutmeview_intro_title": "Intro",
   "aboutmeview_techstack_title": "Tech Stack",
   "aboutmeview_softskills_title": "Soft Skills",

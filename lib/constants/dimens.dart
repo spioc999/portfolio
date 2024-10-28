@@ -8,6 +8,7 @@ class Dimens {
   static const double tightDividerThickness = 0.5;
   static const double defaultDividerThickness = 1.0;
 
+  static const double extraSmallMargin = 2.0;
   static const double verySmallMargin = 4.0;
   static const double smallMargin = 8.0;
   static const double defaultMargin = 16.0;
@@ -33,6 +34,7 @@ class Dimens {
 
   static const double defaultSmallIconSize = 14.0;
   static const double defaultIconSize = 18.0;
+  static const double defaultBigIconSize = 22.0;
 
   static const double defaultImageSize = 264.0;
   static const double defaultSmallImageSize = 132.0;
@@ -45,6 +47,7 @@ class Dimens {
   static const double defaultCardHeight = 208.0;
 
   static const double maxContentWidth = 1080.0;
+  static const double maxButtonWidth = 300.0;
 
   static const double defaultLogoSize = 52.0;
 
