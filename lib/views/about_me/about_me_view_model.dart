@@ -32,16 +32,5 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
   void onLetsCelebrateTap() => sourceView.startLetsCelebrate();
 
   @override
-  void onDownloadCvTap() async {
-    _setIsDownloadingCv(true);
-
-    await _personalDataInteractor.downloadCvFile();
-
-    _setIsDownloadingCv(false);
-  }
-
-  void _setIsDownloadingCv(bool value) {
-    vmState.isDownloadingCv = value;
-    notifyListeners();
-  }
+  void onDownloadCvTap() => _personalDataInteractor.openCvFile();
 }
