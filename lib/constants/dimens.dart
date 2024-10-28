@@ -49,5 +49,4 @@ class Dimens {
   static const double defaultLogoSize = 52.0;
 
   static const double defaultListIndent = 12.0;
-  static const double defaultListRightPadding = 4.0;
 }

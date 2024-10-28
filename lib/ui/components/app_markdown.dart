@@ -32,9 +32,6 @@ class AppMarkdown extends StatelessWidget {
         ),
         textAlign: WrapAlignment.start,
         listBullet: ResponsiveValues.themeBodyStyle(context),
-        listBulletPadding: const EdgeInsets.only(
-          right: Dimens.defaultListRightPadding,
-        ),
         listIndent: Dimens.defaultListIndent,
       ),
       onTapLink: (_, href, __) {
