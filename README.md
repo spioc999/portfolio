@@ -41,7 +41,7 @@ The entire architecture uses the services locator ***get_it*** and abstract clas
 * `pubspec.yaml` file contains, aside the packages' imports, scripts definition with derry, used both locally and in github actions.
 
 ### Cool stuff 💫
-* TODO
+* `lib/core/routing/routing_observers.dart` file contains a custom navigation observer, which is able to set the browser title based on the current route visible.
 
 
 ## Main packages 📦
