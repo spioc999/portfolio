@@ -36,13 +36,11 @@ class Me {
   String get fullName => '$firstName $lastName';
 }
 
-const lastRole = 'Flutter & AI Engineer';
-
 final simonePioCaronia = Me(
   initials: 'SPC',
   firstName: 'Simone Pio',
   lastName: 'Caronia',
-  role: lastRole,
+  role: 'Mobile & AI Engineer',
   contacts: [
     Contact(
       link: 'https://github.com/spioc999/',
@@ -63,7 +61,6 @@ final simonePioCaronia = Me(
   about: About(
     intro: (l10n, params) => l10n.aboutme_intro(
       params['firstName'],
-      params['role'],
       params['yearsOld'],
     ),
     technologies: [
@@ -245,7 +242,7 @@ final simonePioCaronia = Me(
   ),
   experiences: [
     Experience(
-      role: (_) => lastRole,
+      role: (_) => 'Mobile Frontend Engineer | AI',
       company: 'Alpian Technologies',
       companyUrl: 'https://www.alpiantech.com/',
       description: (l10n) => l10n.experience_alpiantech_description,

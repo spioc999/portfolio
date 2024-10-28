@@ -13,7 +13,6 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
   void onInitState() {
     super.onInitState();
     vmState.firstName = _personalDataInteractor.firstName;
-    vmState.role = _personalDataInteractor.role;
     vmState.yearsOld = _personalDataInteractor.yearsOld;
     vmState.isBirthdayToday = _personalDataInteractor.isBirthdayToday;
 
