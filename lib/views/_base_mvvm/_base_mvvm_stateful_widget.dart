@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'base_state.dart';
+import '_base_state.dart';
 
 abstract class BaseMvvmStatefulWidget extends StatefulWidget {
   const BaseMvvmStatefulWidget(this.state, {super.key});

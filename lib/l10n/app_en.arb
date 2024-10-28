@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
   "generic_error": "Ops, something went wrong!",
-  "homeview_tabtitle": "Home",
-  "notfoundview_tabtitle": "404"
+  "homeview_tabtitle": "Portfolio",
+  "notfoundview_tabtitle": "Error 404"
 }

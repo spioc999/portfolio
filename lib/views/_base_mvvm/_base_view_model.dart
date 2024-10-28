@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'base_contracts.dart';
+import '_base_contracts.dart';
 
 abstract class BaseViewModel<V extends BaseViewContract, S extends BaseVMState>
     extends ChangeNotifier implements BaseViewModelContract<S, V> {
