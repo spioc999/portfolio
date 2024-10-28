@@ -1,4 +1,5 @@
 {
   "@@locale": "it",
-  "helloWorld": "Ciao Mondo!"
+  "generic_error": "Ops, qualcosa è andato storto!",
+  "homeview_tabtitle": "Home"
 }

@@ -1,7 +1,5 @@
 {
   "@@locale": "en",
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
-  }
+  "generic_error": "Ops, something went wrong!",
+  "homeview_tabtitle": "Home"
 }

@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.3 <4.0.0'
+  sdk: '>=3.4.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -19,6 +19,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   go_router: ^13.2.4
+  url_launcher: ^6.2.6
+  collection: ^1.18.0
 
 dev_dependencies:
   flutter_test:
