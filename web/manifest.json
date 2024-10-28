@@ -1,11 +1,11 @@
 {
-    "name": "SPioC Portfolio",
-    "short_name": "SPC Portfolio",
+    "name": "Simone Pio Caronia",
+    "short_name": "SPC",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Simone Pio Caronia's portfolio.",
+    "description": "Portfolio website 🧑🏽‍💻.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
