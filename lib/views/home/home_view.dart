@@ -14,10 +14,8 @@ class _HomeViewState
     return BaseWidget<HomeViewModelContract, HomeState>(
       model: viewModel,
       builder: (context, viewModel, _) {
-        return Scaffold(
-          body: Center(
-            child: Text('Home'),
-          ),
+        return Center(
+          child: Text('Home'),
         );
       },
     );

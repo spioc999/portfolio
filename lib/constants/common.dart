@@ -8,3 +8,4 @@ const emptyString = '';
 const ScrollPhysics defaultScrollPhysics = ClampingScrollPhysics();
 
 const initials = 'SPC';
+const fullName = 'Simone Pio Caronia';

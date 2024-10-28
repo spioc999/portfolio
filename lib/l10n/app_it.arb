@@ -1,6 +1,8 @@
 {
   "@@locale": "it",
   "generic_error": "Ops, qualcosa è andato storto!",
-  "homeview_tabtitle": "Portfolio",
-  "notfoundview_tabtitle": "Errore 404"
+  "aboutmeview_title": "Su di me",
+  "experienceview_title": "Esperienza",
+  "educationview_title": "Formazione",
+  "notfoundview_title": "Pagina Non Trovata"
 }
