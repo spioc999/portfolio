@@ -14,8 +14,8 @@ class Me {
   final List<String> imageUrls;
 
   final About about;
-  final Education education;
-  final Experience experience;
+  final List<Education> educations;
+  final List<Experience> experiences;
 
   Me({
     required this.initials,
@@ -27,8 +27,8 @@ class Me {
     required this.imageUrls,
     required this.role,
     required this.about,
-    required this.education,
-    required this.experience,
+    required this.educations,
+    required this.experiences,
   });
 
   String get fullName => '$firstName $lastName';
@@ -239,6 +239,6 @@ final simonePioCaronia = Me(
       ),
     ],
   ),
-  education: Education(),
-  experience: Experience(),
+  educations: [Education()],
+  experiences: [Experience()],
 );

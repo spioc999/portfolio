@@ -17,6 +17,6 @@ class PersonalDataService {
   DateTime get dateOfBirth => _me.dateOfBirth;
 
   About get about => _me.about;
-  Education get education => _me.education;
-  Experience get experience => _me.experience;
+  List<Experience> get experiences => _me.experiences;
+  List<Education> get educations => _me.educations;
 }
