@@ -6,6 +6,7 @@ import 'package:spioc_portfolio/ui/components/app_markdown.dart';
 import 'package:spioc_portfolio/ui/components/at_place_clickable.dart';
 import 'package:spioc_portfolio/ui/components/logo_squared_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
+import 'package:spioc_portfolio/ui/layouts/row_or_column_layout.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 
@@ -26,53 +27,48 @@ class EducationItem extends StatelessWidget {
       child: PortfolioTimeBoundedLayout(
         startDateTime: education.startDateTime,
         endDateTime: education.endDateTime,
-        child: Row(
+        child: RowOrColumnLayout(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            LogoSquaredNetworkImage.experience(
-              imgUrl: education.instituteImageUrl ?? emptyString,
-            ),
-            defaultMarginGap,
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    education.degree(l10n(context)).toUpperCase(),
-                    style: ResponsiveValues.themeTitleStyle(context)?.copyWith(
-                      height: Dimens.one,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  smallMarginGap,
-                  AtPlaceClickable(
-                    place: education.institute(l10n(context)),
-                    link: education.instituteUrl,
-                    onLinkTap: onLinkTap,
-                    style: ResponsiveValues.themeBodyStyle(context),
-                  ),
-                  if (education.grade != null) ...[
-                    smallMarginGap,
-                    Text(
-                      l10n(context).educationview_grade_label(
-                        education.grade!(l10n(context)),
-                      ),
-                      style: ResponsiveValues.themeBodyStyle(context)?.copyWith(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                  if (education.description != null) ...[
-                    smallMarginGap,
-                    AppMarkdown(
-                      data: education.description!(l10n(context)),
-                    ),
-                  ]
-                ],
+          first: LogoSquaredNetworkImage.experience(
+            imgUrl: education.instituteImageUrl ?? emptyString,
+          ),
+          second: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                education.degree(l10n(context)).toUpperCase(),
+                style: ResponsiveValues.themeTitleStyle(context)?.copyWith(
+                  height: Dimens.one,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-          ],
+              smallMarginGap,
+              AtPlaceClickable(
+                place: education.institute(l10n(context)),
+                link: education.instituteUrl,
+                onLinkTap: onLinkTap,
+                style: ResponsiveValues.themeBodyStyle(context),
+              ),
+              if (education.grade != null) ...[
+                smallMarginGap,
+                Text(
+                  l10n(context).educationview_grade_label(
+                    education.grade!(l10n(context)),
+                  ),
+                  style: ResponsiveValues.themeBodyStyle(context)?.copyWith(
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+              if (education.description != null) ...[
+                smallMarginGap,
+                AppMarkdown(
+                  data: education.description!(l10n(context)),
+                ),
+              ]
+            ],
+          ),
         ),
       ),
     );

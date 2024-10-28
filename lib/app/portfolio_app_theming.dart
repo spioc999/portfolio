@@ -158,12 +158,13 @@ class PortfolioAppTheming {
       );
 
   static ChipThemeData _chipTheme({required bool isDark}) => ChipThemeData(
-      side: BorderSide(
-        color: isDark ? Colors.white : Colors.black,
-        width: Dimens.one,
-      ),
-      padding: defaultChipPadding,
-      color: WidgetStatePropertyAll(isDark ? Colors.black : Colors.white));
+        side: BorderSide(
+          color: isDark ? Colors.white : Colors.black,
+          width: Dimens.one,
+        ),
+        padding: defaultChipPadding,
+        color: isDark ? null : const WidgetStatePropertyAll(Colors.white),
+      );
 
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
     dividerColor: Colors.black,
