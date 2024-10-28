@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
+import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/_base_contracts.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/_base_mvvm_stateful_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 abstract class BaseState<T extends BaseMvvmStatefulWidget,
@@ -12,8 +12,6 @@ abstract class BaseState<T extends BaseMvvmStatefulWidget,
   late VM _viewModel;
   VM get viewModel => _viewModel;
   S get vmState => _viewModel.vmState as S;
-
-  AppLocalizations get l10n => AppLocalizations.of(context)!;
 
   @override
   void initState() {
@@ -38,7 +36,7 @@ abstract class BaseState<T extends BaseMvvmStatefulWidget,
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
-        backgroundColor: Colors.red, //TODO
+        backgroundColor: Colors.red,
       ),
     );
   }

@@ -7,7 +7,7 @@ import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:spioc_portfolio/utils/extensions.dart';
 
 class PortfolioShellNavigatorScaffold extends StatefulWidget {
   final Widget child;
@@ -120,8 +120,7 @@ class _PortfolioShellNavigatorScaffoldState
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Tooltip(
-                            message: AppLocalizations.of(context)!
-                                .generic_switch_language_tooltip,
+                            message: l10n.generic_switch_language_tooltip,
                             child: TextButton(
                               onPressed: () => Provider.of<AppSettingsProvider>(
                                 context,
@@ -132,8 +131,7 @@ class _PortfolioShellNavigatorScaffoldState
                             ),
                           ),
                           Tooltip(
-                            message: AppLocalizations.of(context)!
-                                .generic_switch_theme_tooltip,
+                            message: l10n.generic_switch_theme_tooltip,
                             child: TextButton(
                               onPressed: () => Provider.of<AppSettingsProvider>(
                                 context,
