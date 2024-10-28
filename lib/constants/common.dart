@@ -7,6 +7,7 @@ import 'package:spioc_portfolio/constants/dimens.dart';
 const emptyWidget = SizedBox();
 const emptyString = '';
 const whitespaceString = ' ';
+const dashWithSpacingString = ' - ';
 
 const technologyName = 'Flutter';
 const technologyLink = 'https://flutter.dev/';
