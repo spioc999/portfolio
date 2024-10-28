@@ -68,6 +68,7 @@ class _AboutMeViewState
                   if (vmState.isBirthdayToday) ...[
                     defaultMarginGap,
                     TransparentInkWell(
+                      key: const Key(AboutMeKeys.letsCelebrateLabel),
                       onTap: viewModel.onLetsCelebrateTap,
                       child: Text(
                         l10n.aboutmeview_letscelebrate,
