@@ -16,7 +16,7 @@ class PersonalDataInteractor {
       _dateTimeService.localNow.difference(dateOfBirth).inDays ~/ 365;
 
   bool get isBirthdayToday =>
-      _dateTimeService.localNow.isSameDayAndMonth(_personalData.dateOfBirth);
+      _dateTimeService.localNow.isSameDayAndMonth(dateOfBirth);
 
   String get initials => _personalData.initials;
   String get firstName => _personalData.firstName;
