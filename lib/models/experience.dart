@@ -10,6 +10,7 @@ class Experience {
   final ExperienceWorkingType? workingType;
   final DateTime startDateTime;
   final DateTime? endDateTime;
+  final LocalizedString? description;
 
   Experience({
     required this.role,
@@ -20,6 +21,7 @@ class Experience {
     required this.endDateTime,
     this.locality,
     this.workingType,
+    this.description,
   });
 
   String get identifier =>

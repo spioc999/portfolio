@@ -43,21 +43,21 @@ class PortfolioAppTheming {
         );
 
     return TextTheme(
-      displayLarge: displayStyle(116),
-      displayMedium: displayStyle(96),
-      displaySmall: displayStyle(76),
-      headlineLarge: headlineStyle(42),
-      headlineMedium: headlineStyle(34),
+      displayLarge: displayStyle(112),
+      displayMedium: displayStyle(86),
+      displaySmall: displayStyle(68),
+      headlineLarge: headlineStyle(38),
+      headlineMedium: headlineStyle(30),
       headlineSmall: headlineStyle(26),
-      titleLarge: titleStyle(24),
-      titleMedium: titleStyle(20),
-      titleSmall: titleStyle(16),
-      bodyLarge: bodyStyle(16),
-      bodyMedium: bodyStyle(14),
-      bodySmall: bodyStyle(12),
-      labelLarge: labelStyle(12),
-      labelMedium: labelStyle(10),
-      labelSmall: labelStyle(8),
+      titleLarge: titleStyle(25),
+      titleMedium: titleStyle(21),
+      titleSmall: titleStyle(17),
+      bodyLarge: bodyStyle(17),
+      bodyMedium: bodyStyle(15),
+      bodySmall: bodyStyle(13),
+      labelLarge: labelStyle(13),
+      labelMedium: labelStyle(11),
+      labelSmall: labelStyle(9),
     );
   }
 
@@ -181,7 +181,6 @@ class PortfolioAppTheming {
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     dividerColor: Colors.white,
-    scaffoldBackgroundColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
