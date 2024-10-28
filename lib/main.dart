@@ -15,7 +15,7 @@ Future<void> commonRuns({bool isTesting = false}) async {
   WidgetsFlutterBinding.ensureInitialized();
   setUrlStrategy(PathUrlStrategy());
 
-  locatorSetup();
+  await locatorSetup();
   initRouting();
 
   await Future.wait([

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/core/providers.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
 
@@ -23,6 +25,15 @@ class _PortfolioShellNavigatorScaffoldState
     extends State<PortfolioShellNavigatorScaffold> {
   static const bottomDividerHeight = 1.0;
 
+  ButtonStyle? get _textButtonButtonStyle =>
+      Theme.of(context).textButtonTheme.style?.copyWith(
+            fixedSize: const WidgetStatePropertyAll(
+              Size.fromHeight(
+                Dimens.appBarHeight - bottomDividerHeight,
+              ),
+            ),
+          );
+
   late RouteName selectedRoute;
 
   @override
@@ -41,11 +52,15 @@ class _PortfolioShellNavigatorScaffoldState
 
   @override
   Widget build(BuildContext context) {
+    final languageCode = Localizations.localeOf(context).languageCode;
+    final themeBrightness = Theme.of(context).brightness;
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(Dimens.appBarHeight),
         child: Column(
           children: [
+            //TODO convert into CustomScroll
             Row(
               children: [
                 ElevatedButton(
@@ -70,13 +85,7 @@ class _PortfolioShellNavigatorScaffoldState
                     onPressed: route != selectedRoute
                         ? () => RoutingHelper.goNamed(context, route)
                         : emptyCallback,
-                    style: Theme.of(context).textButtonTheme.style?.copyWith(
-                          fixedSize: const WidgetStatePropertyAll(
-                            Size.fromHeight(
-                              Dimens.appBarHeight - bottomDividerHeight,
-                            ),
-                          ),
-                        ),
+                    style: _textButtonButtonStyle,
                     child: Text(
                       route.title(context)?.toUpperCase() ?? emptyString,
                       style: route == selectedRoute
@@ -89,6 +98,28 @@ class _PortfolioShellNavigatorScaffoldState
                     ),
                   ),
                 ),
+                const Spacer(),
+                TextButton(
+                  onPressed: () =>
+                      Provider.of<AppSettingsProvider>(context, listen: false)
+                          .switchLocale(languageCode),
+                  style: _textButtonButtonStyle,
+                  child: Text(
+                    languageCode.toUpperCase(),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () =>
+                      Provider.of<AppSettingsProvider>(context, listen: false)
+                          .switchThemeByBrightness(themeBrightness),
+                  style: _textButtonButtonStyle,
+                  child: Icon(
+                    themeBrightness == Brightness.dark
+                        ? Icons.dark_mode_outlined
+                        : Icons.light_mode_outlined,
+                    size: 18,
+                  ),
+                )
               ],
             ),
             Container(
