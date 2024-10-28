@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
+import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_navigation_scaffold.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -23,28 +25,32 @@ class _NotFoundViewState
         return PortfolioNavigationScaffold(
           route: RouteName.notFound,
           child: PortfolioScrollableView(
-            body: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Column(
-                children: [
-                  Text(
+            body: Column(
+              children: [
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
                     l10n.notfoundview_errorcode,
                     textAlign: TextAlign.center,
                     style: ResponsiveValues.themeDisplayStyle(context),
                   ),
-                  Text(
-                    l10n.notfoundview_title,
-                    style: ResponsiveValues.themeHeadingStyle(context),
-                    textAlign: TextAlign.center,
-                  ),
-                  defaultMarginGap,
-                  Text(
-                    l10n.notfoundview_subtitle,
-                    style: ResponsiveValues.themeTitleStyle(context),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
+                ),
+                const AppDivider.horizontal(
+                  height: Dimens.tightDividerThickness,
+                ),
+                largeMarginGap,
+                Text(
+                  l10n.notfoundview_title,
+                  style: ResponsiveValues.themeHeadingStyle(context),
+                  textAlign: TextAlign.center,
+                ),
+                defaultMarginGap,
+                Text(
+                  l10n.notfoundview_subtitle,
+                  style: ResponsiveValues.themeTitleStyle(context),
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
           ),
         );

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:spioc_portfolio/constants/common.dart';
@@ -9,7 +11,16 @@ class ResponsiveValues {
         context: context,
         mobile: defaultBodyPadding,
         tablet: tabletBodyPadding,
-        desktop: desktopBodyPadding,
+        desktop: _desktopDynamicBodyPadding(context),
+      );
+
+  static EdgeInsetsGeometry _desktopDynamicBodyPadding(BuildContext context) =>
+      EdgeInsets.symmetric(
+        horizontal: max(
+          Dimens.horizontalPaddingDesktop,
+          (MediaQuery.sizeOf(context).width - Dimens.maxContentWidth) / 2,
+        ),
+        vertical: Dimens.verticalPaddingDefault,
       );
 
   static TextStyle? themeDisplayStyle(BuildContext context) =>

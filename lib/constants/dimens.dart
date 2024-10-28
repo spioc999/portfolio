@@ -43,4 +43,6 @@ class Dimens {
   static const double defaultCardPadding = 14.0;
   static const double defaultCardWidth = 320.0;
   static const double defaultCardHeight = 208.0;
+
+  static const double maxContentWidth = 1080.0;
 }
