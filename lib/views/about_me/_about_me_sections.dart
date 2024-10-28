@@ -3,6 +3,7 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/expandable_rounded_network_image.dart';
+import 'package:spioc_portfolio/ui/toolkit/transparent_inkwell.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 
@@ -24,7 +25,7 @@ class AboutMeTechStackSection extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             l10n(context).aboutmeview_techstack_title,
-            style: ResponsiveValues.themeTitleStyle(context),
+            style: ResponsiveValues.themeHeadingStyle(context),
           ),
         ),
         defaultMarginGap,
@@ -68,7 +69,7 @@ class AboutMeSoftSkillsSection extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             l10n(context).aboutmeview_softskills_title,
-            style: ResponsiveValues.themeTitleStyle(context),
+            style: ResponsiveValues.themeHeadingStyle(context),
           ),
         ),
         defaultMarginGap,
@@ -117,7 +118,7 @@ class AboutMeHobbiesSection extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             l10n(context).aboutmeview_hobbies_title,
-            style: ResponsiveValues.themeTitleStyle(context),
+            style: ResponsiveValues.themeHeadingStyle(context),
           ),
         ),
         defaultMarginGap,
@@ -157,10 +158,12 @@ class AboutMeHobbiesSection extends StatelessWidget {
 
 class AboutMeProjectsSection extends StatelessWidget {
   final List<Project> projects;
+  final Function(String) onLinkTap;
 
   const AboutMeProjectsSection({
     super.key,
     required this.projects,
+    required this.onLinkTap,
   });
 
   @override
@@ -173,7 +176,7 @@ class AboutMeProjectsSection extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             l10n(context).aboutmeview_projects_title,
-            style: ResponsiveValues.themeTitleStyle(context),
+            style: ResponsiveValues.themeHeadingStyle(context),
           ),
         ),
         defaultMarginGap,
@@ -194,15 +197,49 @@ class AboutMeProjectsSection extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(Dimens.defaultCardPadding),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
                         children: [
-                          smallMarginGap,
                           Text(
                             h.title,
-                            style: ResponsiveValues.themeBodyStyle(context),
-                            maxLines: 2,
+                            style: ResponsiveValues.themeTitleStyle(context),
+                            maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
+                          ),
+                          Wrap(
+                            spacing: Dimens.smallMargin,
+                            alignment: WrapAlignment.start,
+                            children: h.links
+                                .map(
+                                  (link) => TransparentInkWell(
+                                    onTap: () => onLinkTap(link.url),
+                                    child: Text(
+                                      link.label ??
+                                          l10n(context)
+                                              .aboutmeview_projects_repolink,
+                                      style: ResponsiveValues.themeLabelStyle(
+                                        context,
+                                      )?.copyWith(
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                                .toList(),
+                          ),
+                          const Spacer(),
+                          Wrap(
+                            spacing: Dimens.defaultMargin,
+                            alignment: WrapAlignment.start,
+                            children: h.techIcons
+                                .map(
+                                  (techIcon) => Icon(
+                                    techIcon,
+                                    size: Dimens.defaultSmallIconSize,
+                                  ),
+                                )
+                                .toList(),
                           )
                         ],
                       ),
@@ -235,7 +272,7 @@ class AboutMeCertificationsSection extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             l10n(context).aboutmeview_certifications_title,
-            style: ResponsiveValues.themeTitleStyle(context),
+            style: ResponsiveValues.themeHeadingStyle(context),
           ),
         ),
         defaultMarginGap,

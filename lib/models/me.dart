@@ -161,7 +161,19 @@ final simonePioCaronia = Me(
         imageUrl: Res.jpgHobbyLego,
       ),
     ],
-    projects: [],
+    projects: [
+      Project(
+        title: 'portfolio',
+        description: (l10n) => 'fefe',
+        links: [
+          (label: null, url: 'https://github.com/spioc999/portfolio'),
+        ],
+        techIcons: [
+          SimpleIcons.flutter,
+          SimpleIcons.dart,
+        ],
+      ),
+    ],
     certifications: [
       Certification(
         icon: SimpleIcons.oracle,

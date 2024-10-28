@@ -58,7 +58,7 @@ class _HomeViewState
                 ),
                 Text(
                   vmState.role,
-                  style: ResponsiveValues.themeTitleStyle(context),
+                  style: ResponsiveValues.themeHeadingStyle(context),
                   textAlign: TextAlign.center,
                 ),
                 largeMarginGap,
