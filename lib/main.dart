@@ -3,6 +3,7 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:spioc_portfolio/app/portifolio_web_app.dart';
 import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/core/routing/routing_config.dart';
+import 'package:spioc_portfolio/modules/shared_pref.dart';
 
 void main() async {
   await commonRuns();
@@ -16,4 +17,10 @@ Future<void> commonRuns({bool isTesting = false}) async {
 
   locatorSetup();
   initRouting();
+
+  await Future.wait(
+    [
+      getIt<SharedPref>().init(),
+    ],
+  );
 }
