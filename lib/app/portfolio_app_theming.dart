@@ -181,7 +181,6 @@ class PortfolioAppTheming {
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     dividerColor: Colors.white,
-    scaffoldBackgroundColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
