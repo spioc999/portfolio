@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 
 class PortfolioAppTheming {
-  static const titleFontFamily = 'Bebas Neue';
+  static const headingFontFamily = 'Bebas Neue';
   static const bodyFontFamily = 'Fira Sans Condensed';
 
   static TextTheme _textTheme({required bool isDark}) {
     TextStyle displayStyle(double fontSize) => TextStyle(
-          fontFamily: titleFontFamily,
+          fontFamily: headingFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.bold,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle headlineStyle(double fontSize) => TextStyle(
-          fontFamily: titleFontFamily,
+          fontFamily: headingFontFamily,
           fontSize: fontSize,
           fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black,
         );
 
     TextStyle titleStyle(double fontSize) => TextStyle(
-          fontFamily: titleFontFamily,
+          fontFamily: bodyFontFamily,
           fontSize: fontSize,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black,
         );
 
@@ -45,12 +46,12 @@ class PortfolioAppTheming {
       displayLarge: displayStyle(120),
       displayMedium: displayStyle(100),
       displaySmall: displayStyle(80),
-      headlineLarge: headlineStyle(48),
-      headlineMedium: headlineStyle(40),
-      headlineSmall: headlineStyle(32),
-      titleLarge: titleStyle(36),
-      titleMedium: titleStyle(32),
-      titleSmall: titleStyle(28),
+      headlineLarge: headlineStyle(44),
+      headlineMedium: headlineStyle(36),
+      headlineSmall: headlineStyle(28),
+      titleLarge: titleStyle(26),
+      titleMedium: titleStyle(22),
+      titleSmall: titleStyle(18),
       bodyLarge: bodyStyle(18),
       bodyMedium: bodyStyle(16),
       bodySmall: bodyStyle(14),
@@ -144,26 +145,48 @@ class PortfolioAppTheming {
         ),
       );
 
+  static CardTheme _cardTheme({required bool isDark}) => CardTheme(
+        elevation: Dimens.zero,
+        color: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: defaultBorderRadius,
+          side: BorderSide(
+            color: isDark ? Colors.white : Colors.black,
+            width: Dimens.one,
+          ),
+        ),
+      );
+
+  static ChipThemeData _chipTheme({required bool isDark}) => ChipThemeData(
+        side: BorderSide(
+          color: isDark ? Colors.white : Colors.black,
+          width: Dimens.one,
+        ),
+        padding: defaultChipPadding,
+      );
+
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
-    cardColor: Colors.white,
     dividerColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.light,
     ),
+    cardTheme: _cardTheme(isDark: false),
     textTheme: _textTheme(isDark: false),
+    chipTheme: _chipTheme(isDark: false),
     elevatedButtonTheme: _elevatedButtonThemeData(isDark: false),
     textButtonTheme: _textButtonThemeData(isDark: false),
     outlinedButtonTheme: _outlinedButtonThemeData(isDark: false),
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
-    cardColor: Colors.black,
     dividerColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
     ),
+    cardTheme: _cardTheme(isDark: true),
     textTheme: _textTheme(isDark: true),
+    chipTheme: _chipTheme(isDark: true),
     elevatedButtonTheme: _elevatedButtonThemeData(isDark: true),
     textButtonTheme: _textButtonThemeData(isDark: true),
     outlinedButtonTheme: _outlinedButtonThemeData(isDark: true),

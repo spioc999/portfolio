@@ -4,16 +4,17 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
+import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioScrollableView extends StatelessWidget {
   final Widget body;
-  final bool hasFooter;
+  final bool withFooter;
 
   const PortfolioScrollableView({
     super.key,
     required this.body,
-    this.hasFooter = true,
+    this.withFooter = true,
   });
 
   @override
@@ -22,10 +23,10 @@ class PortfolioScrollableView extends StatelessWidget {
       physics: defaultScrollPhysics,
       slivers: [
         SliverPadding(
-          padding: defaultBodyPadding,
+          padding: ResponsiveValues.bodyPadding(context),
           sliver: SliverToBoxAdapter(child: body),
         ),
-        if (hasFooter) const _PortfolioSliverFooter(),
+        if (withFooter) const _PortfolioSliverFooter(),
       ],
     );
   }
@@ -44,16 +45,14 @@ class _PortfolioSliverFooter extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const AppDivider.horizontal(height: 0.5),
+            const AppDivider.horizontal(height: Dimens.tightDividerThickness),
             Padding(
               padding: defaultHorizontalPadding.copyWith(
                 top: Dimens.smallMargin,
                 bottom: Dimens.smallMargin,
               ),
-              child: RichText(
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                text: TextSpan(
+              child: Text.rich(
+                TextSpan(
                   style: Theme.of(context).textTheme.labelSmall,
                   children: [
                     TextSpan(
@@ -71,6 +70,8 @@ class _PortfolioSliverFooter extends StatelessWidget {
                     ),
                   ],
                 ),
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
               ),
             ),
           ],

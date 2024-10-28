@@ -5,17 +5,13 @@ import 'package:spioc_portfolio/modules/modules.dart';
 void setupLocatorObjects({bool isTesting = false}) {
   if (!isTesting) {
     getIt.registerSingleton<PersonalDataService>(
-      PersonalDataService(
-        me: Me(
-          role: (appLocalization) => appLocalization.me_role,
-          about: About(
-            intro: (appLocalization) => '',
-          ),
-          education: Education(),
-          experience: Experience(),
-        ),
-      ),
+      PersonalDataService(me: simonePioCaronia),
     );
-    getIt.registerSingleton<SharedPref>(SharedPref());
+    getIt.registerSingletonAsync<SharedPref>(() async {
+      final sharedPref = SharedPref();
+      await sharedPref.init();
+      return sharedPref;
+    });
+    getIt.registerSingleton<DateTimeService>(DateTimeService());
   }
 }
