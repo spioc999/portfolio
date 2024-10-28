@@ -16,7 +16,11 @@ class _ExperienceViewState extends BaseState<
       model: viewModel,
       builder: (context, viewModel, child) {
         return Center(
-          child: Text('Experience'),
+          child: Text(
+            'Experience',
+            style: Theme.of(context).textTheme.displayLarge,
+            textAlign: TextAlign.center,
+          ),
         );
       },
     );

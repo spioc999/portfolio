@@ -21,7 +21,7 @@ class PortfolioShellNavigatorScaffold extends StatefulWidget {
 
 class _PortfolioShellNavigatorScaffoldState
     extends State<PortfolioShellNavigatorScaffold> {
-  static const bottomDividerHeight = 1.0;
+  static const bottomDividerHeight = 0.5;
 
   late RouteName selectedRoute;
 
@@ -75,7 +75,7 @@ class _PortfolioShellNavigatorScaffoldState
                         RoutingHelper.goNamed(context, route);
                       },
                       child: Text(
-                        '${route.title(context)}${route == selectedRoute ? "-" : ""}',
+                        route.title(context)?.toUpperCase() ?? emptyString,
                       ),
                     ),
                   ),

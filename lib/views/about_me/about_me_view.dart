@@ -15,7 +15,11 @@ class _AboutMeViewState
       model: viewModel,
       builder: (context, viewModel, child) {
         return Center(
-          child: Text('About Me'),
+          child: Text(
+            'About Me',
+            style: Theme.of(context).textTheme.displayLarge,
+            textAlign: TextAlign.center,
+          ),
         );
       },
     );

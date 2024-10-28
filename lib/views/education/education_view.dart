@@ -15,7 +15,11 @@ class _EducationViewState
       model: viewModel,
       builder: (context, viewModel, child) {
         return Center(
-          child: Text('Education'),
+          child: Text(
+            'Education',
+            style: Theme.of(context).textTheme.displayLarge,
+            textAlign: TextAlign.center,
+          ),
         );
       },
     );

@@ -13,4 +13,5 @@ class Dimens {
   static const double minButtonWidth = 48.0;
 
   static const double horizontalPaddingButton = 8.0;
+  static const double horizontalPaddingDefault = 16.0;
 }

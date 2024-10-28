@@ -5,7 +5,7 @@ import 'package:spioc_portfolio/constants/dimens.dart';
 class PortfolioAppTheming {
   //TODO download fonts
   static const titleFontFamily = 'Bebas Neue';
-  static const bodyFontFamily = 'Nunito Sans';
+  static const bodyFontFamily = 'Fira Sans Condensed';
 
   static TextTheme _textTheme({required bool isDark}) {
     TextStyle displayStyle(double fontSize) => GoogleFonts.getFont(
