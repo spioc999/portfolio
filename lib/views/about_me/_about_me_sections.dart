@@ -157,6 +157,33 @@ class AboutMeHobbiesSection extends StatelessWidget {
   }
 }
 
+class AboutMeProjectsSection extends StatelessWidget {
+  final List<Project> projects;
+
+  const AboutMeProjectsSection({
+    super.key,
+    required this.projects,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        gigantMarginGap,
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            l10n(context).aboutmeview_projects_title,
+            style: ResponsiveValues.themeTitleStyle(context),
+          ),
+        ),
+        defaultMarginGap,
+      ],
+    );
+  }
+}
+
 class AboutMeCertificationsSection extends StatelessWidget {
   final List<Certification> certifications;
 
@@ -179,6 +206,24 @@ class AboutMeCertificationsSection extends StatelessWidget {
           ),
         ),
         defaultMarginGap,
+        Wrap(
+          spacing: Dimens.smallMargin,
+          runSpacing: Dimens.smallMargin,
+          alignment: WrapAlignment.center,
+          children: certifications
+              .map(
+                (c) => Chip(
+                  avatar: Icon(
+                    c.icon,
+                    size: Theme.of(context).textTheme.bodyMedium?.fontSize,
+                  ),
+                  padding: defaultChipPadding,
+                  label: Text(c.label),
+                  labelStyle: ResponsiveValues.themeBodyStyle(context),
+                ),
+              )
+              .toList(),
+        ),
       ],
     );
   }
