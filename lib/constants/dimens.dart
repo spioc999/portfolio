@@ -6,4 +6,6 @@ class Dimens {
   static const double defaultMargin = 16.0;
   static const double largeMargin = 24.0;
   static const double veryLargeMargin = 32.0;
+
+  static const double appBarHeight = 48.0;
 }
