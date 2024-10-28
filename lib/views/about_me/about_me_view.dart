@@ -18,7 +18,13 @@ class _AboutMeViewState
     extends BaseState<AboutMeView, AboutMeViewModelContract, AboutMeState>
     implements AboutMeViewContract {
   static const _celebrateDuration = Duration(seconds: 5);
-  final _confettiController = ConfettiController(duration: _celebrateDuration);
+  late ConfettiController _confettiController;
+
+  @override
+  void initState() {
+    super.initState();
+    _confettiController = ConfettiController(duration: _celebrateDuration);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +48,8 @@ class _AboutMeViewState
                     height: Dimens.tightDividerThickness,
                   ),
                   veryLargeMarginGap,
-                  RichText(
-                    //TODO fix me for selection
-                    text: TextSpan(
+                  Text.rich(
+                    TextSpan(
                       children: [
                         TextSpan(
                           text: l10n.aboutmeview_intro_1(
@@ -86,12 +91,7 @@ class _AboutMeViewState
   }
 
   @override
-  void startLetsCelebrate() {
-    if (_confettiController.state == ConfettiControllerState.playing) {
-      _confettiController.stop();
-    }
-    _confettiController.play();
-  }
+  void startLetsCelebrate() => _confettiController.play();
 
   @override
   void dispose() {
