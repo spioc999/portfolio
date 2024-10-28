@@ -4,7 +4,7 @@ import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
-import 'package:spioc_portfolio/utils/responsive_helper.dart';
+import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioScrollableView extends StatelessWidget {
