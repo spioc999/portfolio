@@ -12,7 +12,15 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
   @override
   void onInitState() {
     super.onInitState();
-    vmState.intro = _personalDataInteractor.about.intro;
+    vmState.firstName = _personalDataInteractor.firstName;
+    vmState.role = _personalDataInteractor.role;
     vmState.yearsOld = _personalDataInteractor.yearsOld;
+    vmState.isBirthdayToday = _personalDataInteractor.isBirthdayToday;
+  }
+
+  @override
+  void onLetsCelebrateTap() {
+    // TODO: implement onLetsCelebrateTap
+    print('lets celebrate');
   }
 }

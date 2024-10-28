@@ -27,11 +27,8 @@ void setupLocatorObjects({bool isTesting = false}) {
           ],
           dateOfBirth: DateTime(1999, 10, 20),
           imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
-          role: (appLocalization) => appLocalization.me_role,
-          about: About(
-            intro: (appLocalization, param) =>
-                appLocalization.aboutmeview_intro(param['yearsOld']),
-          ),
+          role: 'Flutter & AI Engineer',
+          about: About(),
           education: Education(),
           experience: Experience(),
         ),

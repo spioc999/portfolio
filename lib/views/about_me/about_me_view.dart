@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
@@ -35,10 +36,32 @@ class _AboutMeViewState
                 height: Dimens.tightDividerThickness,
               ),
               veryLargeMarginGap,
-              Text(
-                vmState.intro(l10n, {'yearsOld': vmState.yearsOld}),
-                style: ResponsiveValues.themeBodyStyle(context),
-                textAlign: TextAlign.left,
+              RichText(
+                //TODO fix me for selection
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: l10n.aboutmeview_intro_1(
+                          vmState.firstName, vmState.yearsOld),
+                    ),
+                    const TextSpan(text: whitespaceString),
+                    if (true) ...[
+                      TextSpan(
+                        text: l10n.aboutmeview_intro_letscelebrate,
+                        style: const TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = viewModel.onLetsCelebrateTap,
+                      ),
+                      const TextSpan(text: whitespaceString),
+                    ],
+                    TextSpan(
+                      text: l10n.aboutmeview_intro_2(vmState.role),
+                    ),
+                  ],
+                  style: ResponsiveValues.themeBodyStyle(context),
+                ),
               ),
             ],
           ),
