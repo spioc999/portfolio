@@ -23,6 +23,7 @@ dependencies:
   collection: ^1.18.0
   shared_preferences: ^2.2.3
   google_fonts: ^6.2.1
+  responsive_builder: ^0.7.0
 
 dev_dependencies:
   flutter_test:
