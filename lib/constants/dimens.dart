@@ -18,9 +18,9 @@ class Dimens {
   static const double minButtonWidth = 48.0;
 
   static const double horizontalPaddingButton = 10.0;
-  static const double horizontalPaddingDefault = 32.0;
-  static const double horizontalPaddingTablet = 84.0;
-  static const double horizontalPaddingDesktop = 150.0;
+  static const double horizontalPaddingDefault = 36.0;
+  static const double horizontalPaddingTablet = 80.0;
+  static const double horizontalPaddingDesktop = 132.0;
   static const double verticalPaddingDefault = 48.0;
 
   static const double defaultIconSize = 18.0;

@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/constants/keys.dart';
+import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -35,13 +37,17 @@ class _AboutMeViewState
           body: Stack(
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      l10n.aboutmeview_title,
-                      textAlign: TextAlign.center,
-                      style: ResponsiveValues.themeDisplayStyle(context),
+                  Align(
+                    alignment: Alignment.center,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        l10n.aboutmeview_title,
+                        textAlign: TextAlign.center,
+                        style: ResponsiveValues.themeDisplayStyle(context),
+                      ),
                     ),
                   ),
                   const AppDivider.horizontal(
@@ -74,15 +80,26 @@ class _AboutMeViewState
                       style: ResponsiveValues.themeBodyStyle(context),
                     ),
                   ),
+                  if (vmState.technologies.isNotEmpty)
+                    _TechStackSection(
+                      key: const Key(AboutMeKeys.techStackSection),
+                      technologies: vmState.technologies,
+                    ),
+                  if (vmState.hobbies.isNotEmpty)
+                    _HobbiesSection(
+                      key: const Key(AboutMeKeys.hobbiesSection),
+                      hobbies: vmState.hobbies,
+                    ),
                 ],
               ),
-              Align(
-                alignment: Alignment.topCenter,
-                child: ConfettiWidget(
-                  confettiController: _confettiController,
-                  blastDirectionality: BlastDirectionality.explosive,
+              if (vmState.isBirthdayToday)
+                Align(
+                  alignment: Alignment.center,
+                  child: ConfettiWidget(
+                    confettiController: _confettiController,
+                    blastDirectionality: BlastDirectionality.explosive,
+                  ),
                 ),
-              ),
             ],
           ),
         );
@@ -97,5 +114,72 @@ class _AboutMeViewState
   void dispose() {
     _confettiController.dispose();
     super.dispose();
+  }
+}
+
+class _TechStackSection extends StatelessWidget {
+  final List<Technology> technologies;
+
+  const _TechStackSection({
+    super.key,
+    required this.technologies,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        veryLargeMarginGap,
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            l10n(context).aboutmeview_techstack_title,
+            style: ResponsiveValues.themeTitleStyle(context),
+          ),
+        ),
+        defaultMarginGap,
+        Wrap(
+          spacing: Dimens.smallMargin,
+          runSpacing: Dimens.smallMargin,
+          children: technologies
+              .map(
+                (t) => Chip(
+                  avatar: Icon(t.icon),
+                  label: Text(t.name),
+                  labelStyle: ResponsiveValues.themeBodyStyle(context),
+                ),
+              )
+              .toList(),
+        )
+      ],
+    );
+  }
+}
+
+class _HobbiesSection extends StatelessWidget {
+  final List<Hobby> hobbies;
+
+  const _HobbiesSection({
+    super.key,
+    required this.hobbies,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        veryLargeMarginGap,
+        Align(
+          alignment: Alignment.center,
+          child: Text(
+            l10n(context).aboutmeview_hobbies_title,
+            style: ResponsiveValues.themeTitleStyle(context),
+          ),
+        ),
+        defaultMarginGap,
+      ],
+    );
   }
 }
