@@ -14,5 +14,6 @@ class ExperienceViewModel
   void onInitState() {
     super.onInitState();
     vmState.experiences.addAll(_personalDataInteractor.experiences);
+    vmState.otherExperiences.addAll(_personalDataInteractor.otherExperiences);
   }
 }

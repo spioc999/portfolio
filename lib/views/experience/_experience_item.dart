@@ -25,9 +25,10 @@ class ExperienceItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              experience.role(l10n(context)),
-              style: ResponsiveValues.themeHeadingStyle(context)?.copyWith(
+              experience.role(l10n(context)).toUpperCase(),
+              style: ResponsiveValues.themeTitleStyle(context)?.copyWith(
                 height: Dimens.one,
+                fontWeight: FontWeight.bold,
               ),
             ),
             smallMarginGap,

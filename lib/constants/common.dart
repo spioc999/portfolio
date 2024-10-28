@@ -48,6 +48,7 @@ const largeMarginGap = Gap(Dimens.largeMargin);
 const veryLargeMarginGap = Gap(Dimens.veryLargeMargin);
 const extraLargeMarginGap = Gap(Dimens.extraLargeMargin);
 const gigantMarginGap = Gap(Dimens.gigantMargin);
+const superGigantMarginGap = Gap(Dimens.superGigantMargin);
 
 const dateFormatMonth = 'MMM';
 const dateFormatMonthAndYear = 'MMM yyyy';
