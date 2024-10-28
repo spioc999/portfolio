@@ -41,19 +41,22 @@ class _ExperienceViewState extends BaseState<
                 height: Dimens.tightDividerThickness,
               ),
               ...vmState.experiences.map(
-                (e) => ExperienceItem(experience: e),
+                (e) => ExperienceItem(
+                  experience: e,
+                  onLinkTap: viewModel.onLinkTap,
+                ),
               ),
               if (vmState.otherExperiences.isNotEmpty) ...[
                 superGigantMarginGap,
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    l10n.experienceview_otherexperiences_label,
-                    style: ResponsiveValues.themeHeadingStyle(context),
-                  ),
+                Text(
+                  l10n.experienceview_otherexperiences_label,
+                  style: ResponsiveValues.themeHeadingStyle(context),
                 ),
                 ...vmState.otherExperiences.map(
-                  (oE) => ExperienceItem(experience: oE),
+                  (oE) => ExperienceItem(
+                    experience: oE,
+                    onLinkTap: viewModel.onLinkTap,
+                  ),
                 )
               ]
             ],

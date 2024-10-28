@@ -45,4 +45,6 @@ class Dimens {
   static const double defaultCardHeight = 208.0;
 
   static const double maxContentWidth = 1080.0;
+
+  static const double defaultLogoSize = 52.0;
 }

@@ -16,4 +16,7 @@ class ExperienceViewModel
     vmState.experiences.addAll(_personalDataInteractor.experiences);
     vmState.otherExperiences.addAll(_personalDataInteractor.otherExperiences);
   }
+
+  @override
+  void onLinkTap(String url) => sourceView.openExternalUrl(url);
 }

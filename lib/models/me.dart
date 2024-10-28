@@ -247,6 +247,8 @@ final simonePioCaronia = Me(
     Experience(
       role: (_) => lastRole,
       company: 'Alpian Technologies',
+      companyUrl: 'https://www.alpiantech.com/',
+      companyImageUrl: Res.jpgExperienceAlpiantech,
       startDateTime: DateTime(2022, 11),
       endDateTime: null,
       workingType: ExperienceWorkingType.remote,
@@ -255,6 +257,8 @@ final simonePioCaronia = Me(
     Experience(
       role: (_) => 'Digital Engineer',
       company: 'NTT Data',
+      companyUrl: 'https://it.nttdata.com/',
+      companyImageUrl: Res.jpgExperienceNttdata,
       startDateTime: DateTime(2020, 9),
       endDateTime: DateTime(2022, 11),
       workingType: ExperienceWorkingType.hybrid,
@@ -263,6 +267,8 @@ final simonePioCaronia = Me(
     Experience(
       role: (_) => 'Junior Mobile Developer',
       company: 'NTT Data',
+      companyUrl: 'https://it.nttdata.com/',
+      companyImageUrl: Res.jpgExperienceNttdata,
       startDateTime: DateTime(2020, 4),
       endDateTime: DateTime(2020, 7),
       workingType: ExperienceWorkingType.internship,
@@ -271,6 +277,8 @@ final simonePioCaronia = Me(
     Experience(
       role: (_) => 'Junior Frontend Developer',
       company: 'NTT Data',
+      companyUrl: 'https://it.nttdata.com/',
+      companyImageUrl: Res.jpgExperienceNttdata,
       startDateTime: DateTime(2019, 3),
       endDateTime: DateTime(2019, 7),
       workingType: ExperienceWorkingType.internship,
@@ -281,6 +289,8 @@ final simonePioCaronia = Me(
     Experience(
       role: (l10n) => l10n.experienceview_shopassistant_jobname,
       company: 'Piggybank',
+      companyUrl: 'https://museumofchildhood.ie/',
+      companyImageUrl: Res.jpgExperiencePiggybank,
       startDateTime: DateTime(2019, 8),
       endDateTime: DateTime(2019, 9),
       workingType: ExperienceWorkingType.summerWorkExperience,
@@ -289,6 +299,8 @@ final simonePioCaronia = Me(
     Experience(
       role: (l10n) => l10n.experienceview_referee_jobname,
       company: 'Federazione Italiana Pallacanestro',
+      companyUrl: 'https://fip.it/',
+      companyImageUrl: Res.jpgExperienceFip,
       startDateTime: DateTime(2015, 11),
       endDateTime: DateTime(2018, 6),
     ),

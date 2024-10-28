@@ -24,7 +24,6 @@ class PortfolioTimeBoundedLayout extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(
-          flex: 4,
           child: Opacity(
             opacity: opacityTimeBounds,
             child: Text(
@@ -35,7 +34,7 @@ class PortfolioTimeBoundedLayout extends StatelessWidget {
           ),
         ),
         defaultMarginGap,
-        Expanded(flex: 10, child: child),
+        Expanded(flex: 2, child: child),
       ],
     );
   }
