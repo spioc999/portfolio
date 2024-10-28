@@ -147,6 +147,7 @@ class PortfolioAppTheming {
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
     cardColor: Colors.white,
     dividerColor: Colors.black,
+    scaffoldBackgroundColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.light,
@@ -159,6 +160,7 @@ class PortfolioAppTheming {
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
     cardColor: Colors.black,
     dividerColor: Colors.white,
+    scaffoldBackgroundColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
       seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
