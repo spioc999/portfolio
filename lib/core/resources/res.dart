@@ -15,4 +15,9 @@ class Res {
   static const jpgExperienceFip = 'assets/imgs/experience_fip.jpg';
   static const jpgExperienceNttdata = 'assets/imgs/experience_nttdata.jpg';
   static const jpgExperiencePiggybank = 'assets/imgs/experience_piggybank.jpg';
+
+  static const jpgEducationElis = 'assets/imgs/education_elis.jpg';
+  static const jpgEducationItis = 'assets/imgs/education_itis.jpg';
+  static const jpgEducationPolimi = 'assets/imgs/education_polimi.jpg';
+  static const jpgEducationUcbm = 'assets/imgs/education_ucbm.jpg';
 }
