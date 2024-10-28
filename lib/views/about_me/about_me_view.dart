@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/constants/keys.dart';
-import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/ui/toolkit/transparent_inkwell.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
+import 'package:spioc_portfolio/views/about_me/_about_me_sections.dart';
 import 'package:spioc_portfolio/views/about_me/about_me_contracts.dart';
 
 class AboutMeView extends BaseMvvmStatefulWidget {
@@ -80,17 +80,17 @@ class _AboutMeViewState
                     )
                   ],
                   if (vmState.technologies.isNotEmpty)
-                    _TechStackSection(
+                    AboutMeTechStackSection(
                       key: const Key(AboutMeKeys.techStackSection),
                       technologies: vmState.technologies,
                     ),
                   if (vmState.softSkills.isNotEmpty)
-                    _SoftSkillsSection(
+                    AboutMeSoftSkillsSection(
                       key: const Key(AboutMeKeys.softSkillsSection),
                       softSkills: vmState.softSkills,
                     ),
                   if (vmState.hobbies.isNotEmpty)
-                    _HobbiesSection(
+                    AboutMeHobbiesSection(
                       key: const Key(AboutMeKeys.hobbiesSection),
                       hobbies: vmState.hobbies,
                     ),
@@ -118,113 +118,5 @@ class _AboutMeViewState
   void dispose() {
     _confettiController.dispose();
     super.dispose();
-  }
-}
-
-class _TechStackSection extends StatelessWidget {
-  final List<Technology> technologies;
-
-  const _TechStackSection({
-    super.key,
-    required this.technologies,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        veryLargeMarginGap,
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-            l10n(context).aboutmeview_techstack_title,
-            style: ResponsiveValues.themeTitleStyle(context),
-          ),
-        ),
-        defaultMarginGap,
-        Wrap(
-          spacing: Dimens.smallMargin,
-          runSpacing: Dimens.smallMargin,
-          alignment: WrapAlignment.center,
-          children: technologies
-              .map(
-                (t) => Chip(
-                  avatar: Icon(t.icon),
-                  label: Text(t.name),
-                  labelStyle: ResponsiveValues.themeBodyStyle(context),
-                ),
-              )
-              .toList(),
-        )
-      ],
-    );
-  }
-}
-
-class _SoftSkillsSection extends StatelessWidget {
-  final List<SoftSkill> softSkills;
-
-  const _SoftSkillsSection({
-    super.key,
-    required this.softSkills,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        veryLargeMarginGap,
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-            l10n(context).aboutmeview_softskills_title,
-            style: ResponsiveValues.themeTitleStyle(context),
-          ),
-        ),
-        defaultMarginGap,
-        Wrap(
-          spacing: Dimens.smallMargin,
-          runSpacing: Dimens.smallMargin,
-          alignment: WrapAlignment.center,
-          children: softSkills
-              .map(
-                (t) => Chip(
-                  label: Text(t.label(l10n(context))),
-                  labelStyle: ResponsiveValues.themeBodyStyle(context),
-                ),
-              )
-              .toList(),
-        )
-      ],
-    );
-  }
-}
-
-class _HobbiesSection extends StatelessWidget {
-  final List<Hobby> hobbies;
-
-  const _HobbiesSection({
-    super.key,
-    required this.hobbies,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        veryLargeMarginGap,
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-            l10n(context).aboutmeview_hobbies_title,
-            style: ResponsiveValues.themeTitleStyle(context),
-          ),
-        ),
-        defaultMarginGap,
-      ],
-    );
   }
 }

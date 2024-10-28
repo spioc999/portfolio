@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
 
 class ResponsiveValues {
   static EdgeInsetsGeometry bodyPadding(BuildContext context) =>
@@ -49,5 +50,12 @@ class ResponsiveValues {
         mobile: Theme.of(context).textTheme.labelMedium,
         tablet: Theme.of(context).textTheme.labelLarge,
         desktop: Theme.of(context).textTheme.labelLarge,
+      );
+
+  static double smallImageSize(BuildContext context) => getValueForScreenType(
+        context: context,
+        mobile: Dimens.defaultSmallImageSize,
+        tablet: Dimens.defaultSmallImageSize + Dimens.largeMargin,
+        desktop: Dimens.defaultSmallImageSize + Dimens.largeMargin,
       );
 }
