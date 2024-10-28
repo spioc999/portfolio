@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
 
@@ -20,6 +21,8 @@ class PortfolioShellNavigatorScaffold extends StatefulWidget {
 
 class _PortfolioShellNavigatorScaffoldState
     extends State<PortfolioShellNavigatorScaffold> {
+  static const bottomDividerHeight = 1.0;
+
   late RouteName selectedRoute;
 
   @override
@@ -39,36 +42,50 @@ class _PortfolioShellNavigatorScaffoldState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // TODO change me
-        leadingWidth: double.maxFinite,
-        leading: Row(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(Dimens.appBarHeight),
+        child: Column(
           children: [
-            const SizedBox(
-              width: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                RoutingHelper.goNamed(context, RouteName.home);
-              },
-              child: Text(
-                  '$initials${selectedRoute == RouteName.home ? "-" : ""}'),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            ...RouteNameExt.pages.map(
-              (route) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: TextButton(
+            Row(
+              children: [
+                ElevatedButton(
                   onPressed: () {
-                    RoutingHelper.goNamed(context, route);
+                    RoutingHelper.goNamed(context, RouteName.home);
                   },
-                  child: Text(
-                    '${route.title(context)}${route == selectedRoute ? "-" : ""}',
+                  style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                        fixedSize: const WidgetStatePropertyAll(
+                          Size(
+                            Dimens.appBarHeight + Dimens.smallMargin,
+                            Dimens.appBarHeight - bottomDividerHeight,
+                          ),
+                        ),
+                      ),
+                  child: const Text(
+                    initials,
                   ),
                 ),
-              ),
+                const SizedBox(
+                  width: 4,
+                ),
+                ...RouteNameExt.pages.map(
+                  (route) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: TextButton(
+                      onPressed: () {
+                        RoutingHelper.goNamed(context, route);
+                      },
+                      child: Text(
+                        '${route.title(context)}${route == selectedRoute ? "-" : ""}',
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              color: Theme.of(context).dividerColor,
+              height: bottomDividerHeight,
+              width: double.infinity,
             ),
           ],
         ),
