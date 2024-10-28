@@ -1,0 +1,81 @@
+name: Build and Deploy
+run-name: ${{ github.actor }} is running out Build and Deploy 🚀
+
+on:
+    workflow_dispatch: #TODO remove me
+    push:
+        branches:
+            - main
+
+jobs:
+    version_check:
+        name: Version Check
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+            - name: Read version of yaml
+              id: read-version
+              uses: jbutcher5/read-yaml@1.6
+              with:
+                file: "pubspec.yaml"
+                key-path: '["version"]'
+            - name: Check tag
+              env:
+                VERSION: ${{ steps.read-version.outputs.data }}
+              run: |-
+                  # Check code tag format
+                  [[  $VERSION =~ ^[0-9]+.[0-9]+.[0-9]+$ ]] || \
+                    (echo $'regex \'^[0-9]+.[0-9]+.[0-9]+$\' was not respected'; exit 99)
+        
+                  # Check code tag uniqueness
+                  git tag | grep "^$VERSION$" && echo "ERROR: TAG EXISTS WITHIN THE REPO!" && exit 99
+                  
+                  echo "Version is valid!" 
+                  echo "VERSION=$VERSION" >> $GITHUB_ENV
+        outputs:
+            version: ${{ steps.read-version.outputs.data }}
+
+    build_and_deploy:
+        name: Build Flutter Web and deploy
+        runs-on: ubuntu-latest
+        needs: version_check
+        env:
+            VERSION: ${{ needs.version_check.outputs.version }}
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+            - name: Set up flutter
+              uses: subosito/flutter-action@v2
+              with:
+                flutter-version: '3.24.x'
+                channel: 'stable'
+            - name: Check flutter and install derry
+              run: |-
+                flutter --version
+                dart pub global activate derry
+            - name: Clean, get and build
+              run: |-
+                derry clean
+                derry build
+            - name: Deploy
+              run: |-
+                cd build/web
+                git init
+                git config --global user.email spc_automatic_deploy@github.com
+                git config --global user.name SPC_AutomaticDeploy
+                git remote add origin https://${{secrets.GH_TOKEN}}@github.com/spioc999/spioc999.github.io.git
+                git checkout main
+                git add --all
+                git commit -m "v${{ env.VERSION }} - SPC's portfolio automatic deploy"
+                git push origin main -f
+
+    detach_tag:
+        name: Detach tags
+        runs-on: ubuntu-latest
+        needs: [version_check, build_and_deploy]
+        env:
+            VERSION: ${{ needs.version_check.outputs.version }}
+        steps:
+            - name: Read 
+              run: echo v${{ env.VERSION }}
