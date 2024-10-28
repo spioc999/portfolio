@@ -185,7 +185,7 @@ class AboutMeProjectsSection extends StatelessWidget {
               .map(
                 (h) => Card(
                   child: Container(
-                    constraints: BoxConstraints.loose(
+                    constraints: BoxConstraints.tight(
                       const Size(
                         Dimens.defaultCardWidth,
                         Dimens.defaultCardHeight,
@@ -250,7 +250,11 @@ class AboutMeCertificationsSection extends StatelessWidget {
                     c.icon,
                     size: Theme.of(context).textTheme.bodyMedium?.fontSize,
                   ),
-                  label: Text(c.label),
+                  label: Text(
+                    c.label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   labelStyle: ResponsiveValues.themeBodyStyle(context),
                 ),
               )
