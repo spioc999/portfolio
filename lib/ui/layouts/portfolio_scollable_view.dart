@@ -8,12 +8,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioScrollableView extends StatelessWidget {
   final Widget body;
-  final bool hasFooter;
+  final bool withFooter;
 
   const PortfolioScrollableView({
     super.key,
     required this.body,
-    this.hasFooter = true,
+    this.withFooter = true,
   });
 
   @override
@@ -25,7 +25,7 @@ class PortfolioScrollableView extends StatelessWidget {
           padding: defaultBodyPadding,
           sliver: SliverToBoxAdapter(child: body),
         ),
-        if (hasFooter) const _PortfolioSliverFooter(),
+        if (withFooter) const _PortfolioSliverFooter(),
       ],
     );
   }

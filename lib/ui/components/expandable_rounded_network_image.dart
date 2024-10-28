@@ -1,30 +1,33 @@
-import 'dart:async';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/animation_duration.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
-import 'package:spioc_portfolio/models/models.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-class PersonalRoundedImages extends StatefulWidget {
-  const PersonalRoundedImages({super.key});
+class ExpandableRoundedNetworkImage extends StatefulWidget {
+  final double size;
+  final String imgUrl;
+  final double expansionSize;
+  final double borderThickness;
+
+  const ExpandableRoundedNetworkImage(
+    this.imgUrl, {
+    super.key,
+    this.size = Dimens.defaultImageSize,
+    this.expansionSize = Dimens.defaultImageExpansionSize,
+    this.borderThickness = Dimens.defaultImageBorderThickness,
+  });
 
   @override
-  State<PersonalRoundedImages> createState() => _PersonalRoundedImagesState();
+  State<ExpandableRoundedNetworkImage> createState() =>
+      _ExpandableRoundedNetworkImageState();
 }
 
-class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
+class _ExpandableRoundedNetworkImageState
+    extends State<ExpandableRoundedNetworkImage>
     with SingleTickerProviderStateMixin {
   late AnimationController _rotationController;
   bool isHovered = false;
-  static const _gradientBorderThickness = 5.0;
   static const _rotationDuration = Duration(seconds: 4);
-  static const _switchingImagesDuration = Duration(seconds: 2);
-
-  late Timer _switchingImagesTimer;
-  final _images = Me.images;
-  late int _imageIndex;
 
   @override
   void initState() {
@@ -33,26 +36,22 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
       duration: _rotationDuration,
       vsync: this,
     )..repeat();
-
-    _imageIndex = Random().nextInt(_images.length);
-    _switchingImagesTimer = Timer.periodic(_switchingImagesDuration, (_) {
-      setState(() => _imageIndex = (_imageIndex + 1) % _images.length);
-    });
   }
 
   double get _dimension =>
-      isHovered ? Dimens.imageSize + Dimens.largeMargin : Dimens.imageSize;
+      isHovered ? widget.size + widget.expansionSize : widget.size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints.loose(
-        const Size.square(Dimens.imageSize + Dimens.veryLargeMargin),
+        Size.square(widget.size + widget.expansionSize),
       ),
       alignment: Alignment.center,
       child: MouseRegion(
         onEnter: (_) => setState(() => isHovered = true),
         onExit: (_) => setState(() => isHovered = false),
+        hitTestBehavior: HitTestBehavior.deferToChild,
         child: Stack(
           children: [
             RotationTransition(
@@ -75,11 +74,11 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
             ),
             Positioned.fill(
               child: Padding(
-                padding: const EdgeInsets.all(_gradientBorderThickness),
+                padding: EdgeInsets.all(widget.borderThickness),
                 child: ClipOval(
                   child: FadeInImage.memoryNetwork(
                     placeholder: kTransparentImage,
-                    image: _images[_imageIndex],
+                    image: widget.imgUrl,
                   ),
                 ),
               ),
@@ -93,7 +92,6 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
   @override
   void dispose() {
     _rotationController.dispose();
-    _switchingImagesTimer.cancel();
     super.dispose();
   }
 }
