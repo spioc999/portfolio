@@ -1,3 +1,5 @@
+import 'package:collection/collection.dart';
+import 'package:simple_icons/simple_icons.dart';
 import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/about_me/about_me_contracts.dart';
@@ -24,6 +26,9 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
     vmState.softSkills.addAll(about.softSkills);
     vmState.hobbies.addAll(about.hobbies);
     vmState.projects.addAll(about.projects);
+    vmState.moreProjectsLink = _personalDataInteractor.contacts
+        .firstWhereOrNull((c) => c.icon == SimpleIcons.github)
+        ?.link;
     vmState.certifications.addAll(about.certifications);
   }
 
