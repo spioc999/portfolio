@@ -1,7 +1,7 @@
 name: spioc_portfolio
 description: "Simone Pio's portofolio website"
 publish_to: 'none'
-version: 1.2.7
+version: 1.2.8
 
 environment:
   sdk: '>=3.4.0 <4.0.0'
@@ -25,13 +25,15 @@ dependencies:
   gap: ^3.0.1
   transparent_image: ^2.0.1
   simple_icons: ^10.1.3
-  confetti: ^0.7.0
+  confetti: ^0.8.0
   flutter_markdown: ^0.7.3+1
+  cross_file: ^0.3.4+2
+  universal_html: ^2.2.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   generate: true
@@ -39,6 +41,7 @@ flutter:
 
   assets:
     - assets/imgs/
+    - assets/pdfs/
 
   fonts:
     - family: Bebas Neue

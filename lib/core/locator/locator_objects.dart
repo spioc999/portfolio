@@ -13,5 +13,6 @@ void setupLocatorObjects({bool isTesting = false}) {
       return sharedPref;
     });
     getIt.registerSingleton<DateTimeService>(DateTimeService());
+    getIt.registerSingleton<FileService>(FileService());
   }
 }

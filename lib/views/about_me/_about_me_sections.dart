@@ -9,6 +9,79 @@ import 'package:spioc_portfolio/ui/toolkit/transparent_inkwell.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 
+class AboutMeDownloadCv extends StatelessWidget {
+  final bool isDowloading;
+  final GestureTapCallback onDownloadTap;
+
+  const AboutMeDownloadCv({
+    super.key,
+    required this.isDowloading,
+    required this.onDownloadTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: Dimens.largeMargin,
+        left: Dimens.defaultMargin,
+        right: Dimens.defaultMargin,
+      ),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints.tightFor(
+            width: Dimens.maxButtonWidth,
+          ),
+          child: OutlinedButton(
+            onPressed: isDowloading ? null : onDownloadTap,
+            style: Theme.of(context).outlinedButtonTheme.style?.copyWith(
+                  padding: const WidgetStatePropertyAll(
+                    EdgeInsets.all(Dimens.largeMargin),
+                  ),
+                  shape: const WidgetStatePropertyAll(
+                    RoundedRectangleBorder(
+                      borderRadius: defaultBorderRadius,
+                    ),
+                  ),
+                ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: isDowloading
+                      ? const SizedBox.square(
+                          dimension: Dimens.defaultBigIconSize,
+                          child: Padding(
+                            padding: EdgeInsets.all(Dimens.extraSmallMargin),
+                            child: CircularProgressIndicator(),
+                          ),
+                        )
+                      : const Icon(
+                          Icons.download,
+                          size: Dimens.defaultBigIconSize,
+                        ),
+                ),
+                Flexible(
+                  flex: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: Dimens.smallMargin,
+                    ),
+                    child: Text(
+                      l10n(context).aboutmeview_downloadmycv,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class AboutMeIntroSection extends StatelessWidget {
   final String intro;
   final bool isBirthdayToday;

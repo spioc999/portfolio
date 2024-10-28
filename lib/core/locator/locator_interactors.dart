@@ -13,6 +13,7 @@ void setupLocatorInteractors() {
     () => PersonalDataInteractor(
       personalDataService: getIt<PersonalDataService>(),
       dateTimeService: getIt<DateTimeService>(),
+      fileService: getIt<FileService>(),
     ),
   );
 }

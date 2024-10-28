@@ -63,6 +63,12 @@ class _PortfolioNavigationScaffoldState
     RoutingHelper.goNamed(context, route);
   }
 
+  TextStyle get _boldAndUnderlined => const TextStyle(
+        decoration: TextDecoration.underline,
+        decorationThickness: 2.0,
+        fontWeight: FontWeight.bold,
+      );
+
   @override
   Widget build(BuildContext context) {
     final languageCode = Localizations.localeOf(context).languageCode;
@@ -106,16 +112,25 @@ class _PortfolioNavigationScaffoldState
                             (route) => TextButton(
                               onPressed: () => _onPageTap(route),
                               style: _navigationAndSettingsButtonStyle,
-                              child: Text(
-                                route.title(context)?.toUpperCase() ??
-                                    emptyString,
-                                style: route == selectedRoute
-                                    ? const TextStyle(
-                                        decoration: TextDecoration.underline,
-                                        decorationThickness: 2.0,
-                                        fontWeight: FontWeight.bold,
-                                      )
-                                    : null,
+                              child: Stack(
+                                children: [
+                                  //To avoid shift behaviour of buttons
+                                  Opacity(
+                                    opacity: Dimens.zero,
+                                    child: Text(
+                                      route.title(context)?.toUpperCase() ??
+                                          emptyString,
+                                      style: _boldAndUnderlined,
+                                    ),
+                                  ),
+                                  Text(
+                                    route.title(context)?.toUpperCase() ??
+                                        emptyString,
+                                    style: route == selectedRoute
+                                        ? _boldAndUnderlined
+                                        : null,
+                                  ),
+                                ],
                               ),
                             ),
                           )
