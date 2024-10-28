@@ -1,9 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_markdown.dart';
+import 'package:spioc_portfolio/ui/components/institute_widget.dart';
 import 'package:spioc_portfolio/ui/components/logo_squared_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -24,8 +24,6 @@ class EducationItem extends StatefulWidget {
 }
 
 class _EducationItemState extends State<EducationItem> {
-  bool onHoverInstituteName = false;
-
   Education get _education => widget.education;
 
   @override
@@ -54,27 +52,11 @@ class _EducationItemState extends State<EducationItem> {
                     ),
                   ),
                   smallMarginGap,
-                  Text.rich(
-                    TextSpan(
-                      style: ResponsiveValues.themeBodyStyle(context),
-                      children: [
-                        const TextSpan(text: '@ '),
-                        TextSpan(
-                          text: _education.institute(l10n),
-                          style: onHoverInstituteName
-                              ? const TextStyle(
-                                  decoration: TextDecoration.underline)
-                              : null,
-                          onEnter: (_) =>
-                              setState(() => onHoverInstituteName = true),
-                          onExit: (_) =>
-                              setState(() => onHoverInstituteName = false),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap =
-                                () => widget.onLinkTap(_education.instituteUrl),
-                        ),
-                      ],
-                    ),
+                  AtPlaceClickable(
+                    place: _education.institute(l10n),
+                    link: _education.instituteUrl,
+                    onLinkTap: widget.onLinkTap,
+                    style: ResponsiveValues.themeBodyStyle(context),
                   ),
                   if (_education.grade != null) ...[
                     smallMarginGap,
