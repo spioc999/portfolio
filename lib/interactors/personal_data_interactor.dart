@@ -1,4 +1,3 @@
-import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/modules/modules.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -42,8 +41,5 @@ class PersonalDataInteractor {
 
   List<Education> get educations => _personalData.educations;
 
-  Future<void> downloadCv() => _fileService.downloadFile(
-        about.cvUrl!,
-        '$fullName $cvString',
-      );
+  Future<void> downloadCvFile() => _fileService.openAssetFile(about.cvUrl!);
 }

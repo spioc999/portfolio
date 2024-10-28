@@ -35,7 +35,7 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
   void onDownloadCvTap() async {
     _setIsDownloadingCv(true);
 
-    await _personalDataInteractor.downloadCv();
+    await _personalDataInteractor.downloadCvFile();
 
     _setIsDownloadingCv(false);
   }
