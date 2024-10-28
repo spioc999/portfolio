@@ -9,6 +9,7 @@ class Me {
   final String lastName;
   final String role;
   final List<Contact> contacts;
+  final String? projectsUrl;
   final DateTime dateOfBirth;
   final List<String> imageUrls;
 
@@ -21,6 +22,7 @@ class Me {
     required this.firstName,
     required this.lastName,
     required this.contacts,
+    this.projectsUrl,
     required this.dateOfBirth,
     required this.imageUrls,
     required this.role,
@@ -51,6 +53,7 @@ final simonePioCaronia = Me(
       icon: SimpleIcons.instagram,
     ),
   ],
+  projectsUrl: 'https://github.com/spioc999?tab=repositories',
   dateOfBirth: DateTime(1999, 10, 20),
   imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
   about: About(
@@ -99,10 +102,6 @@ final simonePioCaronia = Me(
       Technology(
         icon: SimpleIcons.databricks,
         name: 'SQL',
-      ),
-      Technology(
-        icon: SimpleIcons.javascript,
-        name: 'JavaScript',
       ),
       Technology(
         icon: SimpleIcons.oracle,

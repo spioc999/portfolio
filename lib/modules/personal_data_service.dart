@@ -11,6 +11,7 @@ class PersonalDataService {
   String get role => _me.role;
 
   List<Contact> get contacts => _me.contacts;
+  String? get projectsUrl => _me.projectsUrl;
   List<String> get imageUrls => _me.imageUrls;
   String get fullName => _me.fullName;
   DateTime get dateOfBirth => _me.dateOfBirth;
