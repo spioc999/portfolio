@@ -1,11 +1,9 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
-import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/constants/keys.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
-import 'package:spioc_portfolio/ui/toolkit/transparent_inkwell.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
@@ -53,9 +51,9 @@ class _AboutMeViewState
                   const AppDivider.horizontal(
                     height: Dimens.tightDividerThickness,
                   ),
-                  veryLargeMarginGap,
-                  Text(
-                    vmState.intro(
+                  AboutMeIntroSection(
+                    key: const Key(AboutMeKeys.introSection),
+                    intro: vmState.intro(
                       l10n,
                       {
                         'firstName': vmState.firstName,
@@ -63,22 +61,9 @@ class _AboutMeViewState
                         'yearsOld': vmState.yearsOld,
                       },
                     ),
-                    style: ResponsiveValues.themeBodyStyle(context),
+                    isBirthdayToday: vmState.isBirthdayToday,
+                    onLetsCelebrateTap: viewModel.onLetsCelebrateTap,
                   ),
-                  if (vmState.isBirthdayToday) ...[
-                    defaultMarginGap,
-                    TransparentInkWell(
-                      key: const Key(AboutMeKeys.letsCelebrateLabel),
-                      onTap: viewModel.onLetsCelebrateTap,
-                      child: Text(
-                        l10n.aboutmeview_letscelebrate,
-                        style:
-                            ResponsiveValues.themeBodyStyle(context)?.copyWith(
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    )
-                  ],
                   if (vmState.technologies.isNotEmpty)
                     AboutMeTechStackSection(
                       key: const Key(AboutMeKeys.techStackSection),

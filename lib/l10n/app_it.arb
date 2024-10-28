@@ -9,6 +9,7 @@
   "aboutmeview_title": "Chi sono",
   "aboutmeview_intro": "Ciao👋! Mi chiamo {firstName}, ho {yearsOld} anni e lavoro come {role}. Mi descrivo come una persona molto determinata, che vuole sempre imparare cose nuove e cercare di capirne tutti gli aspetti.\n\nLa mia passione per la tecnologia è nata nella mia amata terra natale, la splendida Sicilia. Oltre alla tecnologia, sono un grande appassionato di sport e musica, che occupano un posto speciale nella mia vita.\nMolto importanti sono state le mie esperienze all'estero, che hanno arricchito il mio bagaglio culturale e professionale, permettendomi di crescere notevolmente. Le amicizie strette durante gli anni hanno avuto un impatto significativo su di me, insegnandomi il valore della diversità e della collaborazione.",
   "aboutmeview_letscelebrate": "PS: Oggi è il mio compleanno, festeggiamo!🎉",
+  "aboutmeview_intro_title": "Intro",
   "aboutmeview_techstack_title": "Tecnologie",
   "aboutmeview_softskills_title": "Soft Skill",
   "aboutmeview_softskills_problemsolving": "Problem Solving",
