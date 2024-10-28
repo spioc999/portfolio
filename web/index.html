@@ -57,25 +57,25 @@
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
-    
     .loader {
-      /* border and border-top should match the app theme */
-      border: 4px solid #FFFFFF;
-      border-top: 4px solid #000;
-      border-radius: 50%;
-      /* similar size to CircularProgressIndicator */
-      width: 35px;
-      height: 35px;
-      /* similar animation to CircularProgressIndicator */
-      animation: spin 1s linear infinite;
+      width: 60px;
+      aspect-ratio: 1;
+      --c: no-repeat linear-gradient(#000 0 0);
+      background: 
+        var(--c) 0%   50%,
+        var(--c) 50%  50%,
+        var(--c) 100% 50%;
+      background-size: 20% 100%;
+      animation: l1 1s infinite linear;
     }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes l1 {
+      0%  {background-size: 20% 100%,20% 100%,20% 100%}
+      33% {background-size: 20% 10% ,20% 100%,20% 100%}
+      50% {background-size: 20% 100%,20% 10% ,20% 100%}
+      66% {background-size: 20% 100%,20% 100%,20% 10% }
+      100%{background-size: 20% 100%,20% 100%,20% 100%}
     }
   </style>
-
 </head>
 <body>
   <script>
