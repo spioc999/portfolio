@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -27,17 +28,16 @@ class _AboutMeViewState
                 child: Text(
                   l10n.aboutmeview_title,
                   textAlign: TextAlign.center,
-                  style: ResponsiveHelper.themeDisplayStyle(context),
+                  style: ResponsiveValues.themeDisplayStyle(context),
                 ),
               ),
-              defaultMarginGap,
               const AppDivider.horizontal(
-                height: 0.5,
+                height: Dimens.tightDividerThickness,
               ),
-              defaultMarginGap,
+              veryLargeMarginGap,
               Text(
                 vmState.intro(l10n, {'yearsOld': vmState.yearsOld}),
-                style: ResponsiveHelper.themeBodyStyle(context),
+                style: ResponsiveValues.themeBodyStyle(context),
                 textAlign: TextAlign.left,
               ),
             ],

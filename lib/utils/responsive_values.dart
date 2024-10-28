@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:spioc_portfolio/constants/common.dart';
 
-class ResponsiveHelper {
+class ResponsiveValues {
+  static EdgeInsetsGeometry bodyPadding(BuildContext context) =>
+      getValueForScreenType(
+        context: context,
+        mobile: defaultBodyPadding,
+        tablet: tabletBodyPadding,
+        desktop: desktopBodyPadding,
+      );
+
   static TextStyle? themeDisplayStyle(BuildContext context) =>
       getValueForScreenType(
         context: context,

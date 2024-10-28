@@ -25,7 +25,7 @@ class _EducationViewState
                 child: Text(
                   l10n.educationview_title,
                   textAlign: TextAlign.center,
-                  style: ResponsiveHelper.themeDisplayStyle(context),
+                  style: ResponsiveValues.themeDisplayStyle(context),
                 ),
               ),
             ],

@@ -30,17 +30,17 @@ class _NotFoundViewState
                   Text(
                     l10n.notfoundview_errorcode,
                     textAlign: TextAlign.center,
-                    style: ResponsiveHelper.themeDisplayStyle(context),
+                    style: ResponsiveValues.themeDisplayStyle(context),
                   ),
                   Text(
                     l10n.notfoundview_title,
-                    style: ResponsiveHelper.themeTitleStyle(context),
+                    style: ResponsiveValues.themeTitleStyle(context),
                     textAlign: TextAlign.center,
                   ),
                   defaultMarginGap,
                   Text(
                     l10n.notfoundview_subtitle,
-                    style: ResponsiveHelper.themeBodyStyle(context),
+                    style: ResponsiveValues.themeBodyStyle(context),
                     textAlign: TextAlign.center,
                   ),
                 ],
