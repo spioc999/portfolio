@@ -32,7 +32,7 @@ The entire architecture uses the ***get_it*** service locator and abstract class
 - **`lib/app/`** contains the main `MaterialApp` widget and theming setup.
 - **`lib/core/`** contains responsive and routing configurations, factory and singleton registration using `get_it`, and general providers for dynamically changing the language or theme.
 - **`lib/interactors/`** contains the interactors for performing operations in cache or retrieving data.
-- **`lib/l10n/` and `l10n.yaml`** contain localized labels and configuration for multiple languages.
+- **`lib/l10n/`** and **`l10n.yaml`** contain localized labels and configuration for multiple languages.
 - **`lib/models/`** contains all internal model classes used within the app.
 - **`lib/ui/`** contains all UI components used in the app, which also handle responsiveness and scrolling behavior.
 - **`lib/utils/`** contains useful extensions, typedefs, and validation methods.
