@@ -9,8 +9,5 @@ void emptyCallback() {}
 
 const ScrollPhysics defaultScrollPhysics = ClampingScrollPhysics();
 
-const initials = 'SPC';
-const fullName = 'Simone Pio Caronia';
-
 const defaultHorizontalPadding =
     EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingDefault);

@@ -8,4 +8,10 @@ void setupLocatorInteractors() {
       sharedPref: getIt<SharedPref>(),
     ),
   );
+
+  getIt.registerFactory<PersonalDataInteractor>(
+    () => PersonalDataInteractor(
+      personalDataService: getIt<PersonalDataService>(),
+    ),
+  );
 }

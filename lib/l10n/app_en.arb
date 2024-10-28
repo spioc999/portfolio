@@ -1,6 +1,7 @@
 {
   "@@locale": "en",
   "generic_error": "Ops, something went wrong!",
+  "me_role": "Flutter & AI Engineer",
   "aboutmeview_title": "About me",
   "experienceview_title": "Experience",
   "educationview_title": "Education",
