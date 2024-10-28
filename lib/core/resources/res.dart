@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Res {
   static const jpgMeSerious = 'assets/imgs/me_serious.jpg';
   static const jpgMeSmiling = 'assets/imgs/me_smiling.jpg';
@@ -21,4 +23,7 @@ class Res {
   static const jpgEducationPolimi = 'assets/imgs/education_polimi.jpg';
   static const jpgEducationUcbm = 'assets/imgs/education_ucbm.jpg';
   static const jpgEducationTorquay = 'assets/imgs/education_torquay.jpg';
+
+  static String resolvePath(String path) =>
+      kReleaseMode ? 'assets/$path' : path;
 }
