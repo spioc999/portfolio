@@ -34,11 +34,13 @@ class Me {
   String get fullName => '$firstName $lastName';
 }
 
+const lastRole = 'Flutter & AI Engineer';
+
 final simonePioCaronia = Me(
   initials: 'SPC',
   firstName: 'Simone Pio',
   lastName: 'Caronia',
-  role: 'Flutter & AI Engineer',
+  role: lastRole,
   contacts: [
     Contact(
       link: 'https://github.com/spioc999/',
@@ -241,22 +243,40 @@ final simonePioCaronia = Me(
   ),
   experiences: [
     Experience(
-      role: 'Flutter & AI Engineer',
+      role: (_) => lastRole,
       company: 'Alpian Technologies',
       startDateTime: DateTime(2022, 11),
       endDateTime: null,
     ),
     Experience(
-      role: 'Digital Engineer',
+      role: (_) => 'Digital Engineer',
       company: 'NTT Data',
       startDateTime: DateTime(2020, 9),
       endDateTime: DateTime(2022, 11),
     ),
     Experience(
-      role: 'Mobile Engineer',
-      company: 'NTT Data Int',
+      role: (_) => 'Mobile Developer Intern',
+      company: 'NTT Data',
       startDateTime: DateTime(2020, 4),
       endDateTime: DateTime(2020, 7),
+    ),
+    Experience(
+      role: (_) => 'Shop Assistant',
+      company: 'eduVentute',
+      startDateTime: DateTime(2019, 8),
+      endDateTime: DateTime(2019, 9),
+    ),
+    Experience(
+      role: (_) => 'Frontend Developer Intern',
+      company: 'NTT Data',
+      startDateTime: DateTime(2019, 3),
+      endDateTime: DateTime(2019, 7),
+    ),
+    Experience(
+      role: (_) => 'Basketball Referee',
+      company: 'Federazione Italiana Pallacanestro',
+      startDateTime: DateTime(2015, 11),
+      endDateTime: DateTime(2018, 6),
     ),
   ],
   educations: [Education()],
