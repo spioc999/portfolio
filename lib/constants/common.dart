@@ -8,6 +8,7 @@ const emptyWidget = SizedBox();
 const emptyString = '';
 const whitespaceString = ' ';
 const dashWithSpacingString = ' - ';
+const cvString = 'CV';
 
 const loading = 'Loading...';
 const technologyName = 'Flutter';

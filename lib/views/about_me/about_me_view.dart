@@ -6,7 +6,6 @@ import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
-import 'package:spioc_portfolio/utils/validation_utils.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/about_me/_about_me_sections.dart';
 import 'package:spioc_portfolio/views/about_me/about_me_contracts.dart';
@@ -52,7 +51,7 @@ class _AboutMeViewState
                   const AppDivider.horizontal(
                     height: Dimens.tightDividerThickness,
                   ),
-                  if (!isNullOrEmpty(vmState.cvUrl))
+                  if (vmState.hasCv)
                     AboutMeDownloadCv(
                       isDowloading: vmState.isDownloadingCv,
                       onDownloadTap: viewModel.onDownloadCvTap,

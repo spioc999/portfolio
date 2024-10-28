@@ -13,7 +13,7 @@ abstract class AboutMeViewModelContract
 }
 
 class AboutMeState extends BaseVMState {
-  String? cvUrl;
+  late bool hasCv;
   late String firstName;
   late int yearsOld;
   late ParamLocalizedString intro;
