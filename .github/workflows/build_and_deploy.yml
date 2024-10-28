@@ -1,8 +1,7 @@
 name: Build and Deploy
-run-name: ${{ github.actor }} is running Build and Deploy 🚀
+run-name: ${{ github.actor }} is running "Build and Deploy" 🚀
 
 on:
-    workflow_dispatch: #TODO remove me
     push:
         branches:
             - main
@@ -82,6 +81,8 @@ jobs:
         steps:
             - name: Checkout repo
               uses: actions/checkout@v4
+              with:
+                token: ${{ secrets.GH_TOKEN }}
             - name: Setup Git
               run: |-
                 git config --global user.name ${{ env.GH_USERNAME }}
@@ -93,7 +94,7 @@ jobs:
             - name: Create release
               uses: actions/create-release@v1
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
               with:
                 tag_name: ${{ env.TAG_VERSION }}
                 release_name: Release ${{ env.TAG_VERSION }}
