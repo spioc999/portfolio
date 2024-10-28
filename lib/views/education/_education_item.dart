@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 import 'package:spioc_portfolio/models/models.dart';
+import 'package:spioc_portfolio/ui/components/app_markdown.dart';
 import 'package:spioc_portfolio/ui/components/logo_squared_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_time_bounded_layout.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -75,7 +76,22 @@ class _EducationItemState extends State<EducationItem> {
                       ],
                     ),
                   ),
-                  smallMarginGap,
+                  if (_education.grade != null) ...[
+                    smallMarginGap,
+                    Text(
+                      l10n.educationview_grade_label(_education.grade!(l10n)),
+                      style: ResponsiveValues.themeBodyStyle(context)?.copyWith(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                  if (_education.description != null) ...[
+                    smallMarginGap,
+                    AppMarkdown(
+                      data: _education.description!(l10n),
+                    ),
+                  ]
                 ],
               ),
             ),
