@@ -305,5 +305,5 @@ final simonePioCaronia = Me(
       endDateTime: DateTime(2018, 6),
     ),
   ],
-  educations: [Education()],
+  educations: [], //TODO
 );

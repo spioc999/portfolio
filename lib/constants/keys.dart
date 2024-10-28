@@ -11,8 +11,10 @@ class AboutMeKeys {
 }
 
 class ExperienceKeys {
-  static String item(String position, String company) =>
-      'experience_item_$position@$company';
-  static String otherItem(String position, String company) =>
-      'experience_otherItem_$position@$company';
+  static String item(String id) => 'experience_item_$id';
+  static String otherItem(String id) => 'experience_otherItem_$id';
+}
+
+class EducationKeys {
+  static String item(String id) => 'education_item_$id';
 }

@@ -73,7 +73,8 @@ class _ExperienceItemState extends State<ExperienceItem> {
                       ],
                     ),
                   ),
-                  if (widget.experience.hasLocalityOrWorkingType) ...[
+                  if (widget.experience.locality != null ||
+                      widget.experience.workingType != null) ...[
                     verySmallMarginGap,
                     Text.rich(
                       TextSpan(

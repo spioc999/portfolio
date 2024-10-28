@@ -43,7 +43,7 @@ class _ExperienceViewState extends BaseState<
               ),
               ...vmState.experiences.map(
                 (e) => ExperienceItem(
-                  key: Key(ExperienceKeys.item(e.role(l10n), e.company)),
+                  key: Key(ExperienceKeys.item(e.identifier)),
                   experience: e,
                   onLinkTap: viewModel.onLinkTap,
                 ),
@@ -57,7 +57,7 @@ class _ExperienceViewState extends BaseState<
                 ...vmState.otherExperiences.map(
                   (oE) => ExperienceItem(
                     key: Key(
-                      ExperienceKeys.otherItem(oE.role(l10n), oE.company),
+                      ExperienceKeys.otherItem(oE.identifier),
                     ),
                     experience: oE,
                     onLinkTap: viewModel.onLinkTap,
