@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/core/providers.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
-import 'package:spioc_portfolio/models/models.dart';
+import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 
@@ -27,6 +28,7 @@ class PortfolioShellNavigatorScaffold extends StatefulWidget {
 class _PortfolioShellNavigatorScaffoldState
     extends State<PortfolioShellNavigatorScaffold> {
   static const bottomDividerHeight = 1.0;
+  late String initials;
 
   ButtonStyle? get _navigationAndSettingsButtonStyle =>
       Theme.of(context).textButtonTheme.style?.copyWith(
@@ -43,6 +45,7 @@ class _PortfolioShellNavigatorScaffoldState
   void initState() {
     super.initState();
     selectedRoute = widget.route;
+    initials = getIt<PersonalDataInteractor>().initials;
   }
 
   @override
@@ -86,9 +89,9 @@ class _PortfolioShellNavigatorScaffoldState
                                   ),
                                 ),
                               ),
-                          child: const Text(
-                            Me.initials,
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          child: Text(
+                            initials,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
                         ...RouteNameExt.pages.map(

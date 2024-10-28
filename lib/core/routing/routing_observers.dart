@@ -1,8 +1,9 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';
+import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_config.dart';
-import 'package:spioc_portfolio/models/models.dart';
+import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/utils/web_utils.dart';
 
 class WebAppTitleNavigationObserver extends NavigatorObserver {
@@ -38,7 +39,9 @@ class WebAppTitleNavigationObserver extends NavigatorObserver {
       prefix = routeEnum.title(context);
     }
 
-    final title = prefix != null ? '$prefix | ${Me.fullName}' : Me.fullName;
+    final fullName = getIt<PersonalDataInteractor>().fullName;
+
+    final title = prefix != null ? '$prefix | $fullName' : fullName;
     WebUtils.setTitle(title);
   }
 }

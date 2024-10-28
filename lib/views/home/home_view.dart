@@ -4,7 +4,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
-import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/expandable_rounded_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -25,11 +24,11 @@ class _HomeViewState
   late int _imageIndex;
 
   @override
-  void initState() {
-    super.initState();
-    _imageIndex = Random().nextInt(Me.images.length);
+  void initializeImagesTimer() {
+    _imageIndex = Random().nextInt(vmState.imageUrls.length);
     _switchingImagesTimer = Timer.periodic(_switchingImagesDuration, (_) {
-      setState(() => _imageIndex = (_imageIndex + 1) % Me.images.length);
+      setState(
+          () => _imageIndex = (_imageIndex + 1) % vmState.imageUrls.length);
     });
   }
 
@@ -41,28 +40,31 @@ class _HomeViewState
         return PortfolioScrollableView(
           body: FittedBox(
             fit: BoxFit.scaleDown,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ExpandableRoundedNetworkImage(Me.images[_imageIndex]),
-                const Gap(Dimens.defaultMargin),
-                Text(
-                  Me.firstName,
-                  style: ResponsiveHelper.themeDisplayStyle(context),
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  Me.lastName,
-                  style: ResponsiveHelper.themeDisplayStyle(context),
-                  textAlign: TextAlign.center,
-                ),
-                const Gap(Dimens.defaultMargin),
-                Text(
-                  vmState.role(l10n),
-                  style: ResponsiveHelper.themeTitleStyle(context),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: Dimens.largeMargin),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ExpandableRoundedNetworkImage(vmState.imageUrls[_imageIndex]),
+                  const Gap(Dimens.defaultMargin),
+                  Text(
+                    vmState.firstName,
+                    style: ResponsiveHelper.themeDisplayStyle(context),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    vmState.lastName,
+                    style: ResponsiveHelper.themeDisplayStyle(context),
+                    textAlign: TextAlign.center,
+                  ),
+                  const Gap(Dimens.defaultMargin),
+                  Text(
+                    vmState.role(l10n),
+                    style: ResponsiveHelper.themeTitleStyle(context),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
           ),
         );

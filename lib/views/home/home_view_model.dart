@@ -13,5 +13,9 @@ class HomeViewModel extends BaseViewModel<HomeViewContract, HomeState>
   void onInitState() {
     super.onInitState();
     vmState.role = _personalDataInteractor.role;
+    vmState.firstName = _personalDataInteractor.firstName;
+    vmState.lastName = _personalDataInteractor.lastName;
+    vmState.imageUrls = _personalDataInteractor.imageUrls;
+    sourceView.initializeImagesTimer();
   }
 }
