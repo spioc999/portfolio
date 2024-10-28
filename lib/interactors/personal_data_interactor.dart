@@ -1,5 +1,6 @@
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/modules/modules.dart';
+import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/typedefs.dart';
 
 class PersonalDataInteractor {
@@ -15,10 +16,14 @@ class PersonalDataInteractor {
   int get yearsOld =>
       _dateTimeService.localNow.difference(dateOfBirth).inDays ~/ 365;
 
+  bool get isBirthdayToday =>
+      _dateTimeService.localNow.isSameDayAndMonth(_personalData.dateOfBirth);
+
   String get initials => _personalData.initials;
   String get firstName => _personalData.firstName;
   String get lastName => _personalData.lastName;
   String get fullName => _personalData.fullName;
+  List<Contact> get contacts => _personalData.contacts;
   List<String> get imageUrls => _personalData.imageUrls;
   DateTime get dateOfBirth => _personalData.dateOfBirth;
 

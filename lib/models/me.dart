@@ -5,6 +5,7 @@ class Me {
   final String initials;
   final String firstName;
   final String lastName;
+  final List<Contact> contacts;
   final DateTime dateOfBirth;
   final List<String> imageUrls;
 
@@ -17,6 +18,7 @@ class Me {
     required this.initials,
     required this.firstName,
     required this.lastName,
+    required this.contacts,
     required this.dateOfBirth,
     required this.imageUrls,
     required this.role,

@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/components/expandable_rounded_network_image.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
@@ -40,31 +41,42 @@ class _HomeViewState
         return PortfolioScrollableView(
           body: FittedBox(
             fit: BoxFit.scaleDown,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: Dimens.largeMargin),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ExpandableRoundedNetworkImage(vmState.imageUrls[_imageIndex]),
-                  defaultMarginGap,
-                  Text(
-                    vmState.firstName,
-                    style: ResponsiveValues.themeDisplayStyle(context),
-                    textAlign: TextAlign.center,
-                  ),
-                  Text(
-                    vmState.lastName,
-                    style: ResponsiveValues.themeDisplayStyle(context),
-                    textAlign: TextAlign.center,
-                  ),
-                  defaultMarginGap,
-                  Text(
-                    vmState.role(l10n),
-                    style: ResponsiveValues.themeTitleStyle(context),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ExpandableRoundedNetworkImage(vmState.imageUrls[_imageIndex]),
+                smallMarginGap,
+                Text(
+                  vmState.firstName,
+                  style: ResponsiveValues.themeDisplayStyle(context),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  vmState.lastName,
+                  style: ResponsiveValues.themeDisplayStyle(context),
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  vmState.role(l10n),
+                  style: ResponsiveValues.themeTitleStyle(context),
+                  textAlign: TextAlign.center,
+                ),
+                largeMarginGap,
+                const AppDivider.horizontal(
+                  width: Dimens.gigantMargin,
+                ),
+                largeMarginGap,
+                Wrap(
+                  children: vmState.contacts
+                      .map(
+                        (c) => TextButton(
+                          onPressed: () => viewModel.onContactTap(c),
+                          child: Icon(c.type.icon),
+                        ),
+                      )
+                      .toList(),
+                )
+              ],
             ),
           ),
         );
