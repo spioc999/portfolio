@@ -7,7 +7,11 @@ void setupLocatorObjects({bool isTesting = false}) {
     getIt.registerSingleton<PersonalDataService>(
       PersonalDataService(me: simonePioCaronia),
     );
-    getIt.registerSingleton<SharedPref>(SharedPref());
+    getIt.registerSingletonAsync<SharedPref>(() async {
+      final sharedPref = SharedPref();
+      await sharedPref.init();
+      return sharedPref;
+    });
     getIt.registerSingleton<DateTimeService>(DateTimeService());
   }
 }
