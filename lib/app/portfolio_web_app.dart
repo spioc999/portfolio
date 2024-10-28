@@ -18,10 +18,8 @@ class PortfolioWebApp extends StatelessWidget {
         onGenerateTitle: (_) => initials,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
-          useMaterial3: true,
-        ),
+        theme: ThemeData.light(useMaterial3: true),
+        darkTheme: ThemeData.dark(useMaterial3: true),
         routerConfig: routerConfig,
         builder: (context, child) {
           return Stack(
