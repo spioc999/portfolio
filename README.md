@@ -43,6 +43,7 @@ The entire architecture uses the services locator ***get_it*** and abstract clas
 ### Cool stuff 💫
 * `lib/core/routing/routing_observers.dart` file contains a custom navigation observer, which is able to set the browser title based on the current route visible.
 * `lib/ui/layouts/portfolio_navigation_scaffold.dart` file contains the base scaffold, which handles both navigation and scrolling behaviour, using slivers.
+* `web/flutter_bootstrap.js` and `web/index.html` files contain the custom native loader which is prompted before that flutter engine is ready. It also looks at shared preferences to adapt the theming.
 
 
 ## Main packages 📦
