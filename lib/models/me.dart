@@ -165,7 +165,7 @@ final simonePioCaronia = Me(
       Project(
         title: 'portfolio',
         description: (l10n) =>
-            'fefevfv fvfvfvf vfvfvfv vfvfv vfvfvf vfvfvfv fvfvfvfvfbgtbt fgbrgbr5ththtybg ',
+            'fefevfv fvfvfvf vfvfvfv vfvfv vfvfvf vfvfvfv fvfvfvfvfbgtbt fgbrgbr5ththtybg ededded dedede dedede deed ',
         links: [
           (label: null, url: 'https://github.com/spioc999/portfolio'),
         ],

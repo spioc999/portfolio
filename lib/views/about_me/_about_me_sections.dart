@@ -204,7 +204,7 @@ class AboutMeProjectsSection extends StatelessWidget {
                         children: [
                           Text(
                             h.title,
-                            style: ResponsiveValues.themeTitleStyle(context),
+                            style: Theme.of(context).textTheme.titleMedium,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
@@ -221,22 +221,24 @@ class AboutMeProjectsSection extends StatelessWidget {
                                         link.label ??
                                             l10n(context)
                                                 .aboutmeview_projects_repolink,
-                                        style: ResponsiveValues.themeLabelStyle(
-                                          context,
-                                        )?.copyWith(
-                                          decoration: TextDecoration.underline,
-                                        ),
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelMedium
+                                            ?.copyWith(
+                                              decoration:
+                                                  TextDecoration.underline,
+                                            ),
                                       ),
                                     ),
                                   )
                                   .toList(),
                             ),
-                          smallMarginGap,
+                          defaultMarginGap,
                           Text(
                             h.description(l10n(context)),
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,
-                            style: ResponsiveValues.themeBodyStyle(context),
+                            style: Theme.of(context).textTheme.bodyMedium,
                           ),
                           const Spacer(),
                           smallMarginGap,
@@ -269,15 +271,10 @@ class AboutMeProjectsSection extends StatelessWidget {
         ),
         if (moreProjectsLink != null) ...[
           defaultMarginGap,
-          TransparentInkWell(
-            onTap: () => onLinkTap(moreProjectsLink!),
+          TextButton(
+            onPressed: () => onLinkTap(moreProjectsLink!),
             child: Text(
-              l10n(context).generic_view_more,
-              style: ResponsiveValues.themeBodyStyle(
-                context,
-              )?.copyWith(
-                decoration: TextDecoration.underline,
-              ),
+              '${l10n(context).generic_view_more} ➡️',
             ),
           )
         ]
