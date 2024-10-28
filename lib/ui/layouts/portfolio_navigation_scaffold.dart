@@ -57,6 +57,12 @@ class _PortfolioNavigationScaffoldState
     }
   }
 
+  void _onPageTap(RouteName route) {
+    if (route == selectedRoute) return;
+
+    RoutingHelper.goNamed(context, route);
+  }
+
   @override
   Widget build(BuildContext context) {
     final languageCode = Localizations.localeOf(context).languageCode;
@@ -77,8 +83,7 @@ class _PortfolioNavigationScaffoldState
                     child: Row(
                       children: [
                         ElevatedButton(
-                          onPressed: () =>
-                              RoutingHelper.goNamed(context, RouteName.home),
+                          onPressed: () => _onPageTap(RouteName.home),
                           style: Theme.of(context)
                               .elevatedButtonTheme
                               .style
@@ -99,8 +104,7 @@ class _PortfolioNavigationScaffoldState
                         if (!_isNotFoundPage)
                           ...RouteNameExt.pages.map(
                             (route) => TextButton(
-                              onPressed: () =>
-                                  RoutingHelper.goNamed(context, route),
+                              onPressed: () => _onPageTap(route),
                               style: _navigationAndSettingsButtonStyle,
                               child: Text(
                                 route.title(context)?.toUpperCase() ??
