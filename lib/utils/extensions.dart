@@ -16,3 +16,14 @@ extension DateTimeExt on DateTime {
   bool isSameDayAndMonth(DateTime other) =>
       month == other.month && day == other.day;
 }
+
+extension NavigatorGlobalKeyExt on GlobalKey<NavigatorState> {
+  String? get currentRouteName {
+    String? currentRoute;
+    currentState?.popUntil((route) {
+      currentRoute = route.settings.name;
+      return true;
+    });
+    return currentRoute;
+  }
+}
