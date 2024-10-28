@@ -16,15 +16,15 @@ class PortfolioWebApp extends StatelessWidget {
       providers: providers,
       child: Selector<AppSettingsProvider, AppSettings>(
         selector: (_, provider) => provider.appSettings,
-        builder: (_, value, __) => MaterialApp.router(
+        builder: (_, settings, __) => MaterialApp.router(
           onGenerateTitle: (_) => fullName,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           debugShowCheckedModeBanner: false,
           theme: PortfolioAppTheming.lightTheme,
           darkTheme: PortfolioAppTheming.darkTheme,
-          themeMode: value.themeMode,
-          locale: value.locale,
+          themeMode: settings.themeMode,
+          locale: settings.locale,
           routerConfig: routerConfig,
           builder: (_, child) => Stack(
             children: [

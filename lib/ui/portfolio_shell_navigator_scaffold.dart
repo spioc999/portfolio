@@ -60,64 +60,90 @@ class _PortfolioShellNavigatorScaffoldState
         preferredSize: const Size.fromHeight(Dimens.appBarHeight),
         child: Column(
           children: [
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    RoutingHelper.goNamed(context, RouteName.home);
-                  },
-                  style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
-                        fixedSize: const WidgetStatePropertyAll(
-                          Size(
-                            Dimens.appBarHeight + Dimens.smallMargin,
-                            Dimens.appBarHeight - bottomDividerHeight,
+            SizedBox(
+              height: Dimens.appBarHeight - bottomDividerHeight,
+              child: CustomScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: defaultScrollPhysics,
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Row(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () =>
+                              RoutingHelper.goNamed(context, RouteName.home),
+                          style: Theme.of(context)
+                              .elevatedButtonTheme
+                              .style
+                              ?.copyWith(
+                                fixedSize: const WidgetStatePropertyAll(
+                                  Size(
+                                    Dimens.appBarHeight + Dimens.smallMargin,
+                                    Dimens.appBarHeight - bottomDividerHeight,
+                                  ),
+                                ),
+                              ),
+                          child: const Text(
+                            initials,
+                            style: TextStyle(fontWeight: FontWeight.bold),
                           ),
                         ),
-                      ),
-                  child: const Text(
-                    initials,
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                ...RouteNameExt.pages.map(
-                  (route) => TextButton(
-                    onPressed: () => RoutingHelper.goNamed(context, route),
-                    style: _navigationAndSettingsButtonStyle,
-                    child: Text(
-                      route.title(context)?.toUpperCase() ?? emptyString,
-                      style: route == selectedRoute
-                          ? const TextStyle(
-                              decoration: TextDecoration.underline,
-                              decorationThickness: 2.0,
-                              fontWeight: FontWeight.bold,
-                            )
-                          : null,
+                        ...RouteNameExt.pages.map(
+                          (route) => TextButton(
+                            onPressed: () =>
+                                RoutingHelper.goNamed(context, route),
+                            style: _navigationAndSettingsButtonStyle,
+                            child: Text(
+                              route.title(context)?.toUpperCase() ??
+                                  emptyString,
+                              style: route == selectedRoute
+                                  ? const TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      decorationThickness: 2.0,
+                                      fontWeight: FontWeight.bold,
+                                    )
+                                  : null,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                ),
-                const Spacer(),
-                TextButton(
-                  onPressed: () =>
-                      Provider.of<AppSettingsProvider>(context, listen: false)
-                          .switchLocale(languageCode),
-                  style: _navigationAndSettingsButtonStyle,
-                  child: Text(
-                    languageCode.toUpperCase(),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () =>
-                      Provider.of<AppSettingsProvider>(context, listen: false)
-                          .switchThemeByBrightness(themeBrightness),
-                  style: _navigationAndSettingsButtonStyle,
-                  child: Icon(
-                    themeBrightness == Brightness.dark
-                        ? Icons.dark_mode_outlined
-                        : Icons.light_mode_outlined,
-                    size: 18,
-                  ),
-                )
-              ],
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TextButton(
+                            onPressed: () => Provider.of<AppSettingsProvider>(
+                              context,
+                              listen: false,
+                            ).switchLocale(languageCode),
+                            style: _navigationAndSettingsButtonStyle,
+                            child: Text(
+                              languageCode.toUpperCase(),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () => Provider.of<AppSettingsProvider>(
+                              context,
+                              listen: false,
+                            ).switchThemeByBrightness(themeBrightness),
+                            style: _navigationAndSettingsButtonStyle,
+                            child: Icon(
+                              themeBrightness == Brightness.dark
+                                  ? Icons.dark_mode_outlined
+                                  : Icons.light_mode_outlined,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
             Container(
               color: Theme.of(context).dividerColor,
