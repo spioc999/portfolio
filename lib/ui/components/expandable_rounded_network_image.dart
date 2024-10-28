@@ -6,14 +6,14 @@ import 'package:transparent_image/transparent_image.dart';
 class ExpandableRoundedNetworkImage extends StatefulWidget {
   final double size;
   final String imgUrl;
-  final double expansionSize;
+  final double expansionPercentage;
   final double borderThickness;
 
   const ExpandableRoundedNetworkImage(
     this.imgUrl, {
     super.key,
     this.size = Dimens.defaultImageSize,
-    this.expansionSize = Dimens.defaultImageExpansionSize,
+    this.expansionPercentage = Dimens.defaultImageExpansionPercentage,
     this.borderThickness = Dimens.defaultImageBorderThickness,
   });
 
@@ -38,15 +38,15 @@ class _ExpandableRoundedNetworkImageState
     )..repeat();
   }
 
-  double get _dimension =>
-      isHovered ? widget.size + widget.expansionSize : widget.size;
+  double get _expandedSize =>
+      widget.size + widget.size * widget.expansionPercentage;
+
+  double get _dimension => isHovered ? _expandedSize : widget.size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints.loose(
-        Size.square(widget.size + widget.expansionSize),
-      ),
+      constraints: BoxConstraints.loose(Size.square(_expandedSize)),
       alignment: Alignment.center,
       child: MouseRegion(
         onEnter: (_) => setState(() => isHovered = true),
@@ -54,8 +54,8 @@ class _ExpandableRoundedNetworkImageState
         hitTestBehavior: HitTestBehavior.deferToChild,
         child: GestureDetector(
           onTap: () => _rotationController
-            ..reset()
-            ..repeat(),
+              .animateBack(0.0, duration: AnimationDuration.standardDuration)
+              .then((_) => _rotationController.repeat()),
           child: Stack(
             children: [
               RotationTransition(
