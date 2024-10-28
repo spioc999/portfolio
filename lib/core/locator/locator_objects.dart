@@ -15,7 +15,8 @@ void setupLocatorObjects({bool isTesting = false}) {
           imageUrls: [Res.jpgMeSerious, Res.jpgMeSmiling],
           role: (appLocalization) => appLocalization.me_role,
           about: About(
-            intro: (appLocalization) => '',
+            intro: (appLocalization, param) =>
+                appLocalization.aboutmeview_intro(param['yearsOld']),
           ),
           education: Education(),
           experience: Experience(),

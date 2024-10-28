@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
-import 'package:spioc_portfolio/constants/dimens.dart';
+import 'package:spioc_portfolio/constants/common.dart';
+import 'package:spioc_portfolio/core/routing/route_name.dart';
+import 'package:spioc_portfolio/ui/layouts/portfolio_navigation_scaffold.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_helper.dart';
@@ -19,9 +20,9 @@ class _NotFoundViewState
     return BaseWidget<NotFoundViewModelContract, NotFoundState>(
       model: viewModel,
       builder: (context, viewModel, _) {
-        return Scaffold(
-          //TODO complete me
-          body: PortfolioScrollableView(
+        return PortfolioNavigationScaffold(
+          route: RouteName.notFound,
+          child: PortfolioScrollableView(
             body: FittedBox(
               fit: BoxFit.scaleDown,
               child: Column(
@@ -31,10 +32,15 @@ class _NotFoundViewState
                     textAlign: TextAlign.center,
                     style: ResponsiveHelper.themeDisplayStyle(context),
                   ),
-                  const Gap(Dimens.defaultMargin),
                   Text(
                     l10n.notfoundview_title,
                     style: ResponsiveHelper.themeTitleStyle(context),
+                    textAlign: TextAlign.center,
+                  ),
+                  defaultMarginGap,
+                  Text(
+                    l10n.notfoundview_subtitle,
+                    style: ResponsiveHelper.themeBodyStyle(context),
                     textAlign: TextAlign.center,
                   ),
                 ],

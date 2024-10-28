@@ -7,9 +7,10 @@
   "generic_switch_language_tooltip": "Switch language: Italian",
   "generic_switch_theme_tooltip": "Switch theme",
   "aboutmeview_title": "About me",
-  "aboutmeview_intro": "Hello, I'm Simone Pio! I'm {years} years old and I'm a Flutter & AI Engineer.\n\nMy passion for technology was born when I was a child in my homeland, Sicily.\n\nI describe myself as a very determined person who always wants to learn new things and try to understand all aspects of them.",
+  "aboutmeview_intro": "Hello👋, I'm Simone Pio! I'm {yearsOld} years old and I'm a Flutter & AI Engineer.\n\nMy passion for technology was born when I was a child in my homeland, Sicily.\n\nI describe myself as a very determined person who always wants to learn new things and try to understand all aspects of them.",
   "experienceview_title": "Experience",
   "educationview_title": "Education",
   "notfoundview_title": "Page Not Found",
-  "notfoundview_errorcode": "404"
+  "notfoundview_errorcode": "404",
+  "notfoundview_subtitle": "↖️ Go back to the homepage"
 }

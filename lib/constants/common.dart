@@ -1,6 +1,7 @@
 // Common Widgets
 
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
 
 const emptyWidget = SizedBox();
@@ -20,3 +21,5 @@ const defaultBodyPadding = EdgeInsets.symmetric(
   horizontal: Dimens.horizontalPaddingDefault,
   vertical: Dimens.verticalPaddingDefault,
 );
+
+const defaultMarginGap = Gap(Dimens.defaultMargin);

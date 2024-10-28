@@ -29,7 +29,7 @@ class AppSettingsProvider extends ChangeNotifier {
     }
 
     final savedLanguageCode = _appSettingsInteractor.getSavedLanguageCode();
-    if (savedThemeModeName != null) {
+    if (savedLanguageCode != null) {
       final savedLocale = AppLocalizations.supportedLocales.firstWhereOrNull(
         (locale) => locale.languageCode == savedLanguageCode,
       );
