@@ -38,6 +38,8 @@
   "aboutmeview_projects_bingo_description": "Una riproduzione del Bingo che presenta sia l'interfaccia utente (in Flutter) che la logica applicativa (in Python) per giocare in simultanea su diversi dispositivi.",
   "aboutmeview_certifications_title": "Certificazioni",
   "experienceview_title": "Esperienza",
+  "experienceview_shopassistant_jobname": "Commesso",
+  "experienceview_referee_jobname": "Arbitro di Pallacanestro",
   "educationview_title": "Formazione",
   "notfoundview_title": "Pagina Non Trovata",
   "notfoundview_errorcode": "404",
