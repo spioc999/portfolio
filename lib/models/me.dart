@@ -239,6 +239,25 @@ final simonePioCaronia = Me(
       ),
     ],
   ),
+  experiences: [
+    Experience(
+      role: 'Flutter & AI Engineer',
+      company: 'Alpian Technologies',
+      startDateTime: DateTime(2022, 11),
+      endDateTime: null,
+    ),
+    Experience(
+      role: 'Digital Engineer',
+      company: 'NTT Data',
+      startDateTime: DateTime(2020, 9),
+      endDateTime: DateTime(2022, 11),
+    ),
+    Experience(
+      role: 'Mobile Engineer',
+      company: 'NTT Data Int',
+      startDateTime: DateTime(2020, 4),
+      endDateTime: DateTime(2020, 7),
+    ),
+  ],
   educations: [Education()],
-  experiences: [Experience()],
 );

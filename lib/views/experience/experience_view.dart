@@ -5,6 +5,7 @@ import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
+import 'package:spioc_portfolio/views/experience/_experience_item.dart';
 import 'package:spioc_portfolio/views/experience/experience_contracts.dart';
 
 class ExperienceView extends BaseMvvmStatefulWidget {
@@ -37,6 +38,9 @@ class _ExperienceViewState extends BaseState<
               ),
               const AppDivider.horizontal(
                 height: Dimens.tightDividerThickness,
+              ),
+              ...vmState.experiences.map(
+                (e) => ExperienceItem(experience: e),
               ),
             ],
           ),
