@@ -16,8 +16,8 @@ abstract class BaseViewModelContract<S extends BaseVMState,
   void onInitState();
   void onSourceViewReady();
   void onDispose();
-  void tapOnRetry();
   void failedToOpenUrl();
+  void onExternalUrlTap(String url);
 }
 
 abstract class BaseVMState {

@@ -28,7 +28,11 @@ class PersonalDataInteractor {
   String? get projectsUrl => _personalData.projectsUrl;
   List<String> get imageUrls => _personalData.imageUrls;
   DateTime get dateOfBirth => _personalData.dateOfBirth;
+
   About get about => _personalData.about;
-  Education get education => _personalData.education;
-  Experience get experience => _personalData.experience;
+
+  List<Experience> get experiences => _personalData.experiences;
+  List<Experience> get otherExperiences => _personalData.otherExperiences;
+
+  List<Education> get educations => _personalData.educations;
 }

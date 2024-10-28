@@ -14,8 +14,9 @@ class Me {
   final List<String> imageUrls;
 
   final About about;
-  final Education education;
-  final Experience experience;
+  final List<Education> educations;
+  final List<Experience> experiences;
+  final List<Experience> otherExperiences;
 
   Me({
     required this.initials,
@@ -27,18 +28,21 @@ class Me {
     required this.imageUrls,
     required this.role,
     required this.about,
-    required this.education,
-    required this.experience,
+    required this.educations,
+    required this.experiences,
+    this.otherExperiences = const <Experience>[],
   });
 
   String get fullName => '$firstName $lastName';
 }
 
+const lastRole = 'Flutter & AI Engineer';
+
 final simonePioCaronia = Me(
   initials: 'SPC',
   firstName: 'Simone Pio',
   lastName: 'Caronia',
-  role: 'Flutter & AI Engineer',
+  role: lastRole,
   contacts: [
     Contact(
       link: 'https://github.com/spioc999/',
@@ -239,6 +243,108 @@ final simonePioCaronia = Me(
       ),
     ],
   ),
-  education: Education(),
-  experience: Experience(),
+  experiences: [
+    Experience(
+      role: (_) => lastRole,
+      company: 'Alpian Technologies',
+      companyUrl: 'https://www.alpiantech.com/',
+      companyImageUrl: Res.jpgExperienceAlpiantech,
+      startDateTime: DateTime(2022, 11),
+      endDateTime: null,
+      workingType: ExperienceWorkingType.remote,
+      locality: (l10n) => l10n.generic_rome,
+    ),
+    Experience(
+      role: (_) => 'Digital Engineer',
+      company: 'NTT Data',
+      companyUrl: 'https://it.nttdata.com/',
+      companyImageUrl: Res.jpgExperienceNttdata,
+      startDateTime: DateTime(2020, 9),
+      endDateTime: DateTime(2022, 11),
+      workingType: ExperienceWorkingType.hybrid,
+      locality: (l10n) => l10n.generic_rome,
+    ),
+    Experience(
+      role: (_) => 'Junior Mobile Developer',
+      company: 'NTT Data',
+      companyUrl: 'https://it.nttdata.com/',
+      companyImageUrl: Res.jpgExperienceNttdata,
+      startDateTime: DateTime(2020, 4),
+      endDateTime: DateTime(2020, 7),
+      workingType: ExperienceWorkingType.internship,
+      locality: (l10n) => l10n.generic_rome,
+    ),
+    Experience(
+      role: (_) => 'Junior Frontend Developer',
+      company: 'NTT Data',
+      companyUrl: 'https://it.nttdata.com/',
+      companyImageUrl: Res.jpgExperienceNttdata,
+      startDateTime: DateTime(2019, 3),
+      endDateTime: DateTime(2019, 7),
+      workingType: ExperienceWorkingType.internship,
+      locality: (l10n) => l10n.generic_rome,
+    ),
+  ],
+  otherExperiences: [
+    Experience(
+      role: (l10n) => l10n.experienceview_shopassistant_jobname,
+      company: 'Piggybank',
+      companyUrl: 'https://museumofchildhood.ie/',
+      companyImageUrl: Res.jpgExperiencePiggybank,
+      startDateTime: DateTime(2019, 8),
+      endDateTime: DateTime(2019, 9),
+      workingType: ExperienceWorkingType.summerWorkExperience,
+      locality: (l10n) => l10n.generic_dublin,
+    ),
+    Experience(
+      role: (l10n) => l10n.experienceview_referee_jobname,
+      company: 'Federazione Italiana Pallacanestro',
+      companyUrl: 'https://fip.it/',
+      companyImageUrl: Res.jpgExperienceFip,
+      startDateTime: DateTime(2015, 11),
+      endDateTime: DateTime(2018, 6),
+    ),
+  ],
+  educations: [
+    Education(
+      degree: (l10n) => l10n.educationview_ucbm_degree,
+      institute: (l10n) => l10n.educationview_ucbm_institute,
+      instituteUrl: 'https://www.unicampus.it/',
+      instituteImageUrl: Res.jpgEducationUcbm,
+      startDateTime: DateTime(2021, 9),
+      endDateTime: DateTime(2024, 2),
+    ),
+    Education(
+      degree: (l10n) => l10n.educationview_polimi_degree,
+      institute: (l10n) => l10n.educationview_polimi_institute,
+      instituteUrl: 'https://www.polimi.it/',
+      instituteImageUrl: Res.jpgEducationPolimi,
+      startDateTime: DateTime(2018, 10),
+      endDateTime: DateTime(2021, 7),
+    ),
+    Education(
+      degree: (_) => "Digital Engineering Program",
+      institute: (_) => "ELIS",
+      instituteUrl: 'https://www.elis.org/',
+      instituteImageUrl: Res.jpgEducationElis,
+      startDateTime: DateTime(2018, 10),
+      endDateTime: DateTime(2021, 7),
+    ),
+    Education(
+      degree: (_) => "Sixth Form - Exchange Experience",
+      institute: (_) => "St Cuthbert Mayne School",
+      instituteUrl: 'https://www.st-cuthbertmayne.co.uk/',
+      instituteImageUrl: Res.jpgEducationTorquay,
+      startDateTime: DateTime(2016, 9),
+      endDateTime: DateTime(2017, 2),
+    ),
+    Education(
+      degree: (l10n) => l10n.educationview_itis_degree,
+      institute: (l10n) => l10n.educationview_itis_institute,
+      instituteUrl: 'https://www.isdavincitorre.edu.it/',
+      instituteImageUrl: Res.jpgEducationItis,
+      startDateTime: DateTime(2013, 9),
+      endDateTime: DateTime(2018, 7),
+    )
+  ],
 );

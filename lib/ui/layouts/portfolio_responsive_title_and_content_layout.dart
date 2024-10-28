@@ -20,7 +20,7 @@ class PortfolioResponsiveTitleAndContentLayout extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: topMargin),
       child: ScreenTypeLayout.builder(
-        mobile: (context) => Column(
+        mobile: (_) => Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Align(
@@ -31,16 +31,15 @@ class PortfolioResponsiveTitleAndContentLayout extends StatelessWidget {
             content,
           ],
         ),
-        desktop: (context) => Row(
+        desktop: (_) => Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              flex: 2,
               child: title,
             ),
             largeMarginGap,
             Expanded(
-              flex: 4,
+              flex: 2,
               child: content,
             ),
           ],

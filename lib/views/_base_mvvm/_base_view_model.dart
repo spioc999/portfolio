@@ -29,15 +29,15 @@ abstract class BaseViewModel<V extends BaseViewContract, S extends BaseVMState>
   void onSourceViewReady() {}
 
   @override
-  void tapOnRetry() {}
-
-  @override
   void onDispose() {}
 
   @override
   void failedToOpenUrl() {
     sourceView.showGeneralErrorToaster();
   }
+
+  @override
+  void onExternalUrlTap(String url) => sourceView.openExternalUrl(url);
 
   void handleError(
     dynamic exception, {
