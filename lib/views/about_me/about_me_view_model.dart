@@ -18,6 +18,8 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
     vmState.isBirthdayToday = _personalDataInteractor.isBirthdayToday;
 
     final about = _personalDataInteractor.about;
+
+    vmState.intro = about.intro;
     vmState.technologies.addAll(about.technologies);
     vmState.softSkills.addAll(about.softSkills);
     vmState.hobbies.addAll(about.hobbies);

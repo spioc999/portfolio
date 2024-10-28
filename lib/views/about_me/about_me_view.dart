@@ -1,5 +1,4 @@
 import 'package:confetti/confetti.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:spioc_portfolio/constants/common.dart';
 import 'package:spioc_portfolio/constants/dimens.dart';
@@ -7,6 +6,7 @@ import 'package:spioc_portfolio/constants/keys.dart';
 import 'package:spioc_portfolio/models/models.dart';
 import 'package:spioc_portfolio/ui/components/app_divider.dart';
 import 'package:spioc_portfolio/ui/layouts/portfolio_scollable_view.dart';
+import 'package:spioc_portfolio/ui/toolkit/transparent_inkwell.dart';
 import 'package:spioc_portfolio/utils/extensions.dart';
 import 'package:spioc_portfolio/utils/responsive_values.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
@@ -54,32 +54,30 @@ class _AboutMeViewState
                     height: Dimens.tightDividerThickness,
                   ),
                   veryLargeMarginGap,
-                  Text.rich(
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: l10n.aboutmeview_intro_1(
-                              vmState.firstName, vmState.yearsOld),
-                        ),
-                        const TextSpan(text: whitespaceString),
-                        if (vmState.isBirthdayToday) ...[
-                          TextSpan(
-                            text: l10n.aboutmeview_intro_letscelebrate,
-                            style: const TextStyle(
-                              decoration: TextDecoration.underline,
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = viewModel.onLetsCelebrateTap,
-                          ),
-                          const TextSpan(text: whitespaceString),
-                        ],
-                        TextSpan(
-                          text: l10n.aboutmeview_intro_2(vmState.role),
-                        ),
-                      ],
-                      style: ResponsiveValues.themeBodyStyle(context),
+                  Text(
+                    vmState.intro(
+                      l10n,
+                      {
+                        'firstName': vmState.firstName,
+                        'role': vmState.role,
+                        'yearsOld': vmState.yearsOld,
+                      },
                     ),
+                    style: ResponsiveValues.themeBodyStyle(context),
                   ),
+                  if (vmState.isBirthdayToday) ...[
+                    defaultMarginGap,
+                    TransparentInkWell(
+                      onTap: viewModel.onLetsCelebrateTap,
+                      child: Text(
+                        l10n.aboutmeview_letscelebrate,
+                        style:
+                            ResponsiveValues.themeBodyStyle(context)?.copyWith(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    )
+                  ],
                   if (vmState.technologies.isNotEmpty)
                     _TechStackSection(
                       key: const Key(AboutMeKeys.techStackSection),
