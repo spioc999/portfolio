@@ -35,8 +35,7 @@ jobs:
                   # Check code tag uniqueness
                   git tag | grep "^$VERSION$" && echo "ERROR: TAG EXISTS WITHIN THE REPO!" && exit 99
                   
-                  echo "Version is valid!" 
-                  echo "VERSION=$VERSION" >> $GITHUB_ENV
+                  echo "Version $VERSION is valid!"
         outputs:
             tag_version: "v${{ steps.read-version.outputs.data }}"
 
