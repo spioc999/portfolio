@@ -2,7 +2,10 @@
 
 [![Language](https://img.shields.io/badge/language-dart-blue)](https://dart.dev/) [![framework](https://img.shields.io/badge/framework-flutter-9cf)](https://flutter.dev/) ![platform](https://img.shields.io/badge/platform-web-blue)
 
-This repository contains the Flutter codebase related to my portfolio website. Following a screenshot of the main page: 
+This repository contains the Flutter codebase related to my portfolio website. Following a screenshot of the main page:
+
+![Screenshot 2024-10-27 at 10 52 46](https://github.com/user-attachments/assets/e2db447d-7a53-4ff8-bdf4-fbba2551bb28)
+
 
 ## Features 📋
 
