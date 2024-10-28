@@ -151,9 +151,15 @@ final simonePioCaronia = Me(
         label: (l10n) => l10n.aboutmeview_hobbies_travelling,
         imageUrl: Res.jpgHobbyTravelling,
       ),
+      Hobby(
+        label: (l10n) => l10n.aboutmeview_hobbies_lego,
+        imageUrl: Res.jpgHobbyLego,
+      ),
+    ],
+    certifications: [
+      Certification(),
     ],
     projects: [],
-    certifications: [],
   ),
   education: Education(),
   experience: Experience(),

@@ -94,6 +94,11 @@ class _AboutMeViewState
                       key: const Key(AboutMeKeys.hobbiesSection),
                       hobbies: vmState.hobbies,
                     ),
+                  if (vmState.certifications.isNotEmpty)
+                    AboutMeCertificationsSection(
+                      key: const Key(AboutMeKeys.certificationsSection),
+                      certifications: vmState.certifications,
+                    ),
                 ],
               ),
               if (vmState.isBirthdayToday)

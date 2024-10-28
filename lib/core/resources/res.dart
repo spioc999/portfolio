@@ -8,4 +8,5 @@ class Res {
   static const jpgHobbySea = 'assets/imgs/hobby_sea.jpg';
   static const jpgHobbyTravelling = 'assets/imgs/hobby_travelling.jpg';
   static const jpgHobbyTrumpet = 'assets/imgs/hobby_trumpet.jpg';
+  static const jpgHobbyLego = 'assets/imgs/hobby_lego.jpg';
 }

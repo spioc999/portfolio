@@ -23,6 +23,7 @@ class AboutMeViewModel extends BaseViewModel<AboutMeViewContract, AboutMeState>
     vmState.technologies.addAll(about.technologies);
     vmState.softSkills.addAll(about.softSkills);
     vmState.hobbies.addAll(about.hobbies);
+    vmState.certifications.addAll(about.certifications);
   }
 
   @override
