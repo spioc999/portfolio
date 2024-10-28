@@ -6,6 +6,7 @@ import 'package:spioc_portfolio/core/providers.dart';
 import 'package:spioc_portfolio/core/routing/route_name.dart';
 import 'package:spioc_portfolio/core/routing/routing_helper.dart';
 import 'package:spioc_portfolio/models/models.dart';
+import 'package:spioc_portfolio/ui/components/app_divider.dart';
 
 class PortfolioShellNavigatorScaffold extends StatefulWidget {
   final Widget child;
@@ -146,10 +147,8 @@ class _PortfolioShellNavigatorScaffoldState
                 ],
               ),
             ),
-            Container(
-              color: Theme.of(context).dividerColor,
+            const AppDivider.horizontal(
               height: bottomDividerHeight,
-              width: double.infinity,
             ),
           ],
         ),

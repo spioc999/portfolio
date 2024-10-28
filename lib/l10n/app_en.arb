@@ -2,6 +2,7 @@
   "@@locale": "en",
   "generic_error": "Ops, something went wrong!",
   "me_role": "Flutter & AI Engineer",
+  "homeview_footer_label": "Created with Flutter🐦 & Love💚 by me",
   "aboutmeview_title": "About me",
   "experienceview_title": "Experience",
   "educationview_title": "Education",

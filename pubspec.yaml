@@ -23,6 +23,7 @@ dependencies:
   collection: ^1.18.0
   shared_preferences: ^2.2.3
   responsive_builder: ^0.7.0
+  gap: ^3.0.1
 
 dev_dependencies:
   flutter_test:
