@@ -23,9 +23,7 @@ class PortfolioScrollableView extends StatelessWidget {
       slivers: [
         SliverPadding(
           padding: defaultBodyPadding,
-          sliver: SliverToBoxAdapter(
-            child: body,
-          ),
+          sliver: SliverToBoxAdapter(child: body),
         ),
         if (hasFooter) const _PortfolioSliverFooter(),
       ],
