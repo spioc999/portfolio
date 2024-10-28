@@ -82,31 +82,12 @@ class PortfolioAppTheming {
               return isDark ? Colors.white : Colors.black;
             },
           ),
-          textStyle: WidgetStateProperty.resolveWith(
-            (states) {
-              TextStyle textStyle = GoogleFonts.getFont(
-                bodyFontFamily,
-                fontWeight: FontWeight.bold,
-              );
-
-              if (states.contains(WidgetState.hovered) ||
-                  states.contains(WidgetState.pressed)) {
-                textStyle = textStyle.copyWith(
-                  decoration: TextDecoration.underline,
-                  decorationThickness: 2.0,
-                );
-              }
-
-              return textStyle;
-            },
-          ),
           foregroundColor: WidgetStatePropertyAll(
             isDark ? Colors.black : Colors.white,
           ),
           minimumSize: const WidgetStatePropertyAll(minButtonSize),
           padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
-          overlayColor: const WidgetStatePropertyAll(Colors.transparent),
           elevation: const WidgetStatePropertyAll(0.0),
         ),
       );
@@ -123,27 +104,8 @@ class PortfolioAppTheming {
               return isDark ? Colors.white : Colors.black;
             },
           ),
-          textStyle: WidgetStateProperty.resolveWith(
-            (states) {
-              TextStyle textStyle = GoogleFonts.getFont(
-                bodyFontFamily,
-                fontWeight: FontWeight.bold,
-              );
-
-              if (states.contains(WidgetState.hovered) ||
-                  states.contains(WidgetState.pressed)) {
-                textStyle = textStyle.copyWith(
-                  decoration: TextDecoration.underline,
-                  decorationThickness: 2.0,
-                );
-              }
-
-              return textStyle;
-            },
-          ),
           minimumSize: const WidgetStatePropertyAll(minButtonSize),
           padding: const WidgetStatePropertyAll(buttonPadding),
-          overlayColor: const WidgetStatePropertyAll(Colors.transparent),
           elevation: const WidgetStatePropertyAll(0.0),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
         ),
@@ -162,24 +124,6 @@ class PortfolioAppTheming {
               return isDark ? Colors.white : Colors.black;
             },
           ),
-          textStyle: WidgetStateProperty.resolveWith(
-            (states) {
-              TextStyle textStyle = GoogleFonts.getFont(
-                bodyFontFamily,
-                fontWeight: FontWeight.bold,
-              );
-
-              if (states.contains(WidgetState.hovered) ||
-                  states.contains(WidgetState.pressed)) {
-                textStyle = textStyle.copyWith(
-                  decoration: TextDecoration.underline,
-                  decorationThickness: 2.0,
-                );
-              }
-
-              return textStyle;
-            },
-          ),
           side: WidgetStateProperty.resolveWith(
             (states) {
               Color color;
@@ -195,27 +139,27 @@ class PortfolioAppTheming {
           minimumSize: const WidgetStatePropertyAll(minButtonSize),
           padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
-          overlayColor: const WidgetStatePropertyAll(Colors.transparent),
           elevation: const WidgetStatePropertyAll(0.0),
         ),
       );
 
   static final lightTheme = ThemeData.light(useMaterial3: true).copyWith(
-    scaffoldBackgroundColor: Colors.white,
     cardColor: Colors.white,
     dividerColor: Colors.black,
-    colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.deepOrange,
+      brightness: Brightness.light,
+    ),
     textTheme: _textTheme(isDark: false),
     elevatedButtonTheme: _elevatedButtonThemeData(isDark: false),
     textButtonTheme: _textButtonThemeData(isDark: false),
     outlinedButtonTheme: _outlinedButtonThemeData(isDark: false),
   );
   static final darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
-    scaffoldBackgroundColor: Colors.black,
     cardColor: Colors.black,
     dividerColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.black,
+      seedColor: Colors.deepOrange,
       brightness: Brightness.dark,
     ),
     textTheme: _textTheme(isDark: true),
