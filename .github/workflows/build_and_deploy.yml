@@ -67,13 +67,13 @@ jobs:
             - name: Deploy via Git
               run: |-
                 cd build
-                git clone https://${{ secrets.GH_TOKEN }}@github.com/spioc999/spioc999.github.io.git website
-                cd website
+                git clone https://${{ secrets.GH_TOKEN }}@github.com/spioc999/spioc999.github.io.git website-runnable-repo
+                cd website-runnable-repo
                 git checkout main
-                cp -r ../web/* . -f
+                cp -r -f ../web/* .
                 git add --all
                 git commit -m "${{ env.TAG_VERSION }} - SPC's portfolio automatic deploy"
-                git push origin main -f
+                git push origin main
 
     tag_and_release:
         name: Create tag and release
