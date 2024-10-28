@@ -129,11 +129,9 @@ class _PortfolioNavigationScaffoldState
                             Tooltip(
                               message: l10n.generic_switch_language_tooltip,
                               child: TextButton(
-                                onPressed: () =>
-                                    Provider.of<AppSettingsProvider>(
-                                  context,
-                                  listen: false,
-                                ).switchLocale(languageCode),
+                                onPressed: () => context
+                                    .read<AppSettingsProvider>()
+                                    .switchLocale(languageCode),
                                 style: _navigationAndSettingsButtonStyle,
                                 child: Text(languageCode.toUpperCase()),
                               ),
@@ -141,11 +139,9 @@ class _PortfolioNavigationScaffoldState
                             Tooltip(
                               message: l10n.generic_switch_theme_tooltip,
                               child: TextButton(
-                                onPressed: () =>
-                                    Provider.of<AppSettingsProvider>(
-                                  context,
-                                  listen: false,
-                                ).switchThemeByBrightness(themeBrightness),
+                                onPressed: () => context
+                                    .read<AppSettingsProvider>()
+                                    .switchThemeByBrightness(themeBrightness),
                                 style: _navigationAndSettingsButtonStyle,
                                 child: Icon(
                                   themeBrightness == Brightness.dark
