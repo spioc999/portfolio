@@ -77,24 +77,28 @@ final simonePioCaronia = Me(
         name: 'Python',
       ),
       Technology(
-        icon: SimpleIcons.git,
-        name: 'Git',
-      ),
-      Technology(
-        icon: SimpleIcons.docker,
-        name: 'Docker',
-      ),
-      Technology(
-        icon: SimpleIcons.nodedotjs,
-        name: 'Node.js',
+        icon: SimpleIcons.oracle,
+        name: 'Java',
       ),
       Technology(
         icon: SimpleIcons.kotlin,
         name: 'Kotlin',
       ),
       Technology(
+        icon: SimpleIcons.git,
+        name: 'Git',
+      ),
+      Technology(
         icon: SimpleIcons.swift,
         name: 'Swift',
+      ),
+      Technology(
+        icon: SimpleIcons.nodedotjs,
+        name: 'Node.js',
+      ),
+      Technology(
+        icon: SimpleIcons.docker,
+        name: 'Docker',
       ),
       Technology(
         icon: SimpleIcons.firebase,
@@ -103,10 +107,6 @@ final simonePioCaronia = Me(
       Technology(
         icon: SimpleIcons.databricks,
         name: 'SQL',
-      ),
-      Technology(
-        icon: SimpleIcons.oracle,
-        name: 'Java',
       ),
     ],
     softSkills: [
@@ -123,12 +123,12 @@ final simonePioCaronia = Me(
         label: (l10n) => l10n.aboutme_softskills_publicspeaking,
       ),
       SoftSkill(
-        emoji: '🎨',
-        label: (l10n) => l10n.aboutme_softskills_creativity,
-      ),
-      SoftSkill(
         emoji: '📌',
         label: (l10n) => l10n.aboutme_softskills_determination,
+      ),
+      SoftSkill(
+        emoji: '🎨',
+        label: (l10n) => l10n.aboutme_softskills_creativity,
       ),
     ],
     hobbies: [
@@ -341,7 +341,7 @@ final simonePioCaronia = Me(
       description: (l10n) => l10n.education_polimi_description,
     ),
     Education(
-      degree: (_) => "Sixth Form - Exchange Experience",
+      degree: (_) => "Exchange Experience - Sixth Form",
       institute: (_) => "St Cuthbert Mayne School",
       instituteUrl: 'https://www.st-cuthbertmayne.co.uk/',
       instituteImageUrl: Res.jpgEducationTorquay,
