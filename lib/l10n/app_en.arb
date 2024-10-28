@@ -49,6 +49,12 @@
   "experienceworkingtype_internship_label": "Internship",
   "experienceworkingtype_summerworkexperience_label": "Summer work experience",
   "educationview_title": "Education",
+  "educationview_ucbm_degree": "Master's degree in Intelligent Systems Engineering",
+  "educationview_ucbm_institute": "Campus Bio-Medico University of Rome",
+  "educationview_polimi_degree": "Bachelor's degree in Computer Engineering",
+  "educationview_polimi_institute": "Politecnico of Milan",
+  "educationview_itis_degree": "High School Diploma",
+  "educationview_itis_institute": "Technical High School \"L. Da Vinci\"",
   "notfoundview_title": "Page Not Found",
   "notfoundview_errorcode": "404",
   "notfoundview_subtitle": "↖️ Go back to the homepage"
