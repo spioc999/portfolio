@@ -18,11 +18,11 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
   late AnimationController _rotationController;
   bool isHovered = false;
   static const _gradientBorderThickness = 5.0;
-  static const _rotationDuration = Duration(seconds: 5);
+  static const _rotationDuration = Duration(seconds: 4);
   static const _switchingImagesDuration = Duration(seconds: 2);
 
   late Timer _switchingImagesTimer;
-  final _images = Me.imagesAndBlurHashs;
+  final _images = Me.images;
   late int _imageIndex;
 
   @override
@@ -72,12 +72,18 @@ class _PersonalRoundedImagesState extends State<PersonalRoundedImages>
               ),
             ),
             Positioned.fill(
-              child: Padding(
+              child: Container(
+                clipBehavior: Clip.hardEdge,
+                width: _dimension,
+                height: _dimension,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
                 padding: const EdgeInsets.all(_gradientBorderThickness),
                 child: ClipOval(
                   child: Image.network(
-                    _images[_imageIndex].img, //TODO add blur hash
-                    fit: BoxFit.cover,
+                    _images[_imageIndex],
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),

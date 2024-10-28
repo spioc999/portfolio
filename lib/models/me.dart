@@ -9,10 +9,7 @@ class Me {
 
   static const fullName = '$firstName $lastName';
 
-  static const imagesAndBlurHashs = <ImageAndBlurHash>[
-    (img: Res.jpgMeSerious, blurHash: 'UMDbd6M|VDn\$}UnOR.WBz:aexbofIUt7t7WB'),
-    (img: Res.jpgMeSmiling, blurHash: 'UdF}\$mx]rpV=~Ux[bcaextb_s;R+XTkXjFWB'),
-  ];
+  static const images = [Res.jpgMeSerious, Res.jpgMeSmiling];
 
   final LocalizedString role;
   final About about;
