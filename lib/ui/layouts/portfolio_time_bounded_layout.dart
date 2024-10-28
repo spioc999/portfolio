@@ -8,12 +8,14 @@ class PortfolioTimeBoundedLayout extends StatelessWidget {
   final DateTime startDateTime;
   final DateTime? endDateTime;
   final Widget child;
+  final double opacityTimeBounds;
 
   const PortfolioTimeBoundedLayout({
     super.key,
     required this.startDateTime,
     required this.endDateTime,
     required this.child,
+    this.opacityTimeBounds = 0.65,
   });
 
   @override
@@ -23,10 +25,13 @@ class PortfolioTimeBoundedLayout extends StatelessWidget {
       children: [
         Expanded(
           flex: 4,
-          child: Text(
-            '${_startDateString(context)}$dashWithSpacingString${_endDateString(context)}'
-                .toUpperCase(),
-            style: ResponsiveValues.themeLabelStyle(context),
+          child: Opacity(
+            opacity: opacityTimeBounds,
+            child: Text(
+              '${_startDateString(context)}$dashWithSpacingString${_endDateString(context)}'
+                  .toUpperCase(),
+              style: ResponsiveValues.themeLabelStyle(context),
+            ),
           ),
         ),
         defaultMarginGap,
