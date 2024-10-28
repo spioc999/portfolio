@@ -37,9 +37,9 @@ class PortfolioResponsiveTitleAndContentLayout extends StatelessWidget {
             Expanded(
               child: title,
             ),
-            largeMarginGap,
+            veryLargeMarginGap,
             Expanded(
-              flex: 3,
+              flex: 5,
               child: content,
             ),
           ],
