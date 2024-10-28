@@ -1,0 +1,13 @@
+import 'package:flutter/widgets.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+extension StateExt on State {
+  AppLocalizations? get maybeL10n => AppLocalizations.of(context);
+  AppLocalizations get l10n => maybeL10n!;
+}
+
+extension WidgetExt on Widget {
+  AppLocalizations? maybeL10n(BuildContext context) =>
+      AppLocalizations.of(context);
+  AppLocalizations l10n(BuildContext context) => maybeL10n(context)!;
+}
