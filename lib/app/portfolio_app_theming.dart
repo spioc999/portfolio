@@ -140,6 +140,7 @@ class PortfolioAppTheming {
           padding: const WidgetStatePropertyAll(buttonPadding),
           shape: const WidgetStatePropertyAll(RoundedRectangleBorder()),
           elevation: const WidgetStatePropertyAll(0.0),
+          iconSize: const WidgetStatePropertyAll(Dimens.defaultIconSize),
         ),
       );
 
@@ -147,7 +148,7 @@ class PortfolioAppTheming {
     cardColor: Colors.white,
     dividerColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepOrange,
+      seedColor: Colors.deepOrangeAccent,
       brightness: Brightness.light,
     ),
     textTheme: _textTheme(isDark: false),
@@ -159,7 +160,7 @@ class PortfolioAppTheming {
     cardColor: Colors.black,
     dividerColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepOrange,
+      seedColor: Colors.deepOrangeAccent,
       brightness: Brightness.dark,
     ),
     textTheme: _textTheme(isDark: true),
