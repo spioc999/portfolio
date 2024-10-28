@@ -48,7 +48,7 @@ class PortfolioTimeBoundedLayout extends StatelessWidget {
           ),
         ),
         defaultMarginGap,
-        Expanded(flex: 2, child: child),
+        Expanded(flex: 3, child: child),
       ],
     );
   }

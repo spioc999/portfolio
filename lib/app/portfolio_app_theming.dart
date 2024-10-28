@@ -43,21 +43,21 @@ class PortfolioAppTheming {
         );
 
     return TextTheme(
-      displayLarge: displayStyle(120),
-      displayMedium: displayStyle(100),
-      displaySmall: displayStyle(80),
-      headlineLarge: headlineStyle(44),
-      headlineMedium: headlineStyle(36),
-      headlineSmall: headlineStyle(28),
-      titleLarge: titleStyle(26),
-      titleMedium: titleStyle(22),
-      titleSmall: titleStyle(18),
-      bodyLarge: bodyStyle(18),
-      bodyMedium: bodyStyle(16),
-      bodySmall: bodyStyle(14),
-      labelLarge: labelStyle(14),
-      labelMedium: labelStyle(12),
-      labelSmall: labelStyle(10),
+      displayLarge: displayStyle(116),
+      displayMedium: displayStyle(96),
+      displaySmall: displayStyle(76),
+      headlineLarge: headlineStyle(42),
+      headlineMedium: headlineStyle(34),
+      headlineSmall: headlineStyle(26),
+      titleLarge: titleStyle(24),
+      titleMedium: titleStyle(20),
+      titleSmall: titleStyle(16),
+      bodyLarge: bodyStyle(16),
+      bodyMedium: bodyStyle(14),
+      bodySmall: bodyStyle(12),
+      labelLarge: labelStyle(12),
+      labelMedium: labelStyle(10),
+      labelSmall: labelStyle(8),
     );
   }
 
