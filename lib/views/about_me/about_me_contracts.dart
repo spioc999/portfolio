@@ -9,7 +9,6 @@ abstract class AboutMeViewContract extends BaseViewContract {
 abstract class AboutMeViewModelContract
     extends BaseViewModelContract<AboutMeState, AboutMeViewContract> {
   void onLetsCelebrateTap();
-  void onLinkTap(String url);
 }
 
 class AboutMeState extends BaseVMState {

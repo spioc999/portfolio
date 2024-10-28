@@ -20,4 +20,5 @@ class Res {
   static const jpgEducationItis = 'assets/imgs/education_itis.jpg';
   static const jpgEducationPolimi = 'assets/imgs/education_polimi.jpg';
   static const jpgEducationUcbm = 'assets/imgs/education_ucbm.jpg';
+  static const jpgEducationTorquay = 'assets/imgs/education_torquay.jpg';
 }

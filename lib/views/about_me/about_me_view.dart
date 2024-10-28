@@ -83,7 +83,7 @@ class _AboutMeViewState
                     AboutMeProjectsSection(
                       key: const Key(AboutMeKeys.projectsSection),
                       projects: vmState.projects,
-                      onLinkTap: viewModel.onLinkTap,
+                      onLinkTap: viewModel.onExternalUrlTap,
                       moreProjectsLink: vmState.moreProjectsLink,
                     ),
                   if (vmState.certifications.isNotEmpty)

@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:spioc_portfolio/interactors/interactors.dart';
 import 'package:spioc_portfolio/views/_base_mvvm/base_mvvm.dart';
 import 'package:spioc_portfolio/views/education/education_contracts.dart';
@@ -13,6 +14,11 @@ class EducationViewModel
   @override
   void onInitState() {
     super.onInitState();
-    vmState.educations.addAll(_personalDataInteractor.educations);
+    vmState.educations.addAll(
+      _personalDataInteractor.educations.sortedByCompare<DateTime>(
+        (e) => e.startDateTime,
+        (d1, d2) => d2.compareTo(d1),
+      ),
+    );
   }
 }
