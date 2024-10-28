@@ -14,7 +14,7 @@ This repository contains the Flutter codebase related to my portfolio website. F
 * Multi theme 👁️
 * Custom native loader 🔗
 * Automatic deployment ⚙️
-* Path-based navigation and browser title 🛣️
+* Path-based navigation and adaptive browser title 🛣️
 * ...and a special animation for my birthday 🎉
 
 ## Design pattern 🔎
