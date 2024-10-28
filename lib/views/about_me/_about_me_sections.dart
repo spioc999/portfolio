@@ -124,8 +124,8 @@ class AboutMeHobbiesSection extends StatelessWidget {
         ),
         defaultMarginGap,
         Wrap(
-          spacing: Dimens.veryLargeMargin,
-          runSpacing: Dimens.largeMargin,
+          spacing: Dimens.largeMargin,
+          runSpacing: Dimens.smallMargin,
           alignment: WrapAlignment.center,
           children: hobbies
               .map(
