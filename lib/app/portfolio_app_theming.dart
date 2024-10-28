@@ -150,7 +150,7 @@ class PortfolioAppTheming {
     cardColor: Colors.white,
     dividerColor: Colors.black,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepOrangeAccent,
+      seedColor: Colors.greenAccent,
       brightness: Brightness.light,
     ),
     textTheme: _textTheme(isDark: false),
@@ -162,7 +162,7 @@ class PortfolioAppTheming {
     cardColor: Colors.black,
     dividerColor: Colors.white,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.deepOrangeAccent,
+      seedColor: Colors.greenAccent,
       brightness: Brightness.dark,
     ),
     textTheme: _textTheme(isDark: true),

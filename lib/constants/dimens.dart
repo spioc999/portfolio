@@ -16,4 +16,6 @@ class Dimens {
   static const double horizontalPaddingDefault = 16.0;
 
   static const double defaultIconSize = 18.0;
+
+  static const double imageSize = 264.0;
 }
