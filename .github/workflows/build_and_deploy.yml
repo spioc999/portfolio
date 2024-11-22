@@ -67,7 +67,7 @@ jobs:
             - name: Deploy via Git
               run: |-
                 cd build
-                git clone https://${{ secrets.GH_TOKEN }}@github.com/spioc999/spioc999.github.io.git website-runnable-repo
+                git clone https://${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}@github.com/spioc999/spioc999.github.io.git website-runnable-repo
                 cd website-runnable-repo
                 git checkout main
                 cp -r -f ../web/* .
@@ -84,8 +84,6 @@ jobs:
         steps:
             - name: Checkout repo
               uses: actions/checkout@v4
-              with:
-                token: ${{ secrets.GH_TOKEN }}
             - name: Set up Git
               run: |-
                 git config --global user.name ${{ env.GH_USERNAME }}
@@ -96,8 +94,6 @@ jobs:
                 git push origin ${{ env.TAG_VERSION }}
             - name: Create release
               uses: actions/create-release@v1
-              env:
-                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
               with:
                 tag_name: ${{ env.TAG_VERSION }}
                 release_name: Release ${{ env.TAG_VERSION }}
