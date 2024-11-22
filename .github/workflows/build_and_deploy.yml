@@ -56,10 +56,8 @@ jobs:
               run: |-
                 flutter --version
                 dart pub global activate derry
-            - name: Clean, get and build
-              run: |-
-                derry clean
-                derry build
+            - name: Generate web release
+              run: derry generate_web_release
             - name: Set up Git
               run: |-
                 git config --global user.name ${{ env.GH_USERNAME }}
@@ -94,6 +92,8 @@ jobs:
                 git push origin ${{ env.TAG_VERSION }}
             - name: Create release
               uses: actions/create-release@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                 tag_name: ${{ env.TAG_VERSION }}
                 release_name: Release ${{ env.TAG_VERSION }}
