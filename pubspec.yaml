@@ -1,7 +1,7 @@
 name: spioc_portfolio
 description: "Simone Pio's portofolio website"
 publish_to: 'none'
-version: 1.5.0
+version: 1.5.1
 
 environment:
   sdk: '>=3.4.0 <4.0.0'
@@ -61,6 +61,11 @@ scripts:
     - flutter clean && flutter pub get
   build_web:
     - flutter build web
+  build_web_release:
+    - $build_web --release
   generate_web_release:
     - $clean_and_get
-    - $build_web --release --wasm
+    - $build_web_release
+  generate_web_release_wasm:
+    - $clean_and_get
+    - $build_web_release --wasm

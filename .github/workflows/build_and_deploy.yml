@@ -57,7 +57,7 @@ jobs:
                 flutter --version
                 dart pub global activate derry
             - name: Generate web release
-              run: derry generate_web_release
+              run: derry generate_web_release #generate_web_release_wasm TO BE CHANGED
             - name: Set up Git
               run: |-
                 git config --global user.name ${{ env.GH_USERNAME }}
