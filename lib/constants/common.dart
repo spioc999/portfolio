@@ -15,10 +15,9 @@ const technologyLink = 'https://flutter.dev/';
 
 void emptyCallback() {}
 
-const ScrollPhysics defaultScrollPhysics = ClampingScrollPhysics();
+const ScrollPhysics defaultScrollPhysics = BouncingScrollPhysics();
 
-const defaultHorizontalPadding =
-    EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingDefault);
+const defaultHorizontalPadding = EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingDefault);
 
 const defaultBorderRadius = BorderRadius.all(Radius.circular(
   Dimens.defaultRadius,

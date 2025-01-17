@@ -65,12 +65,9 @@ class PortfolioAppTheming {
     Dimens.minButtonWidth,
     Dimens.minButtonHeight,
   );
-  static const buttonPadding =
-      EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingButton);
+  static const buttonPadding = EdgeInsets.symmetric(horizontal: Dimens.horizontalPaddingButton);
 
-  static ElevatedButtonThemeData _elevatedButtonThemeData(
-          {required bool isDark}) =>
-      ElevatedButtonThemeData(
+  static ElevatedButtonThemeData _elevatedButtonThemeData({required bool isDark}) => ElevatedButtonThemeData(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.resolveWith(
             (states) {
@@ -92,8 +89,7 @@ class PortfolioAppTheming {
         ),
       );
 
-  static TextButtonThemeData _textButtonThemeData({required bool isDark}) =>
-      TextButtonThemeData(
+  static TextButtonThemeData _textButtonThemeData({required bool isDark}) => TextButtonThemeData(
         style: ButtonStyle(
           foregroundColor: WidgetStateProperty.resolveWith(
             (states) {
@@ -112,9 +108,7 @@ class PortfolioAppTheming {
         ),
       );
 
-  static OutlinedButtonThemeData _outlinedButtonThemeData(
-          {required bool isDark}) =>
-      OutlinedButtonThemeData(
+  static OutlinedButtonThemeData _outlinedButtonThemeData({required bool isDark}) => OutlinedButtonThemeData(
         style: ButtonStyle(
           foregroundColor: WidgetStateProperty.resolveWith(
             (states) {
