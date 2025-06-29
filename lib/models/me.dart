@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:simple_icons/simple_icons.dart';
 import 'package:spioc_portfolio/core/resources/res.dart';
 import 'package:spioc_portfolio/models/models.dart';
@@ -43,7 +44,7 @@ final simonePioCaronia = Me(
   role: 'Mobile Engineer & AI Enthusiast',
   contacts: [
     Contact(link: 'https://github.com/spioc999/', icon: SimpleIcons.github),
-    Contact(link: 'https://www.linkedin.com/in/simone-pio-caronia-8b959916b/', icon: SimpleIcons.linkerd),
+    Contact(link: 'https://www.linkedin.com/in/simone-pio-caronia-8b959916b/', icon: FontAwesomeIcons.linkedin),
     Contact(link: 'https://www.instagram.com/spioc_999/', icon: SimpleIcons.instagram),
   ],
   projectsUrl: 'https://github.com/spioc999?tab=repositories',
@@ -56,7 +57,7 @@ final simonePioCaronia = Me(
       Technology(icon: SimpleIcons.flutter, name: 'Flutter'),
       Technology(icon: SimpleIcons.dart, name: 'Dart'),
       Technology(icon: SimpleIcons.python, name: 'Python'),
-      Technology(icon: SimpleIcons.languagetool, name: 'Java'),
+      Technology(icon: FontAwesomeIcons.java, name: 'Java'),
       Technology(icon: SimpleIcons.kotlin, name: 'Kotlin'),
       Technology(icon: SimpleIcons.git, name: 'Git'),
       Technology(icon: SimpleIcons.swift, name: 'Swift'),
@@ -124,7 +125,7 @@ final simonePioCaronia = Me(
       ),
     ],
     certifications: [
-      Certification(icon: SimpleIcons.checkio, label: 'Oracle Certified Associate - Java SE 8'),
+      Certification(icon: Icons.check, label: 'Oracle Certified Associate - Java SE 8'),
       Certification(icon: Icons.language_outlined, label: 'TOEFL iBT (88/120 - B2)'),
       Certification(icon: SimpleIcons.cisco, label: 'ITN CCNA1 - Cisco'),
     ],
