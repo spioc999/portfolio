@@ -4,14 +4,10 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:spioc_portfolio/core/locator/locator.dart';
 import 'package:spioc_portfolio/interactors/interactors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:spioc_portfolio/l10n/generated/app_localizations.dart';
 
 List<SingleChildWidget> providers = [
-  ChangeNotifierProvider(
-    create: (_) => AppSettingsProvider(
-      appSettingsInteractor: getIt<AppSettingsInteractor>(),
-    ),
-  ),
+  ChangeNotifierProvider(create: (_) => AppSettingsProvider(appSettingsInteractor: getIt<AppSettingsInteractor>())),
 ];
 
 class AppSettingsProvider extends ChangeNotifier {
@@ -19,12 +15,10 @@ class AppSettingsProvider extends ChangeNotifier {
   AppSettings appSettings = AppSettings();
 
   AppSettingsProvider({required AppSettingsInteractor appSettingsInteractor})
-      : _appSettingsInteractor = appSettingsInteractor {
+    : _appSettingsInteractor = appSettingsInteractor {
     final savedThemeModeName = _appSettingsInteractor.getSavedThemeModeName();
     if (savedThemeModeName != null) {
-      final savedThemeMode = ThemeMode.values.firstWhereOrNull(
-        (themeMode) => themeMode.name == savedThemeModeName,
-      );
+      final savedThemeMode = ThemeMode.values.firstWhereOrNull((themeMode) => themeMode.name == savedThemeModeName);
       appSettings = appSettings.copyWith(themeMode: savedThemeMode);
     }
 
@@ -38,8 +32,7 @@ class AppSettingsProvider extends ChangeNotifier {
   }
 
   Future<void> switchThemeByBrightness(Brightness brightness) async {
-    final newThemeMode =
-        brightness == Brightness.dark ? ThemeMode.light : ThemeMode.dark;
+    final newThemeMode = brightness == Brightness.dark ? ThemeMode.light : ThemeMode.dark;
     appSettings = appSettings.copyWith(themeMode: newThemeMode);
     notifyListeners();
 
@@ -47,9 +40,7 @@ class AppSettingsProvider extends ChangeNotifier {
   }
 
   Future<void> switchLocale(String languageCode) async {
-    final newLocale = AppLocalizations.supportedLocales
-        .whereNot((locale) => locale.languageCode == languageCode)
-        .first;
+    final newLocale = AppLocalizations.supportedLocales.whereNot((locale) => locale.languageCode == languageCode).first;
 
     appSettings = appSettings.copyWith(locale: newLocale);
     notifyListeners();
@@ -67,12 +58,6 @@ class AppSettings {
     this.locale,
   });
 
-  AppSettings copyWith({
-    ThemeMode? themeMode,
-    Locale? locale,
-  }) =>
-      AppSettings(
-        themeMode: themeMode ?? this.themeMode,
-        locale: locale ?? this.locale,
-      );
+  AppSettings copyWith({ThemeMode? themeMode, Locale? locale}) =>
+      AppSettings(themeMode: themeMode ?? this.themeMode, locale: locale ?? this.locale);
 }
