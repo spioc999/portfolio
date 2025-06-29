@@ -37,6 +37,7 @@ migrate_working_dir/
 /packages/flutter/coverage/
 version
 .env
+**/generated
 
 # packages file containing multi-root paths
 .packages.generated
